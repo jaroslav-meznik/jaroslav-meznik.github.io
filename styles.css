@@ -166,6 +166,15 @@ button:active {
   font-family: monospace;
 }
 
+.redacted {
+  display: inline-flex;
+  height: 1em;
+  min-width: 5em;
+  transform: translateY(0.25em); 
+  color: black;
+  background-color: black;
+}
+
 #document-btn {
   position: absolute;
   left: 50%;
