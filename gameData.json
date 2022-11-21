@@ -10,7 +10,7 @@
     "type": "infoScene",
     "next": "demo-bedroom",
     "image": "backgrounds/bedroom.png",
-    "text": "Jednoho dne se nad ránem probudíte a už se vám nepodaří usnout. Najednou uslyšíte odněkud zvláštní zvuky."
+    "text": "Jednoho dne se brzy ráno probudíte a už se vám nepodaří usnout. Najednou uslyšíte zvláštní zvuky."
   },
   {
     "id": "demo-bedroom",
@@ -24,14 +24,14 @@
     "next": "demo-kitchen-trans",
     "person": "",
     "name": "(V hlavě)",
-    "text": "Co to jen může být?..."
+    "text": "Co to může být?..."
   },
   {
     "id": "demo-kitchen-trans",
     "type": "infoScene",
     "next": "demo-kitchen",
     "image": "backgrounds/kitchen.png",
-    "text": "Zvuky se opět ozvou, tentokrát jste si jistý že vycházejí z přízemí. Sejdete po schodech do kuchyně."
+    "text": "Zvuky se opět ozvou, tentokrát jste si jistý, že vycházejí z přízemí. Sejdete po schodech do kuchyně."
   },
   {
     "id": "demo-kitchen",
@@ -52,7 +52,7 @@
     "type": "infoScene",
     "next": "demo-outside",
     "image": "backgrounds/outside.png",
-    "text": "V tu chvíli uslyšíte zvuky z venku a jdete se podívat, co se tam dějě."
+    "text": "V tu chvíli uslyšíte zvuky z venku a jdete se podívat, co se tam děje."
   },
   {
     "id": "demo-outside",
@@ -94,7 +94,7 @@
     "next": "demo-daughter-letter",
     "person": "people/daughter-idle.png",
     "name": "[Dcera]",
-    "text": "Měl by ses pořádně vyspat pro svoje vlastní dobro. Navíc v práci nezanecháváš moc dobrý dojem, když zíváš každých pět minut."
+    "text": "Prospělo by ti, kdyby ses pořádně vyspal. Navíc v práci nezanecháváš moc dobrý dojem, když zíváš každých pět minut."
   },
   {
     "id": "demo-daughter-02",
@@ -110,7 +110,7 @@
     "next": "demo-daughter-letter",
     "person": "people/daughter-idle.png",
     "name": "[Dcera]",
-    "text": "Mám dojem, že jsem ti říkala, že dnes ráno budu stěhovat moje věci. Stejně si teď, když už nebydlím blízko školy, musím zvykat na brzké vstávání."
+    "text": "Mám dojem, že jsem ti říkala, že dnes ráno budu stěhovat moje věci. Stejně si teď, když už nebydlím blízko školy, musím zvykat na vstávání brzy."
   },
   {
     "id": "demo-daughter-letter",
@@ -194,14 +194,14 @@
     "next": "demo-kitchen-back-trans",
     "person": "people/boyfriend-idle.png",
     "name": "[Přítel]",
-    "text": "Každopádně, musím jít nakládat další krabice, samo se to přece nepřestěhuje; ale povím vám, [Dcera] to doopravdy táhne daleko. Jde opravdu vidět, že chce dokázat hodně. Taky už není úplně brzy, možná byste se měl chystat do vaší práce. Nashledanou."
+    "text": "Každopádně, musím jít nakládat další krabice, samo se to přece nepřestěhuje. Ale povím vám, [Dcera] to doopravdy táhne daleko. Jde opravdu vidět, že chce dokázat hodně. Taky už není úplně brzy, možná byste se měl chystat do vaší práce. Na shledanou."
   },
   {
     "id": "demo-kitchen-back-trans",
     "type": "infoScene",
     "next": "demo-kitchen-back",
     "image": "backgrounds/kitchen.png",
-    "text": "Vrátite se zpátky do kuchyně a jdete si přečíst dopis o kterém vám dcera řekla."
+    "text": "Vrátite se zpátky do kuchyně a jdete si přečíst dopis, o kterém vám dcera řekla."
   },
   {
     "id": "demo-kitchen-back",
@@ -221,14 +221,14 @@
     "next": "demo-uni-trans",
     "person": "",
     "name": "(V hlavě)",
-    "text": "Nemám ponětí co má tohle znamenat."
+    "text": "Nemám ponětí, co má tohle znamenat."
   },
   {
     "id": "demo-uni-trans",
     "type": "infoScene",
     "next": "demo-uni",
     "image": "backgrounds/office.png",
-    "text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu kde učíte. Chvíli poté co přijdete do své kanceláře vám zazvoní telefon."
+    "text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu, kde učíte. Chvíli poté, co přijdete do své kanceláře, vám zazvoní telefon."
   },
   {
     "id": "demo-uni",
@@ -301,7 +301,7 @@
     "next": "demo-phone-answer-final-3",
     "person": "people/person.png",
     "name": "???",
-    "text": "Berte tuto situaci jako povýšení na pozici, kterou jste vždycky chtěl. Dovolím si podotknout, že není důvod tuto nabídku odmítnout, nebo o ní komukoliv říkat."
+    "text": "Berte tuto situaci jako povýšení na pozici, kterou jste vždycky chtěl. Dovolím si připomenout, že není důvod tuto nabídku odmítnout, nebo o ní někomu říkat."
   },
   {
     "id": "demo-phone-answer-final-3",
@@ -317,7 +317,7 @@
     "next": "demo-end",
     "person": "people/person.png",
     "name": "???",
-    "text": "Zítra Vás budeme očekávat na Vašem novém pracovišti. Nashledanou, příjemný zbytek dne."
+    "text": "Zítra Vás budeme očekávat na Vašem novém pracovišti. Na shledanou, příjemný zbytek dne."
   },
   {
     "id": "demo-end",
