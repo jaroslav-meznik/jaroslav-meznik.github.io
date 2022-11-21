@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>[REDACTED]</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="game">
+        <div class="scene" id="start-scene">
+          <div class="center-container">
+            <h1 id="start-title"></h1>
+            <button class="next-btn" id="start-btn">Hrát</button>
+          </div>
+        </div>
+        <div class="scene" id="dialog-scene">
+          <div class="content" id="speech-scene">
+            <img src="" class="person-img" id="speech-person" />
+            <div class="text-container">
+              <p id="speech-name"></p>
+              <p id="speech-text"></p>
+              <button class="next-btn" id="speech-btn">Pokračovat</button>
+            </div>
+          </div>
+          <div class="content" id="choice-scene">
+            <img src="" class="person-img" id="choice-person" />
+            <div class="text-container">
+              <p id="choice-question"></p>
+              <button class="choice-option next-btn" id="choice-option-1">
+                <p></p>
+              </button>
+              <button class="choice-option next-btn" id="choice-option-2">
+                <p></p>
+              </button>
+              <button class="choice-option next-btn" id="choice-option-3">
+                <p></p>
+              </button>
+            </div>
+          </div>
+          <div class="content" id="document-scene">
+            <div id="document-doc"></div>
+            <div class="text-container"></div>
+            <button class="next-btn" id="document-btn">Pokračovat</button>
+          </div>
+        </div>
+        <div class="scene" id="info-scene">
+          <img src="" id="info-img" />
+          <div class="text-container">
+            <p id="info-text"></p>
+            <button class="next-btn" id="info-btn">Pokračovat</button>
+          </div>
+        </div>
+        <div class="scene" id="end-scene">
+          <div class="center-container">
+            <h1 id="end-title"></h1>
+            <p id="end-ending"></p>
+            <a href="/">Domů</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+  </body>
+</html>
