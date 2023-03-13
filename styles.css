@@ -9,7 +9,7 @@
 body {
   color: white;
   background-color: black;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .center-container {
@@ -113,6 +113,13 @@ button:active {
   padding: 1rem 3rem;
   margin-top: 10%;
   font-size: 150%;
+}
+
+/* Dialog */
+#dialog-scene > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 /* Speech */

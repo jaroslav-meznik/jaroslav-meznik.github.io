@@ -55,10 +55,10 @@ function startScene(scene) {
 }
 
 function dialogScene(scene) {
-  let sceneElement = document.querySelector("#dialog-scene");
-  sceneElement.style.backgroundImage = `url('${scene["bg"]}')`;
+  let bgElement = document.querySelector("#dialog-bg");
+  bgElement.src = scene["bg"];
 
-  displayScene(sceneElement);
+  displayScene(document.querySelector('#dialog-scene'));
 
   handleScene(scene["next"]);
 }
