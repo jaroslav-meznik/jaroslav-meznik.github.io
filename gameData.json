@@ -9,14 +9,14 @@
     "id": "demo-intro",
     "type": "infoScene",
     "next": "demo-bedroom",
-    "image": "backgrounds/bedroom.png",
+    "image": "backgrounds/bedroom.jpg",
     "text": "Jednoho dne se brzy ráno probudíte a už se vám nepodaří usnout. Najednou uslyšíte zvláštní zvuky."
   },
   {
     "id": "demo-bedroom",
     "type": "dialogScene",
     "next": "demo-noises",
-    "bg": "backgrounds/bedroom.png"
+    "bg": "backgrounds/bedroom.jpg"
   },
   {
     "id": "demo-noises",
@@ -30,14 +30,14 @@
     "id": "demo-kitchen-trans",
     "type": "infoScene",
     "next": "demo-kitchen",
-    "image": "backgrounds/kitchen.png",
+    "image": "backgrounds/kitchen.jpg",
     "text": "Zvuky se opět ozvou, tentokrát jste si jistý, že vycházejí z přízemí. Sejdete po schodech do kuchyně."
   },
   {
     "id": "demo-kitchen",
     "type": "dialogScene",
     "next": "demo-letter-notice",
-    "bg": "backgrounds/kitchen.png"
+    "bg": "backgrounds/kitchen.jpg"
   },
   {
     "id": "demo-letter-notice",
@@ -51,14 +51,14 @@
     "id": "demo-outside-trans",
     "type": "infoScene",
     "next": "demo-outside",
-    "image": "backgrounds/outside.png",
+    "image": "backgrounds/outside.jpg",
     "text": "V tu chvíli uslyšíte zvuky z venku a jdete se podívat, co se tam děje."
   },
   {
     "id": "demo-outside",
     "type": "dialogScene",
     "next": "demo-daughter",
-    "bg": "backgrounds/outside_boxes.png"
+    "bg": "backgrounds/outside_boxes.jpg"
   },
   {
     "id": "demo-daughter",
@@ -200,14 +200,14 @@
     "id": "demo-kitchen-back-trans",
     "type": "infoScene",
     "next": "demo-kitchen-back",
-    "image": "backgrounds/kitchen.png",
+    "image": "backgrounds/kitchen.jpg",
     "text": "Vrátite se zpátky do kuchyně a jdete si přečíst dopis, o kterém vám dcera řekla."
   },
   {
     "id": "demo-kitchen-back",
     "type": "dialogScene",
     "next": "demo-kitchen-letter",
-    "bg": "backgrounds/kitchen.png"
+    "bg": "backgrounds/kitchen.jpg"
   },
   {
     "id": "demo-kitchen-letter",
@@ -227,14 +227,14 @@
     "id": "demo-uni-trans",
     "type": "infoScene",
     "next": "demo-uni",
-    "image": "backgrounds/office.png",
+    "image": "backgrounds/office.jpg",
     "text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu, kde učíte. Chvíli poté, co přijdete do své kanceláře, vám zazvoní telefon."
   },
   {
     "id": "demo-uni",
     "type": "dialogScene",
     "next": "demo-phone-question",
-    "bg": "backgrounds/office.png"
+    "bg": "backgrounds/office.jpg"
   },
   {
     "id": "demo-phone-question",

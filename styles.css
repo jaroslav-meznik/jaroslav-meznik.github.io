@@ -171,6 +171,7 @@ button:active {
   color: black;
   background-color: white;
   font-family: monospace;
+  font-size: 1em;
 }
 
 .redacted {

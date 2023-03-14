@@ -5,6 +5,10 @@ const gameData = await res.json();
 // Start the game
 handleScene(gameData[0]["id"]);
 
+// Preload images and cache them,
+// an ugly hack to improve performance
+prefetchImgs();
+
 function handleScene(sceneId) {
   let scene = getSceneById(sceneId);
 
@@ -58,7 +62,7 @@ function dialogScene(scene) {
   let bgElement = document.querySelector("#dialog-bg");
   bgElement.src = scene["bg"];
 
-  displayScene(document.querySelector('#dialog-scene'));
+  displayScene(document.querySelector("#dialog-scene"));
 
   handleScene(scene["next"]);
 }
@@ -178,4 +182,37 @@ function displayContent(contentElement) {
     contentEl.style.display = "none";
   }
   contentElement.style.display = "block";
+}
+
+async function prefetchImgs() {
+  let images = [
+    "/backgrounds/bedroom.jpg",
+    "/backgrounds/classroom.jpg",
+    "/backgrounds/kitchen.jpg",
+    "/backgrounds/office.jpg",
+    "/backgrounds/office_2.jpg",
+    "/backgrounds/outside.jpg",
+    "/backgrounds/outside_boxes.jpg",
+    "/people/boyfriend-angry.png",
+    "/people/boyfriend-happy.png",
+    "/people/boyfriend-idle.png",
+    "/people/daughter-angry.png",
+    "/people/daughter-happy.png",
+    "/people/daughter-idle.png",
+    "/people/guy.png",
+    "/people/mckun-angry.png",
+    "/people/mckun-idle.png",
+    "/people/mckun-thinking.png",
+    "/people/person.png",
+  ];
+
+  for (let url of images) {
+    let image = new Image();
+    image.src = url;
+    await new Promise((resolve) => {
+      image.onload = () => {
+        resolve();
+      };
+    });
+  }
 }
