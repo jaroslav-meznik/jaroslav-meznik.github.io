@@ -314,10 +314,142 @@
   {
     "id": "demo-phone-answer-final-4",
     "type": "speechScene",
-    "next": "demo-end",
+    "next": "demo-classroom-trans",
     "person": "people/person.png",
     "name": "???",
     "text": "Zítra Vás budeme očekávat na Vašem novém pracovišti. Na shledanou, příjemný zbytek dne."
+  },
+  {
+    "id": "demo-classroom-trans",
+    "type": "infoScene",
+    "next": "demo-policeman-dialog",
+    "image": "backgrounds/classroom.jpg",
+    "text": "Rozhodnete se, že i přes varování té neznámé osoby její nabídku odmítnete. Pokračujete ve své stávající práci učitele a žádné další zprávy už nedostanete. Až jednoho dne, když vejdete do své kanceláře..."
+  },
+  {
+    "id": "demo-policeman-dialog",
+    "type": "dialogScene",
+    "next": "demo-policeman",
+    "bg": "backgrounds/office.jpg"
+  },
+  {
+    "id": "demo-policeman",
+    "type": "speechScene",
+    "person": "people/soldier-idle.png",
+    "name": "Policista",
+    "text": "Čest práci, soudruhu. Odučil jste svoji poslední hodinu dobře?",
+    "next": "demo-policeman-choice"
+  },
+  {
+    "id": "demo-policeman-choice",
+    "type": "choiceScene",
+    "person": "people/mckun-idle.png",
+    "question": "Odučil jste svoji poslední hodinu dobře?",
+    "choices": [
+      {
+        "text": "Kdo jste? A co ode mě chcete?",
+        "next": "demo-policeman-answer-1"
+      },
+      { "text": "...", "next": "demo-policeman-answer-2" },
+      {
+        "text": "Dobrý den, ano, řekl bych že velmi",
+        "next": "demo-policeman-answer-3"
+      }
+    ]
+  },
+  {
+    "id": "demo-policeman-answer-1",
+    "type": "speechScene",
+    "next": "demo-policeman-arrest",
+    "person": "people/soldier-undecisive.png",
+    "name": "Policista",
+    "text": "Kdo jsem vědět nepotřebujete, ale rozhodně víte kde pracuji. A rozhodně víte proč tu dnes jsem."
+  },
+  {
+    "id": "demo-policeman-answer-2",
+    "type": "speechScene",
+    "next": "demo-policeman-arrest",
+    "person": "people/soldier-idle.png",
+    "name": "Policista",
+    "text": "..."
+  },
+  {
+    "id": "demo-policeman-answer-3",
+    "type": "speechScene",
+    "next": "demo-policeman-arrest",
+    "person": "people/soldier-angry.png",
+    "name": "Policista",
+    "text": "Příště buďte zticha a neodpovídejte. Nic od vás slyšet nepotřebuji."
+  },
+  {
+    "id": "demo-policeman-arrest",
+    "type": "speechScene",
+    "next": "demo-policeman-arrest-1",
+    "person": "people/soldier-idle.png",
+    "name": "Policista",
+    "text": "*Ukáže na stůl, kde leží předem vyplňené doznání, kterému chybí jen jeho podpis* Jste obviněn a zatčen z protistátního chování a vlastizrady. Půjdete se mnou a podepíšete nám vaši výpověď."
+  },
+  {
+    "id": "demo-policeman-arrest-1",
+    "type": "speechScene",
+    "next": "demo-policeman-arrest-choice",
+    "person": "people/soldier-idle.png",
+    "name": "Policista",
+    "text": "Teď se ke mně otočte zády a dejte si ruce za záda."
+  },
+  {
+    "id": "demo-policeman-arrest-choice",
+    "type": "choiceScene",
+    "person": "people/mckun-idle.png",
+    "question": "Teď se ke mně otočte zády a dejte si ruce za záda.",
+    "choices": [
+      { "text": "...", "next": "demo-policeman-arrest-answer-1" },
+      { "text": "Tohle nemůžete, já jsem nic neudělal!", "next": "demo-policeman-arrest-answer-2" },
+      { "text": "Mám dceru, uvidím ji ještě?", "next": "demo-policeman-arrest-answer-3" }
+    ]
+  },
+  {
+    "id": "demo-policeman-arrest-answer-1",
+    "type": "speechScene",
+    "next": "demo-policeman-futile-choice",
+    "person": "people/soldier-idle.png",
+    "name": "Policista",
+    "text": "Svůj soudní proces můžete očekávat zítra. Teď se hezky projdeme k mému autu. Cestou se můžete rozloučit se všemi těmi studenty, kterým jste vymýval mozky."
+  },
+  {
+    "id": "demo-policeman-arrest-answer-2",
+    "type": "speechScene",
+    "next": "demo-policeman-futile-choice",
+    "person": "people/soldier-angry.png",
+    "name": "Policista",
+    "text": "Řekl jsem aby jste se otočil! Máte právo zůstat zticha. Jste zatčen za angažování se v protistátním chování a šíření protistátního smýšlení. To vše je vlastizrada. Teď půjdete se mnou."
+  },
+  {
+    "id": "demo-policeman-arrest-answer-3",
+    "type": "speechScene",
+    "next": "demo-policeman-futile-choice",
+    "person": "people/soldier-undecisive.png",
+    "name": "Policista",
+    "text": "To je mi doopravdy jedno. Na to jste měl myslet před tím než jste zradil stát."
+  },
+  {
+    "id": "demo-policeman-futile-choice",
+    "type": "choiceScene",
+    "person": "people/mckun-idle.png",
+    "question": "",
+    "choices": [
+      { "text": "Nikomu jsem mozky nevymýval, a není soudní proces, když je o výsledeku předem rozhodnuto.", "next": "demo-policeman-thoughts" },
+      { "text": "Nesahejte na mě, půjdu sám.", "next": "demo-policeman-thoughts" },
+      { "text": "Já nejsem žádný zrádce!", "next": "demo-policeman-thoughts" }
+    ]
+  },
+  {
+    "id": "demo-policeman-thoughts",
+    "type": "speechScene",
+    "next": "demo-end",
+    "person": "people/mckun-angry.png",
+    "name": "(V hlavě)",
+    "text": "Teď už stejně nemá cenu nic říkat, kéž bych alespoň mohl ještě jednou vidět svou dceru a rozloučit se s ní."
   },
   {
     "id": "demo-end",
