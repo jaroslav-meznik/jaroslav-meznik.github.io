@@ -1,12 +1,25 @@
-const res = await fetch("/gameData.json");
+const gameData = await fetch("/gameData.json").then((res) => res.json());
 
-const gameData = await res.json();
+const canvas = document.querySelector("#canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const WIDTH = canvas.width;
+const HEIGHT = canvas.height;
+
+let bg = new Image();
+bg.src = "thumbnail.png"
+bg.onload = () => {
+  ctx.drawImage(bg, 0, 0, WIDTH, HEIGHT);
+}
 
 // Start the game
 handleScene(gameData[0]["id"]);
 
 // Preload images and cache them,
-// an ugly hack to improve performance
+// a quick hack to improve performance
 prefetchImgs();
 
 function handleScene(sceneId) {
