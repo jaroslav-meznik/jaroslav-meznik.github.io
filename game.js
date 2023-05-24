@@ -16,43 +16,45 @@ class Renderer {
 		this.h = canvas.height;
 	}
 
-	drawImage(image, x, y, w, h) {
-		this.ctx.drawImage(image, x * this.w, y * this.h, w * this.w, h * this.h);
+	drawImage(image, x, y, w, h, ax = 0, ay = 0) {
+		this.ctx.drawImage(image, x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
 	}
 
-	drawRect(style, x, y, w, h) {
+	drawRect(style, x, y, w, h, ax = 0, ay = 0) {
 		this.ctx.save();
 
 		this.ctx.fillStyle = style;
-		this.ctx.fillRect(x * this.w, y * this.h, w * this.w, h * this.h);
+		this.ctx.fillRect(x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
 
 		this.ctx.restore();
 	}
 
-	drawText(text, x, y, w, h) {
+	drawText(text, x, y, w, h, ax = 0, ay = 0) {
 		let paragraph = document.createElement("p");
+
+		/* Intentionally insecure to allow text styling (I"m lazy and this is the easiest option) */
+		paragraph.innerHTML = text;
 
 		paragraph.style.position = "absolute";
 		paragraph.style.left = `${x * this.w}px`;
 		paragraph.style.top = `${y * this.h}px`;
 		paragraph.style.width = `${w * this.w}px`;
 		paragraph.style.height = `${h * this.h}px`;
-
-		/* Intentionally insecure to allow text styling (I"m lazy and this is the easiest option) */
-		paragraph.innerHTML = text;
+		paragraph.style.transform = `translate(-${ax * 100}%, -${ay * 100}%)`;
 
 		this.content.append(paragraph);
 	}
 
-	drawButton(text, callback, x, y, w, h) {
+	drawButton(text, callback, ax, ay) {
 		let button = document.createElement("button");
-
-		button.style.position = "absolute";
-		button.style.left = `${x * this.w}px`;
-		button.style.top = `${y * this.h}px`;
 
 		button.textContent = text;
 		button.onclick = callback;
+
+		button.style.position = "absolute";
+		button.style.left = `${ax * this.w}px`;
+		button.style.top = `${ay * this.h}px`;
+		button.style.transform = `translate(-50%, -50%)`;
 
 		this.content.append(button);
 	}
@@ -89,14 +91,16 @@ async function getImage(url, allow_cached = true) {
 }
 
 const renderer = new Renderer("#canvas", "#content");
-
+/*
 let bg = await getImage("/backgrounds/bedroom.jpg");
 renderer.drawImage(bg, 0, 0, 1, 1);
 renderer.drawRect("black", 0, 0.8, 1, 0.2);
 renderer.drawText("You like kissing boys, don't you?", 0.25, 0.85, 0.50, 0.10);
 renderer.drawButton("next", () => { renderer.clear(); }, 0.80, 0.85, 0.10, 0.05);
+*/
+
 // Start the game
-//handleScene(gameData[0]["id"]);
+handleScene(gameData[0]["id"]);
 
 // Preload images and cache them,
 // a quick hack to improve performance
@@ -134,21 +138,17 @@ function handleScene(sceneId) {
 	}
 }
 
-function startScene(scene) {
-	let sceneElement = document.querySelector("#start-scene");
+async function startScene(scene) {
+	renderer.clear();
 
-	sceneElement.style.display = "block";
+	let bg = await getImage("/thumbnail.png");
+	renderer.drawImage(bg, 0, 0, 1, 1);
 
-	let titleElement = sceneElement.querySelector("#start-title");
-	titleElement.textContent = scene["title"];
+	renderer.drawText(scene["title"], 0.50, 0.50, 0.20, 0.20);
 
-	let startBtn = sceneElement.querySelector("#start-btn");
-	startBtn.onclick = (e) => {
-		e.preventDefault();
-		handleScene(scene["next"]);
-	};
+	renderer.drawButton("Hrát", () => { handleScene(scene["next"]) }, 0.5, 0.7);
 
-	displayScene(sceneElement);
+	renderer.drawRect("black", 0.5, 0.5, 0.2, 0.2, 0.5, 0.5);
 }
 
 function dialogScene(scene) {
