@@ -1,26 +1,106 @@
-const gameData = await fetch("/gameData.json").then((res) => res.json());
+const gameFile = await fetch("/gameData.json");
+const gameData = await gameFile.json();
 
-const canvas = document.querySelector("#canvas");
-const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+class Renderer {
+	constructor(canvasQuerySelector, contentQuerySelector) {
+		this.canvas = document.querySelector(canvasQuerySelector);
+		this.content = document.querySelector(contentQuerySelector);
 
-const WIDTH = canvas.width;
-const HEIGHT = canvas.height;
+		this.ctx = canvas.getContext("2d");
 
-let bg = new Image();
-bg.src = "thumbnail.png"
-bg.onload = () => {
-	ctx.drawImage(bg, 0, 0, WIDTH, HEIGHT);
+		this.canvas.width = window.innerWidth;
+		this.canvas.height = window.innerHeight;
+
+		this.w = canvas.width;
+		this.h = canvas.height;
+	}
+
+	drawImage(image, x, y, w, h) {
+		this.ctx.drawImage(image, x * this.w, y * this.h, w * this.w, h * this.h);
+	}
+
+	drawRect(style, x, y, w, h) {
+		this.ctx.save();
+
+		this.ctx.fillStyle = style;
+		this.ctx.fillRect(x * this.w, y * this.h, w * this.w, h * this.h);
+
+		this.ctx.restore();
+	}
+
+	drawText(text, x, y, w, h) {
+		let paragraph = document.createElement("p");
+
+		paragraph.style.position = "absolute";
+		paragraph.style.left = `${x * this.w}px`;
+		paragraph.style.top = `${y * this.h}px`;
+		paragraph.style.width = `${w * this.w}px`;
+		paragraph.style.height = `${h * this.h}px`;
+
+		/* Intentionally insecure to allow text styling (I"m lazy and this is the easiest option) */
+		paragraph.innerHTML = text;
+
+		this.content.append(paragraph);
+	}
+
+	drawButton(text, callback, x, y, w, h) {
+		let button = document.createElement("button");
+
+		button.style.position = "absolute";
+		button.style.left = `${x * this.w}px`;
+		button.style.top = `${y * this.h}px`;
+
+		button.textContent = text;
+		button.onclick = callback;
+
+		this.content.append(button);
+	}
+
+	clear() {
+		this.ctx.clearRect(0, 0, this.w, this.h);
+		this.content.replaceChildren();
+	}
+
 }
 
+/* Javascript doesn't have static variables so this needs to be global */
+const imgCache = new Map();
+
+async function getImage(url, allow_cached = true) {
+	if (allow_cached && imgCache.has(url)) {
+		return imgCache.get(url);
+	}
+
+	let img = new Image();
+	img.src = url;
+
+	let result = await new Promise((resolve, reject) => {
+		img.onload = () => {
+			imgCache.set(url, img);
+			resolve(img);
+		};
+		img.onerror = (err) => {
+			reject(err);
+		}
+	});
+
+	return result
+}
+
+const renderer = new Renderer("#canvas", "#content");
+
+let bg = await getImage("/backgrounds/bedroom.jpg");
+renderer.drawImage(bg, 0, 0, 1, 1);
+renderer.drawRect("black", 0, 0.8, 1, 0.2);
+renderer.drawText("You like kissing boys, don't you?", 0.25, 0.85, 0.50, 0.10);
+renderer.drawButton("next", () => { renderer.clear(); }, 0.80, 0.85, 0.10, 0.05);
 // Start the game
-handleScene(gameData[0]["id"]);
+//handleScene(gameData[0]["id"]);
 
 // Preload images and cache them,
 // a quick hack to improve performance
-prefetchImgs();
+//prefetchImgs();
 
 function handleScene(sceneId) {
 	let scene = getSceneById(sceneId);
