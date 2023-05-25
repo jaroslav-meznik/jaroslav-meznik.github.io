@@ -14,10 +14,37 @@ class Renderer {
 
 		this.w = canvas.width;
 		this.h = canvas.height;
+
+		this.bg = null;
 	}
 
 	drawImage(image, x, y, w, h, ax = 0, ay = 0) {
 		this.ctx.drawImage(image, x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
+	}
+
+	drawImageRatio(image, x, y, w_max, h_max, ax = 0, ay = 0) {
+		let ratio = image.width / image.height;
+		let w = 0;
+		let h = 0;
+
+		if (w_max / ratio < h_max) {
+			w = w_max;
+			h = w_max / ratio;
+		} else {
+			w = h_max * ratio;
+			h = h_max;
+		}
+
+		this.ctx.drawImage(image, x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
+	}
+
+	drawBG(bg = false) {
+		if (bg) {
+			this.drawImage(bg, 0, 0, 1, 1);
+			this.bg = bg;
+		} else if (this.bg) {
+			this.drawImage(this.bg, 0, 0, 1, 1);
+		}
 	}
 
 	drawRect(style, x, y, w, h, ax = 0, ay = 0) {
@@ -29,7 +56,7 @@ class Renderer {
 		this.ctx.restore();
 	}
 
-	drawText(text, x, y, w, h, ax = 0, ay = 0) {
+	drawText(text, styles = {}, x, y, w, h, ax = 0, ay = 0) {
 		let paragraph = document.createElement("p");
 
 		/* Intentionally insecure to allow text styling (I"m lazy and this is the easiest option) */
@@ -38,14 +65,22 @@ class Renderer {
 		paragraph.style.position = "absolute";
 		paragraph.style.left = `${x * this.w}px`;
 		paragraph.style.top = `${y * this.h}px`;
-		paragraph.style.width = `${w * this.w}px`;
-		paragraph.style.height = `${h * this.h}px`;
+		if (w > 0) {
+			paragraph.style.width = `${w * this.w}px`;
+		}
+		if (h > 0) {
+			paragraph.style.height = `${h * this.h}px`;
+		}
 		paragraph.style.transform = `translate(-${ax * 100}%, -${ay * 100}%)`;
+
+		for (const style in styles) {
+			paragraph.style[style] = styles[style];
+		}
 
 		this.content.append(paragraph);
 	}
 
-	drawButton(text, callback, ax, ay) {
+	drawButton(text, callback, ax, ay, w = 0, h = 0) {
 		let button = document.createElement("button");
 
 		button.textContent = text;
@@ -54,6 +89,12 @@ class Renderer {
 		button.style.position = "absolute";
 		button.style.left = `${ax * this.w}px`;
 		button.style.top = `${ay * this.h}px`;
+		if (w > 0) {
+			button.style.width = `${w * this.w}px`;
+		}
+		if (h > 0) {
+			button.style.height = `${h * this.h}px`;
+		}
 		button.style.transform = `translate(-50%, -50%)`;
 
 		this.content.append(button);
@@ -142,113 +183,101 @@ async function startScene(scene) {
 	renderer.clear();
 
 	let bg = await getImage("/thumbnail.png");
-	renderer.drawImage(bg, 0, 0, 1, 1);
+	renderer.drawBG(bg);
 
-	renderer.drawText(scene["title"], 0.50, 0.50, 0.20, 0.20);
-
-	renderer.drawButton("Hrát", () => { handleScene(scene["next"]) }, 0.5, 0.7);
-
-	renderer.drawRect("black", 0.5, 0.5, 0.2, 0.2, 0.5, 0.5);
+	renderer.drawButton("Hrát", () => { handleScene(scene["next"]) }, 0.5, 0.75);
 }
 
-function dialogScene(scene) {
-	let bgElement = document.querySelector("#dialog-bg");
-	bgElement.src = scene["bg"];
+async function dialogScene(scene) {
+	renderer.clear();
 
-	displayScene(document.querySelector("#dialog-scene"));
+	let bg = await getImage(scene["bg"]);
+	renderer.drawBG(bg);
 
 	handleScene(scene["next"]);
 }
 
-function speechScene(scene) {
-	let sceneElement = document.querySelector("#speech-scene");
+async function speechScene(scene) {
+	renderer.clear();
+	renderer.drawBG();
 
-	let personElement = sceneElement.querySelector("#speech-person");
-	personElement.src = scene["person"];
+	renderer.drawRect("black", 0, 0.75, 1, 0.25);
 
-	let nameElement = sceneElement.querySelector("#speech-name");
-	nameElement.textContent = scene["name"] + ":";
+	if (scene["person"] !== "") {
+		let person = await getImage(scene["person"]);
+		renderer.drawImageRatio(person, 0.25, 0.75, 0.3, 0.6, 0.5, 1.0);
+	}
 
-	let textElement = sceneElement.querySelector("#speech-text");
-	textElement.textContent = scene["text"];
+	renderer.drawText(`${scene["name"]}:`, {}, 0.25, 0.8, 0.05, 0);
+	renderer.drawText(scene["text"], {}, 0.25, 0.85, 0.5, 0.1);
 
-	let nextBtn = sceneElement.querySelector("#speech-btn");
-	nextBtn.onclick = (e) => {
-		e.preventDefault();
-		handleScene(scene["next"]);
-	};
-
-	displayContent(sceneElement);
+	renderer.drawButton("Pokračovat", () => { handleScene(scene["next"]); }, 0.8, 0.9);
 }
 
-function choiceScene(scene) {
-	let sceneElement = document.querySelector("#choice-scene");
+async function choiceScene(scene) {
+	renderer.clear();
+	renderer.drawBG();
 
-	let personElement = sceneElement.querySelector("#choice-person");
-	personElement.src = scene["person"];
+	renderer.drawRect("black", 0, 0.75, 1, 0.25);
 
-	let questionElement = sceneElement.querySelector("#choice-question");
-	questionElement.textContent = scene["question"];
+	if (scene["person"] !== "") {
+		let person = await getImage(scene["person"]);
+		renderer.drawImageRatio(person, 0.25, 0.75, 0.3, 0.6, 0.5, 1.0);
+	}
 
 	scene["choices"].forEach((choice, index) => {
-		let choiceElement = sceneElement.querySelector(
-			`#choice-option-${index + 1}`
-		);
-
-		choiceElement.querySelector("p").textContent = choice["text"];
-
-		choiceElement.onclick = (e) => {
-			e.preventDefault();
-			handleScene(choice["next"]);
-		};
+		renderer.drawButton(choice["text"], () => { handleScene(choice["next"]); }, 0.5, 0.8 + index * 0.075, 0.8);
 	});
-
-	displayContent(sceneElement);
+	//let sceneElement = document.querySelector("#choice-scene");
+	//let personElement = sceneElement.querySelector("#choice-person");
+	//personElement.src = scene["person"];
+	//let questionElement = sceneElement.querySelector("#choice-question");
+	//questionElement.textContent = scene["question"];
+	//scene["choices"].forEach((choice, index) => {
+	//	let choiceElement = sceneElement.querySelector(
+	//		`#choice-option-${index + 1}`
+	//	);
+	//	choiceElement.querySelector("p").textContent = choice["text"];
+	//	choiceElement.onclick = (e) => {
+	//		e.preventDefault();
+	//		handleScene(choice["next"]);
+	//	};
+	//});
+	//displayContent(sceneElement);
 }
 
-function documentScene(scene) {
-	let sceneElement = document.querySelector("#document-scene");
-
-	let docElement = sceneElement.querySelector("#document-doc");
-	docElement.innerHTML = scene["document"];
-
-	let nextBtn = sceneElement.querySelector("#document-btn");
-	nextBtn.onclick = (e) => {
-		e.preventDefault();
-		handleScene(scene["next"]);
-	};
-
-	displayContent(sceneElement);
+async function documentScene(scene) {
+	//let sceneElement = document.querySelector("#document-scene");
+	//let docElement = sceneElement.querySelector("#document-doc");
+	//docElement.innerHTML = scene["document"];
+	//let nextBtn = sceneElement.querySelector("#document-btn");
+	//nextBtn.onclick = (e) => {
+	//	e.preventDefault();
+	//	handleScene(scene["next"]);
+	//};
+	//displayContent(sceneElement);
 }
 
-function infoScene(scene) {
-	let sceneElement = document.querySelector("#info-scene");
+async function infoScene(scene) {
+	renderer.clear();
 
-	let imageElement = sceneElement.querySelector("#info-img");
-	imageElement.src = scene["image"];
+	renderer.drawRect("black", 0, 0, 1, 1);
 
-	let textElement = sceneElement.querySelector("#info-text");
-	textElement.textContent = scene["text"];
+	let image = await getImage(scene["image"]);
+	renderer.drawImageRatio(image, 0.5, 0.4, 1, 0.6, 0.5, 0.5);
 
-	let nextBtn = sceneElement.querySelector("#info-btn");
-	nextBtn.onclick = (e) => {
-		e.preventDefault();
-		handleScene(scene["next"]);
-	};
+	renderer.drawText(scene["text"], {}, 0.5, 0.75, 0.5, 0, 0.5, 0);
 
-	displayScene(sceneElement);
+	renderer.drawButton("Pokračovat", () => { handleScene(scene["next"]); }, 0.8, 0.8);
 }
 
-function endScene(scene) {
-	let sceneElement = document.querySelector("#end-scene");
-
-	let titleElement = sceneElement.querySelector("#end-title");
-	titleElement.textContent = scene["title"];
-
-	let endingElement = sceneElement.querySelector("#end-ending");
-	endingElement.textContent = scene["ending"];
-
-	displayScene(sceneElement);
+async function endScene(scene) {
+	//let sceneElement = document.querySelector("#end-scene");
+	//let titleElement = sceneElement.querySelector("#end-title");
+	//titleElement.textContent = scene["title"];
+	//let endingElement = sceneElement.querySelector("#end-ending");
+	//endingElement.textContent = scene["ending"];
+	//displayScene(sceneElement);
 }
 
 function getSceneById(id) {
@@ -258,54 +287,5 @@ function getSceneById(id) {
 		return scene;
 	} else {
 		return gameData[0];
-	}
-}
-
-function displayScene(sceneElement) {
-	for (let sceneEl of document.querySelectorAll(".scene")) {
-		sceneEl.style.display = "none";
-		sceneEl.classList.remove("fade-in");
-	}
-	sceneElement.style.display = "block";
-	sceneElement.classList.add("fade-in");
-}
-
-function displayContent(contentElement) {
-	for (let contentEl of document.querySelectorAll(".content")) {
-		contentEl.style.display = "none";
-	}
-	contentElement.style.display = "block";
-}
-
-async function prefetchImgs() {
-	let images = [
-		"/backgrounds/bedroom.jpg",
-		"/backgrounds/classroom.jpg",
-		"/backgrounds/kitchen.jpg",
-		"/backgrounds/office.jpg",
-		"/backgrounds/office_2.jpg",
-		"/backgrounds/outside.jpg",
-		"/backgrounds/outside_boxes.jpg",
-		"/people/boyfriend-angry.png",
-		"/people/boyfriend-happy.png",
-		"/people/boyfriend-idle.png",
-		"/people/daughter-angry.png",
-		"/people/daughter-happy.png",
-		"/people/daughter-idle.png",
-		"/people/guy.png",
-		"/people/mckun-angry.png",
-		"/people/mckun-idle.png",
-		"/people/mckun-thinking.png",
-		"/people/person.png",
-	];
-
-	for (let url of images) {
-		let image = new Image();
-		image.src = url;
-		await new Promise((resolve) => {
-			image.onload = () => {
-				resolve();
-			};
-		});
 	}
 }

@@ -53,18 +53,18 @@ button:active {
 /* Game containers */
 #container {
   position: absolute;
-  top: 0;
+  top: 10vh;
   left: 0;
   z-index: -1;
   display: flex;
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 90vh;
   min-width: 100vw;
 }
 
 #game {
-  height: 60vh;
+  height: 80vh;
   aspect-ratio: 4/3;
 }
