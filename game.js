@@ -1,6 +1,107 @@
 const gameFile = await fetch("/gameData.json");
 const gameData = await gameFile.json();
 
+class Drawable {
+	constructor(content) {
+		this.content = content;
+
+		this.x = 0.00;
+		this.y = 0.00;
+
+		this.w = 0.00;
+		this.h = 0.00;
+
+		this.ax = 0.00;
+		this.ay = 0.00;
+	}
+
+	setAnchor(ax, ay) {
+		this.ax = ax;
+		this.ay = ay;
+		return this;
+	}
+
+	setPos(x, y) {
+		this.x = x;
+		this.y = y;
+		return this;
+	}
+
+	setDims(w, h) {
+		this.w = w;
+		this.h = h;
+		return this;
+	}
+
+	setStyles(styles = {}) {
+		this.styles = styles;
+		return this;
+	}
+
+	draw() {
+		console.log(`default draw method for ${this.constructor.name}`);
+	};
+}
+
+class UI_Image extends Drawable {
+	setLayout(layout) {
+		this.layout = layout;
+		return this;
+	}
+
+	draw() {
+		let ratio = this.content.width / this.content.height;
+
+		switch (this.layout) {
+			case "Fit":
+				if (this.w / ratio < this.h) {
+					this.w = this.w;
+					this.h = this.w / ratio;
+				} else {
+					this.w = this.h * ratio;
+					this.h = this.h;
+				}
+				break;
+			case "Fill":
+				if (this.w / ratio > this.h) {
+					this.w = this.w;
+					this.h = this.w / ratio;
+				} else {
+					this.w = this.h * ratio;
+					this.h = this.h;
+				}
+				break;
+			default:
+				break;
+
+		}
+		renderer.drawImage(this.content, this.x, this.y, this.w, this.h, this.ax, this.ay);
+
+	}
+}
+
+class UI_Text extends Drawable {
+	draw() {
+		renderer.drawText(this.content, this.styles, this.x, this.y, this.w, this.h, this.ax, this.ay);
+	}
+}
+
+class UI_Button extends Drawable {
+	setCallback(callback) {
+		this.callback = callback;
+		return this;
+	}
+
+	draw() {
+		renderer.drawButton(this.content, this.callback, this.x, this.y, this.w, this.h, this.ax, this.ay);
+	}
+}
+
+class UI_Rect extends Drawable {
+	draw() {
+		renderer.drawRect(this.styles, this.x, this.y, this.w, this.h, this.ax, this.ay);
+	}
+}
 
 class Renderer {
 	constructor(canvasQuerySelector, contentQuerySelector) {
@@ -15,36 +116,11 @@ class Renderer {
 		this.w = canvas.width;
 		this.h = canvas.height;
 
-		this.bg = null;
+		this.elements = [];
 	}
 
 	drawImage(image, x, y, w, h, ax = 0, ay = 0) {
 		this.ctx.drawImage(image, x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
-	}
-
-	drawImageRatio(image, x, y, w_max, h_max, ax = 0, ay = 0) {
-		let ratio = image.width / image.height;
-		let w = 0;
-		let h = 0;
-
-		if (w_max / ratio < h_max) {
-			w = w_max;
-			h = w_max / ratio;
-		} else {
-			w = h_max * ratio;
-			h = h_max;
-		}
-
-		this.ctx.drawImage(image, x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
-	}
-
-	drawBG(bg = false) {
-		if (bg) {
-			this.drawImage(bg, 0, 0, 1, 1);
-			this.bg = bg;
-		} else if (this.bg) {
-			this.drawImage(this.bg, 0, 0, 1, 1);
-		}
 	}
 
 	drawRect(style, x, y, w, h, ax = 0, ay = 0) {
@@ -80,24 +156,39 @@ class Renderer {
 		this.content.append(paragraph);
 	}
 
-	drawButton(text, callback, ax, ay, w = 0, h = 0) {
+	drawButton(text, callback, x, y, w = 0, h = 0, ax = 0.5, ay = 0.5) {
 		let button = document.createElement("button");
 
 		button.textContent = text;
 		button.onclick = callback;
 
 		button.style.position = "absolute";
-		button.style.left = `${ax * this.w}px`;
-		button.style.top = `${ay * this.h}px`;
+		button.style.left = `${x * this.w}px`;
+		button.style.top = `${y * this.h}px`;
 		if (w > 0) {
 			button.style.width = `${w * this.w}px`;
 		}
 		if (h > 0) {
 			button.style.height = `${h * this.h}px`;
 		}
-		button.style.transform = `translate(-50%, -50%)`;
+		button.style.transform = `translate(-${ax * 100}%, -${ay * 100}%)`;
 
 		this.content.append(button);
+	}
+
+	add(element) {
+		this.elements.push(element);
+	}
+
+	render() {
+		for (let element in this.elements) {
+			element.draw();
+		}
+	}
+
+	resetScene() {
+		this.elements = [];
+		this.clear();
 	}
 
 	clear() {
@@ -131,14 +222,8 @@ async function getImage(url, allow_cached = true) {
 	return result
 }
 
+// Initialize a global renderer that is used to draw UI elements
 const renderer = new Renderer("#canvas", "#content");
-/*
-let bg = await getImage("/backgrounds/bedroom.jpg");
-renderer.drawImage(bg, 0, 0, 1, 1);
-renderer.drawRect("black", 0, 0.8, 1, 0.2);
-renderer.drawText("You like kissing boys, don't you?", 0.25, 0.85, 0.50, 0.10);
-renderer.drawButton("next", () => { renderer.clear(); }, 0.80, 0.85, 0.10, 0.05);
-*/
 
 // Start the game
 handleScene(gameData[0]["id"]);
