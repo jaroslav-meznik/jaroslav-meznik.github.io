@@ -5,6 +5,23 @@
 
 body {
     font-family: monospace;
+    background-color: black;
+    color: white;
+}
+
+/* Fade-in */
+.fade-in {
+  animation: 0.5s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Buttons */
@@ -21,6 +38,12 @@ button:hover {
 
 button:active {
     background-color: rgb(17, 17, 17);
+}
+
+/* Containers */
+#background {
+    position: absolute;
+    z-index: -2;
 }
 
 #canvas {

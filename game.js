@@ -75,6 +75,7 @@ class UI_Image extends Drawable {
 				break;
 
 		}
+
 		renderer.drawImage(this.content, this.x, this.y, this.w, this.h, this.ax, this.ay);
 
 	}
@@ -104,17 +105,24 @@ class UI_Rect extends Drawable {
 }
 
 class Renderer {
-	constructor(canvasQuerySelector, contentQuerySelector) {
+	constructor(canvasQuerySelector, bgQuerySelector, contentQuerySelector) {
 		this.canvas = document.querySelector(canvasQuerySelector);
+		this.background = document.querySelector(bgQuerySelector);
 		this.content = document.querySelector(contentQuerySelector);
 
-		this.ctx = canvas.getContext("2d");
+		this.ctx = this.canvas.getContext("2d");
+		this.bgCtx = this.background.getContext("2d");
 
 		this.canvas.width = window.innerWidth;
 		this.canvas.height = window.innerHeight;
+		this.background.width = window.innerWidth;
+		this.background.height = window.innerHeight;
 
 		this.w = canvas.width;
 		this.h = canvas.height;
+
+		this.bgSrc = null;
+		this.bgChanged = false;
 
 		this.elements = [];
 	}
@@ -180,23 +188,52 @@ class Renderer {
 		this.elements.push(element);
 	}
 
+	setBG(bg) {
+		this.bgSrc = bg;
+		this.bgChanged = true;
+	}
+
+	resizeScreen() {
+		this.canvas.width = window.innerWidth;
+		this.canvas.height = window.innerHeight;
+		this.background.width = window.innerWidth;
+		this.background.height = window.innerHeight;
+
+		this.w = canvas.width;
+		this.h = canvas.height;
+
+		/* Needed to redraw background after a resize */
+		this.bgChanged = true;
+
+		this.render();
+	}
+
 	render() {
-		for (let element in this.elements) {
+		this.clear();
+
+		if (this.bgChanged) {
+			this.bgCtx.drawImage(this.bgSrc.content, 0, 0, this.w, this.h);
+			this.bgChanged = false;
+		}
+
+		for (let element of this.elements) {
 			element.draw();
 		}
 	}
 
 	resetScene() {
 		this.elements = [];
-		this.clear();
 	}
 
 	clear() {
 		this.ctx.clearRect(0, 0, this.w, this.h);
 		this.content.replaceChildren();
 	}
-
 }
+
+window.onresize = () => {
+	renderer.resizeScreen();
+};
 
 /* Javascript doesn't have static variables so this needs to be global */
 const imgCache = new Map();
@@ -223,7 +260,7 @@ async function getImage(url, allow_cached = true) {
 }
 
 // Initialize a global renderer that is used to draw UI elements
-const renderer = new Renderer("#canvas", "#content");
+const renderer = new Renderer("#canvas", "#background", "#content");
 
 // Start the game
 handleScene(gameData[0]["id"]);
@@ -265,104 +302,97 @@ function handleScene(sceneId) {
 }
 
 async function startScene(scene) {
-	renderer.clear();
+	renderer.resetScene();
 
 	let bg = await getImage("/thumbnail.png");
-	renderer.drawBG(bg);
+	renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
 
-	renderer.drawButton("Hrát", () => { handleScene(scene["next"]) }, 0.5, 0.75);
+	renderer.add(new UI_Button("Hrát").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.75).setAnchor(0.5, 0.5));
+
+	renderer.render();
 }
 
 async function dialogScene(scene) {
-	renderer.clear();
+	renderer.resetScene();
 
 	let bg = await getImage(scene["bg"]);
-	renderer.drawBG(bg);
+	renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
 
+	renderer.render();
 	handleScene(scene["next"]);
 }
 
 async function speechScene(scene) {
-	renderer.clear();
-	renderer.drawBG();
+	renderer.resetScene();
 
-	renderer.drawRect("black", 0, 0.75, 1, 0.25);
+	renderer.add(new UI_Rect().setPos(0, 0.75).setDims(1, 0.25).setStyles("black"));
 
 	if (scene["person"] !== "") {
 		let person = await getImage(scene["person"]);
-		renderer.drawImageRatio(person, 0.25, 0.75, 0.3, 0.6, 0.5, 1.0);
+		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.65).setAnchor(0.5, 1).setLayout("Fit"));
 	}
 
-	renderer.drawText(`${scene["name"]}:`, {}, 0.25, 0.8, 0.05, 0);
-	renderer.drawText(scene["text"], {}, 0.25, 0.85, 0.5, 0.1);
+	renderer.add(new UI_Text(`${scene["name"]}:`).setPos(0.25, 0.8).setDims(0.5, 0.05).setAnchor(0, 1));
+	renderer.add(new UI_Text(scene["text"]).setPos(0.25, 0.8).setDims(0.5, 0.15).setAnchor(0, 0));
 
-	renderer.drawButton("Pokračovat", () => { handleScene(scene["next"]); }, 0.8, 0.9);
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.8, 0.85));
+	renderer.render();
 }
 
 async function choiceScene(scene) {
-	renderer.clear();
-	renderer.drawBG();
+	renderer.resetScene();
 
-	renderer.drawRect("black", 0, 0.75, 1, 0.25);
+	renderer.add(new UI_Rect().setPos(0, 0.75).setDims(1, 0.25).setStyles("black"));
 
 	if (scene["person"] !== "") {
 		let person = await getImage(scene["person"]);
-		renderer.drawImageRatio(person, 0.25, 0.75, 0.3, 0.6, 0.5, 1.0);
+		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.65).setAnchor(0.5, 1).setLayout("Fit"));
 	}
 
 	scene["choices"].forEach((choice, index) => {
-		renderer.drawButton(choice["text"], () => { handleScene(choice["next"]); }, 0.5, 0.8 + index * 0.075, 0.8);
+		renderer.add(new UI_Button(choice["text"]).setCallback(() => { handleScene(choice["next"]); }).setPos(0.5, 0.7525 + index * 0.085).setDims(0.9, 0.075).setAnchor(0.5, 0));
 	});
-	//let sceneElement = document.querySelector("#choice-scene");
-	//let personElement = sceneElement.querySelector("#choice-person");
-	//personElement.src = scene["person"];
-	//let questionElement = sceneElement.querySelector("#choice-question");
-	//questionElement.textContent = scene["question"];
-	//scene["choices"].forEach((choice, index) => {
-	//	let choiceElement = sceneElement.querySelector(
-	//		`#choice-option-${index + 1}`
-	//	);
-	//	choiceElement.querySelector("p").textContent = choice["text"];
-	//	choiceElement.onclick = (e) => {
-	//		e.preventDefault();
-	//		handleScene(choice["next"]);
-	//	};
-	//});
-	//displayContent(sceneElement);
+
+	renderer.render();
 }
 
 async function documentScene(scene) {
-	//let sceneElement = document.querySelector("#document-scene");
-	//let docElement = sceneElement.querySelector("#document-doc");
-	//docElement.innerHTML = scene["document"];
-	//let nextBtn = sceneElement.querySelector("#document-btn");
-	//nextBtn.onclick = (e) => {
-	//	e.preventDefault();
-	//	handleScene(scene["next"]);
-	//};
-	//displayContent(sceneElement);
+	renderer.resetScene();
+
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("#0000007E"));
+
+	renderer.add(new UI_Text(scene["document"]).setPos(0.5, 0.45).setDims(0.4, 0.75).setAnchor(0.5, 0.5).setStyles({ "padding": "0.5em", "backgroundColor": "white", "color": "black" }));
+
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.9).setAnchor(0.5, 0));
+
+	renderer.render();
 }
 
 async function infoScene(scene) {
-	renderer.clear();
+	renderer.resetScene();
 
-	renderer.drawRect("black", 0, 0, 1, 1);
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
 	let image = await getImage(scene["image"]);
-	renderer.drawImageRatio(image, 0.5, 0.4, 1, 0.6, 0.5, 0.5);
+	renderer.add(new UI_Image(image).setPos(0.5, 0.45).setDims(0.5, 0.7).setAnchor(0.5, 0.5).setLayout("Fill"));
 
-	renderer.drawText(scene["text"], {}, 0.5, 0.75, 0.5, 0, 0.5, 0);
+	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.85).setDims(0.5, 0.1).setAnchor(0.5, 0));
 
-	renderer.drawButton("Pokračovat", () => { handleScene(scene["next"]); }, 0.8, 0.8);
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.8, 0.85).setAnchor(0, 0));
+
+	renderer.render();
 }
 
 async function endScene(scene) {
-	//let sceneElement = document.querySelector("#end-scene");
-	//let titleElement = sceneElement.querySelector("#end-title");
-	//titleElement.textContent = scene["title"];
-	//let endingElement = sceneElement.querySelector("#end-ending");
-	//endingElement.textContent = scene["ending"];
-	//displayScene(sceneElement);
+	renderer.resetScene();
+
+
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
+
+	renderer.add(new UI_Text(scene["title"]).setPos(0.5, 0.4).setDims(0, 0).setAnchor(0.5, 1).setStyles({ "fontSize": "2rem" }));
+	renderer.add(new UI_Text(scene["ending"]).setPos(0.5, 0.5).setDims(0, 0).setAnchor(0.5, 0));
+
+	renderer.render();
 }
 
 function getSceneById(id) {

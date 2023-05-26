@@ -19,21 +19,6 @@ body {
   align-items: center;
 }
 
-/* Fade-in */
-.fade-in {
-  animation: 0.5s fadeIn;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 /* Buttons */
 button {
   color: white;
