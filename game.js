@@ -1,218 +1,406 @@
-const res = await fetch("/gameData.json");
+const gameFile = await fetch("/gameData.json");
+const gameData = await gameFile.json();
 
-const gameData = await res.json();
+class Drawable {
+	constructor(content) {
+		this.content = content;
+
+		this.x = 0.00;
+		this.y = 0.00;
+
+		this.w = 0.00;
+		this.h = 0.00;
+
+		this.ax = 0.00;
+		this.ay = 0.00;
+	}
+
+	setAnchor(ax, ay) {
+		this.ax = ax;
+		this.ay = ay;
+		return this;
+	}
+
+	setPos(x, y) {
+		this.x = x;
+		this.y = y;
+		return this;
+	}
+
+	setDims(w, h) {
+		this.w = w;
+		this.h = h;
+		return this;
+	}
+
+	setStyles(styles = {}) {
+		this.styles = styles;
+		return this;
+	}
+
+	draw() {
+		console.log(`default draw method for ${this.constructor.name}`);
+	};
+}
+
+class UI_Image extends Drawable {
+	setLayout(layout) {
+		this.layout = layout;
+		return this;
+	}
+
+	draw() {
+		let ratio = this.content.width / this.content.height;
+
+		switch (this.layout) {
+			case "Fit":
+				if (this.w / ratio < this.h) {
+					this.w = this.w;
+					this.h = this.w / ratio;
+				} else {
+					this.w = this.h * ratio;
+					this.h = this.h;
+				}
+				break;
+			case "Fill":
+				if (this.w / ratio > this.h) {
+					this.w = this.w;
+					this.h = this.w / ratio;
+				} else {
+					this.w = this.h * ratio;
+					this.h = this.h;
+				}
+				break;
+			default:
+				break;
+
+		}
+
+		renderer.drawImage(this.content, this.x, this.y, this.w, this.h, this.ax, this.ay);
+
+	}
+}
+
+class UI_Text extends Drawable {
+	draw() {
+		renderer.drawText(this.content, this.styles, this.x, this.y, this.w, this.h, this.ax, this.ay);
+	}
+}
+
+class UI_Button extends Drawable {
+	setCallback(callback) {
+		this.callback = callback;
+		return this;
+	}
+
+	draw() {
+		renderer.drawButton(this.content, this.callback, this.x, this.y, this.w, this.h, this.ax, this.ay);
+	}
+}
+
+class UI_Rect extends Drawable {
+	draw() {
+		renderer.drawRect(this.styles, this.x, this.y, this.w, this.h, this.ax, this.ay);
+	}
+}
+
+class Renderer {
+	constructor(canvasQuerySelector, bgQuerySelector, contentQuerySelector) {
+		this.canvas = document.querySelector(canvasQuerySelector);
+		this.background = document.querySelector(bgQuerySelector);
+		this.content = document.querySelector(contentQuerySelector);
+
+		this.ctx = this.canvas.getContext("2d");
+		this.bgCtx = this.background.getContext("2d");
+
+		this.canvas.width = window.innerWidth;
+		this.canvas.height = window.innerHeight;
+		this.background.width = window.innerWidth;
+		this.background.height = window.innerHeight;
+
+		this.w = canvas.width;
+		this.h = canvas.height;
+
+		this.bgSrc = null;
+		this.bgChanged = false;
+
+		this.elements = [];
+	}
+
+	drawImage(image, x, y, w, h, ax = 0, ay = 0) {
+		this.ctx.drawImage(image, x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
+	}
+
+	drawRect(style, x, y, w, h, ax = 0, ay = 0) {
+		this.ctx.save();
+
+		this.ctx.fillStyle = style;
+		this.ctx.fillRect(x * this.w - ax * w * this.w, y * this.h - ay * h * this.h, w * this.w, h * this.h);
+
+		this.ctx.restore();
+	}
+
+	drawText(text, styles = {}, x, y, w, h, ax = 0, ay = 0) {
+		let paragraph = document.createElement("p");
+
+		/* Intentionally insecure to allow text styling (I"m lazy and this is the easiest option) */
+		paragraph.innerHTML = text;
+
+		paragraph.style.position = "absolute";
+		paragraph.style.left = `${x * this.w}px`;
+		paragraph.style.top = `${y * this.h}px`;
+		if (w > 0) {
+			paragraph.style.width = `${w * this.w}px`;
+		}
+		if (h > 0) {
+			paragraph.style.height = `${h * this.h}px`;
+		}
+		paragraph.style.transform = `translate(-${ax * 100}%, -${ay * 100}%)`;
+
+		for (const style in styles) {
+			paragraph.style[style] = styles[style];
+		}
+
+		this.content.append(paragraph);
+	}
+
+	drawButton(text, callback, x, y, w = 0, h = 0, ax = 0.5, ay = 0.5) {
+		let button = document.createElement("button");
+
+		button.textContent = text;
+		button.onclick = callback;
+
+		button.style.position = "absolute";
+		button.style.left = `${x * this.w}px`;
+		button.style.top = `${y * this.h}px`;
+		if (w > 0) {
+			button.style.width = `${w * this.w}px`;
+		}
+		if (h > 0) {
+			button.style.height = `${h * this.h}px`;
+		}
+		button.style.transform = `translate(-${ax * 100}%, -${ay * 100}%)`;
+
+		this.content.append(button);
+	}
+
+	add(element) {
+		this.elements.push(element);
+	}
+
+	setBG(bg) {
+		this.bgSrc = bg;
+		this.bgChanged = true;
+	}
+
+	resizeScreen() {
+		this.canvas.width = window.innerWidth;
+		this.canvas.height = window.innerHeight;
+		this.background.width = window.innerWidth;
+		this.background.height = window.innerHeight;
+
+		this.w = canvas.width;
+		this.h = canvas.height;
+
+		/* Needed to redraw background after a resize */
+		this.bgChanged = true;
+
+		this.render();
+	}
+
+	render() {
+		this.clear();
+
+		if (this.bgChanged) {
+			this.bgCtx.drawImage(this.bgSrc.content, 0, 0, this.w, this.h);
+			this.bgChanged = false;
+		}
+
+		for (let element of this.elements) {
+			element.draw();
+		}
+	}
+
+	resetScene() {
+		this.elements = [];
+	}
+
+	clear() {
+		this.ctx.clearRect(0, 0, this.w, this.h);
+		this.content.replaceChildren();
+	}
+}
+
+window.onresize = () => {
+	renderer.resizeScreen();
+};
+
+/* Javascript doesn't have static variables so this needs to be global */
+const imgCache = new Map();
+
+async function getImage(url, allow_cached = true) {
+	if (allow_cached && imgCache.has(url)) {
+		return imgCache.get(url);
+	}
+
+	let img = new Image();
+	img.src = url;
+
+	let result = await new Promise((resolve, reject) => {
+		img.onload = () => {
+			imgCache.set(url, img);
+			resolve(img);
+		};
+		img.onerror = (err) => {
+			reject(err);
+		}
+	});
+
+	return result
+}
+
+// Initialize a global renderer that is used to draw UI elements
+const renderer = new Renderer("#canvas", "#background", "#content");
 
 // Start the game
 handleScene(gameData[0]["id"]);
 
 // Preload images and cache them,
-// an ugly hack to improve performance
-prefetchImgs();
+// a quick hack to improve performance
+//prefetchImgs();
 
 function handleScene(sceneId) {
-  let scene = getSceneById(sceneId);
+	let scene = getSceneById(sceneId);
 
-  switch (scene["type"]) {
-    case "startScene":
-      startScene(scene);
-      break;
-    case "dialogScene":
-      dialogScene(scene);
-      break;
-    case "speechScene":
-      speechScene(scene);
-      break;
-    case "choiceScene":
-      choiceScene(scene);
-      break;
-    case "documentScene":
-      documentScene(scene);
-      break;
-    case "infoScene":
-      infoScene(scene);
-      break;
-    case "endScene":
-      endScene(scene);
-      break;
+	switch (scene["type"]) {
+		case "startScene":
+			startScene(scene);
+			break;
+		case "dialogScene":
+			dialogScene(scene);
+			break;
+		case "speechScene":
+			speechScene(scene);
+			break;
+		case "choiceScene":
+			choiceScene(scene);
+			break;
+		case "documentScene":
+			documentScene(scene);
+			break;
+		case "infoScene":
+			infoScene(scene);
+			break;
+		case "endScene":
+			endScene(scene);
+			break;
 
-    default:
-      console.log(`Unknown scene type: ${scene["type"]}`);
-      break;
-  }
+		default:
+			console.log(`Unknown scene type: ${scene["type"]}`);
+			break;
+	}
 }
 
-function startScene(scene) {
-  let sceneElement = document.querySelector("#start-scene");
+async function startScene(scene) {
+	renderer.resetScene();
 
-  sceneElement.style.display = "block";
+	let bg = await getImage("/thumbnail.png");
+	renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
 
-  let titleElement = sceneElement.querySelector("#start-title");
-  titleElement.textContent = scene["title"];
+	renderer.add(new UI_Button("Hrát").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.75).setAnchor(0.5, 0.5));
 
-  let startBtn = sceneElement.querySelector("#start-btn");
-  startBtn.onclick = (e) => {
-    e.preventDefault();
-    handleScene(scene["next"]);
-  };
-
-  displayScene(sceneElement);
+	renderer.render();
 }
 
-function dialogScene(scene) {
-  let bgElement = document.querySelector("#dialog-bg");
-  bgElement.src = scene["bg"];
+async function dialogScene(scene) {
+	renderer.resetScene();
 
-  displayScene(document.querySelector("#dialog-scene"));
+	let bg = await getImage(scene["bg"]);
+	renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
 
-  handleScene(scene["next"]);
+	renderer.render();
+	handleScene(scene["next"]);
 }
 
-function speechScene(scene) {
-  let sceneElement = document.querySelector("#speech-scene");
+async function speechScene(scene) {
+	renderer.resetScene();
 
-  let personElement = sceneElement.querySelector("#speech-person");
-  personElement.src = scene["person"];
+	renderer.add(new UI_Rect().setPos(0, 0.75).setDims(1, 0.25).setStyles("black"));
 
-  let nameElement = sceneElement.querySelector("#speech-name");
-  nameElement.textContent = scene["name"] + ":";
+	if (scene["person"] !== "") {
+		let person = await getImage(scene["person"]);
+		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.65).setAnchor(0.5, 1).setLayout("Fit"));
+	}
 
-  let textElement = sceneElement.querySelector("#speech-text");
-  textElement.textContent = scene["text"];
+	renderer.add(new UI_Text(`${scene["name"]}:`).setPos(0.25, 0.8).setDims(0.5, 0.05).setAnchor(0, 1));
+	renderer.add(new UI_Text(scene["text"]).setPos(0.25, 0.8).setDims(0.5, 0.15).setAnchor(0, 0));
 
-  let nextBtn = sceneElement.querySelector("#speech-btn");
-  nextBtn.onclick = (e) => {
-    e.preventDefault();
-    handleScene(scene["next"]);
-  };
-
-  displayContent(sceneElement);
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.8, 0.85));
+	renderer.render();
 }
 
-function choiceScene(scene) {
-  let sceneElement = document.querySelector("#choice-scene");
+async function choiceScene(scene) {
+	renderer.resetScene();
 
-  let personElement = sceneElement.querySelector("#choice-person");
-  personElement.src = scene["person"];
+	renderer.add(new UI_Rect().setPos(0, 0.75).setDims(1, 0.25).setStyles("black"));
 
-  let questionElement = sceneElement.querySelector("#choice-question");
-  questionElement.textContent = scene["question"];
+	if (scene["person"] !== "") {
+		let person = await getImage(scene["person"]);
+		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.65).setAnchor(0.5, 1).setLayout("Fit"));
+	}
 
-  scene["choices"].forEach((choice, index) => {
-    let choiceElement = sceneElement.querySelector(
-      `#choice-option-${index + 1}`
-    );
+	scene["choices"].forEach((choice, index) => {
+		renderer.add(new UI_Button(choice["text"]).setCallback(() => { handleScene(choice["next"]); }).setPos(0.5, 0.7525 + index * 0.085).setDims(0.9, 0.075).setAnchor(0.5, 0));
+	});
 
-    choiceElement.querySelector("p").textContent = choice["text"];
-
-    choiceElement.onclick = (e) => {
-      e.preventDefault();
-      handleScene(choice["next"]);
-    };
-  });
-
-  displayContent(sceneElement);
+	renderer.render();
 }
 
-function documentScene(scene) {
-  let sceneElement = document.querySelector("#document-scene");
+async function documentScene(scene) {
+	renderer.resetScene();
 
-  let docElement = sceneElement.querySelector("#document-doc");
-  docElement.innerHTML = scene["document"];
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("#0000007E"));
 
-  let nextBtn = sceneElement.querySelector("#document-btn");
-  nextBtn.onclick = (e) => {
-    e.preventDefault();
-    handleScene(scene["next"]);
-  };
+	renderer.add(new UI_Text(scene["document"]).setPos(0.5, 0.45).setDims(0.4, 0.75).setAnchor(0.5, 0.5).setStyles({ "padding": "0.5em", "backgroundColor": "white", "color": "black" }));
 
-  displayContent(sceneElement);
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.9).setAnchor(0.5, 0));
+
+	renderer.render();
 }
 
-function infoScene(scene) {
-  let sceneElement = document.querySelector("#info-scene");
+async function infoScene(scene) {
+	renderer.resetScene();
 
-  let imageElement = sceneElement.querySelector("#info-img");
-  imageElement.src = scene["image"];
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
-  let textElement = sceneElement.querySelector("#info-text");
-  textElement.textContent = scene["text"];
+	let image = await getImage(scene["image"]);
+	renderer.add(new UI_Image(image).setPos(0.5, 0.45).setDims(0.5, 0.7).setAnchor(0.5, 0.5).setLayout("Fill"));
 
-  let nextBtn = sceneElement.querySelector("#info-btn");
-  nextBtn.onclick = (e) => {
-    e.preventDefault();
-    handleScene(scene["next"]);
-  };
+	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.85).setDims(0.5, 0.1).setAnchor(0.5, 0));
 
-  displayScene(sceneElement);
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.8, 0.85).setAnchor(0, 0));
+
+	renderer.render();
 }
 
-function endScene(scene) {
-  let sceneElement = document.querySelector("#end-scene");
+async function endScene(scene) {
+	renderer.resetScene();
 
-  let titleElement = sceneElement.querySelector("#end-title");
-  titleElement.textContent = scene["title"];
 
-  let endingElement = sceneElement.querySelector("#end-ending");
-  endingElement.textContent = scene["ending"];
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
-  displayScene(sceneElement);
+	renderer.add(new UI_Text(scene["title"]).setPos(0.5, 0.4).setDims(0, 0).setAnchor(0.5, 1).setStyles({ "fontSize": "2rem" }));
+	renderer.add(new UI_Text(scene["ending"]).setPos(0.5, 0.5).setDims(0, 0).setAnchor(0.5, 0));
+
+	renderer.render();
 }
 
 function getSceneById(id) {
-  let scene = gameData.find((scene) => scene["id"] == id);
+	let scene = gameData.find((scene) => scene["id"] == id);
 
-  if (scene !== null) {
-    return scene;
-  } else {
-    return gameData[0];
-  }
-}
-
-function displayScene(sceneElement) {
-  for (let sceneEl of document.querySelectorAll(".scene")) {
-    sceneEl.style.display = "none";
-    sceneEl.classList.remove("fade-in");
-  }
-  sceneElement.style.display = "block";
-  sceneElement.classList.add("fade-in");
-}
-
-function displayContent(contentElement) {
-  for (let contentEl of document.querySelectorAll(".content")) {
-    contentEl.style.display = "none";
-  }
-  contentElement.style.display = "block";
-}
-
-async function prefetchImgs() {
-  let images = [
-    "/backgrounds/bedroom.jpg",
-    "/backgrounds/classroom.jpg",
-    "/backgrounds/kitchen.jpg",
-    "/backgrounds/office.jpg",
-    "/backgrounds/office_2.jpg",
-    "/backgrounds/outside.jpg",
-    "/backgrounds/outside_boxes.jpg",
-    "/people/boyfriend-angry.png",
-    "/people/boyfriend-happy.png",
-    "/people/boyfriend-idle.png",
-    "/people/daughter-angry.png",
-    "/people/daughter-happy.png",
-    "/people/daughter-idle.png",
-    "/people/guy.png",
-    "/people/mckun-angry.png",
-    "/people/mckun-idle.png",
-    "/people/mckun-thinking.png",
-    "/people/person.png",
-  ];
-
-  for (let url of images) {
-    let image = new Image();
-    image.src = url;
-    await new Promise((resolve) => {
-      image.onload = () => {
-        resolve();
-      };
-    });
-  }
+	if (scene !== null) {
+		return scene;
+	} else {
+		return gameData[0];
+	}
 }

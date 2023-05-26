@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: monospace;
+    background-color: black;
+    color: white;
+}
+
+/* Fade-in */
+.fade-in {
+  animation: 0.5s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.redacted {
+  display: inline-flex;
+  height: 1em;
+  min-width: 5em;
+  transform: translateY(0.25em); 
+  color: black;
+  background-color: black;
+}
+
+/* Buttons */
+button {
+    color: white;
+    padding: 0.5rem 1rem;
+    background-color: rgb(7, 7, 7);
+    border: 3px solid white;
+}
+
+button:hover {
+    background-color: rgb(12, 12, 12);
+}
+
+button:active {
+    background-color: rgb(17, 17, 17);
+}
+
+/* Containers */
+#background {
+    position: absolute;
+    z-index: -2;
+}
+
+#canvas {
+    position: absolute;
+    z-index: -1;
+}
+
+#content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 0;
+}
