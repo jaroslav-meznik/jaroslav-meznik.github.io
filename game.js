@@ -259,6 +259,42 @@ async function getImage(url, allow_cached = true) {
 	return result
 }
 
+function getImgUrl(url, width = 0, height = 0) {
+	if (width == 0) {
+		width = window.innerWidth;
+	} else {
+		width = width * window.innerWidth;
+	}
+
+	if (height == 0) {
+		height = window.innerHeight;
+	} else {
+		height = height * window.innerHeight;
+	}
+
+	let size = Math.max(width, height);
+
+	let variant = "";
+
+	if (size <= 360) {
+		variant = "sm";
+	} else if (size <= 720) {
+		variant = "md";
+	} else {
+		variant = "lg";
+	}
+
+	let dotIndex = url.lastIndexOf(".");
+
+	if (dotIndex === -1) {
+		return url;
+	}
+
+	let newUrl = url.substring(0, dotIndex) + `.${variant}` + url.substring(dotIndex);
+
+	return newUrl;
+}
+
 // Initialize a global renderer that is used to draw UI elements
 const renderer = new Renderer("#canvas", "#background", "#content");
 
@@ -271,6 +307,14 @@ handleScene(gameData[0]["id"]);
 
 function handleScene(sceneId) {
 	let scene = getSceneById(sceneId);
+
+	if (scene["next"]) {
+		prefetchImages(getSceneById(scene["next"]));
+	} else if (scene["type"] === "choiceScene") {
+		for (let choice of scene["choices"]) {
+			prefetchImages(getSceneById(choice["next"]));
+		}
+	}
 
 	switch (scene["type"]) {
 		case "startScene":
@@ -315,7 +359,7 @@ async function startScene(scene) {
 async function dialogScene(scene) {
 	renderer.resetScene();
 
-	let bg = await getImage(scene["bg"]);
+	let bg = await getImage(getImgUrl(scene["bg"]));
 	renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
 
 	renderer.render();
@@ -328,8 +372,8 @@ async function speechScene(scene) {
 	renderer.add(new UI_Rect().setPos(0, 0.75).setDims(1, 0.25).setStyles("black"));
 
 	if (scene["person"] !== "") {
-		let person = await getImage(scene["person"]);
-		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.65).setAnchor(0.5, 1).setLayout("Fit"));
+		let person = await getImage(getImgUrl(scene["person"], 0.3, 0.5));
+		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.5).setAnchor(0.5, 1).setLayout("Fit"));
 	}
 
 	renderer.add(new UI_Text(`${scene["name"]}:`).setPos(0.25, 0.8).setDims(0.5, 0.05).setAnchor(0, 1));
@@ -345,8 +389,8 @@ async function choiceScene(scene) {
 	renderer.add(new UI_Rect().setPos(0, 0.75).setDims(1, 0.25).setStyles("black"));
 
 	if (scene["person"] !== "") {
-		let person = await getImage(scene["person"]);
-		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.65).setAnchor(0.5, 1).setLayout("Fit"));
+		let person = await getImage(getImgUrl(scene["person"], 0.3, 0.5));
+		renderer.add(new UI_Image(person).setPos(0.25, 0.75).setDims(0.3, 0.5).setAnchor(0.5, 1).setLayout("Fit"));
 	}
 
 	scene["choices"].forEach((choice, index) => {
@@ -373,7 +417,7 @@ async function infoScene(scene) {
 
 	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
-	let image = await getImage(scene["image"]);
+	let image = await getImage(getImgUrl(scene["image"], 0.5, 0.7));
 	renderer.add(new UI_Image(image).setPos(0.5, 0.45).setDims(0.5, 0.7).setAnchor(0.5, 0.5).setLayout("Fill"));
 
 	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.85).setDims(0.5, 0.1).setAnchor(0.5, 0));
@@ -389,10 +433,23 @@ async function endScene(scene) {
 
 	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
-	renderer.add(new UI_Text(scene["title"]).setPos(0.5, 0.4).setDims(0, 0).setAnchor(0.5, 1).setStyles({ "fontSize": "2rem" }));
-	renderer.add(new UI_Text(scene["ending"]).setPos(0.5, 0.5).setDims(0, 0).setAnchor(0.5, 0));
+	renderer.add(new UI_Text(scene["title"]).setPos(0.5, 0.5).setDims(0, 0).setAnchor(0.5, 1).setStyles({ "fontSize": "2rem" }));
+	renderer.add(new UI_Text(scene["ending"]).setPos(0.5, 0.6).setDims(0, 0).setAnchor(0.5, 0));
 
 	renderer.render();
+}
+
+async function prefetchImages(scene) {
+	if (scene["bg"]) {
+		getImage(getImgUrl(scene["bg"]));
+	}
+	if (scene["person"]) {
+		getImage(getImgUrl(scene["person"]));
+	}
+	if (scene["image"]) {
+		getImage(getImgUrl(scene["image"]));
+	}
+
 }
 
 function getSceneById(id) {
