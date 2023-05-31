@@ -36,16 +36,8 @@
 	{
 		"id": "kitchen",
 		"type": "dialogScene",
-		"next": "letter-notice",
-		"bg": "backgrounds/kitchen.jpg"
-	},
-	{
-		"id": "letter-notice",
-		"type": "speechScene",
 		"next": "outside-trans",
-		"person": "",
-		"name": "(V hlavě)",
-		"text": "Je tu nějaký dopis..."
+		"bg": "backgrounds/kitchen.jpg"
 	},
 	{
 		"id": "outside-trans",
@@ -91,7 +83,7 @@
 	{
 		"id": "daughter-01",
 		"type": "speechScene",
-		"next": "daughter-letter",
+		"next": "boyfriend",
 		"person": "people/daughter-idle.png",
 		"name": "[Dcera]",
 		"text": "Prospělo by ti, kdyby ses pořádně vyspal. Navíc v práci nezanecháváš moc dobrý dojem, když zíváš každých pět minut."
@@ -99,7 +91,7 @@
 	{
 		"id": "daughter-02",
 		"type": "speechScene",
-		"next": "daughter-letter",
+		"next": "boyfriend",
 		"person": "people/daughter-angry.png",
 		"name": "[Dcera]",
 		"text": "Už nejsem tak malá, abys mi se vším musel pomáhat. Univerzita je můj cíl a moje cesta. Navíc mi pomáhá přítel. Před chvílí odvezl pár krabic."
@@ -107,62 +99,10 @@
 	{
 		"id": "daughter-03",
 		"type": "speechScene",
-		"next": "daughter-letter",
+		"next": "boyfriend",
 		"person": "people/daughter-idle.png",
 		"name": "[Dcera]",
 		"text": "Mám dojem, že jsem ti říkala, že dnes ráno budu stěhovat moje věci. Stejně si teď, když už nebydlím blízko školy, musím zvykat na vstávání brzy."
-	},
-	{
-		"id": "daughter-letter",
-		"type": "speechScene",
-		"next": "letter-choice",
-		"person": "people/daughter-idle.png",
-		"name": "[Dcera]",
-		"text": "Mimochodem, přišla ti pošta. Něco z práce. Máš to v kuchyni."
-	},
-	{
-		"id": "letter-choice",
-		"type": "choiceScene",
-		"person": "people/daughter-idle.png",
-		"question": "Mimochodem, přišla ti pošta. Něco z práce. Máš to v kuchyni.",
-		"choices": [
-			{
-				"text": "Děkuju, podívám se na to.",
-				"next": "letter-01"
-			},
-			{
-				"text": "Proč jsi ho neotevřela?",
-				"next": "letter-02"
-			},
-			{
-				"text": "...?",
-				"next": "letter-03"
-			}
-		]
-	},
-	{
-		"id": "letter-01",
-		"type": "speechScene",
-		"next": "boyfriend",
-		"person": "people/daughter-idle.png",
-		"name": "Dcera",
-		"text": "Nic se neděje. Snad to jsou nějaké dobré zprávy."
-	},
-	{
-		"id": "letter-02",
-		"type": "speechScene",
-		"next": "boyfriend",
-		"person": "people/daughter-idle.png",
-		"name": "[Dcera]",
-		"text": "Myslela jsem, že to je něco, co vědět nemusím."
-	},
-	{
-		"id": "letter-03",
-		"type": "speechScene",
-		"next": "boyfriend",
-		"person": "people/daughter-angry.png",
-		"name": "[Dcera]",
-		"text": "Neboj, nepotřebuju s tebou znovu řešit tvoje kariérní rozhodnutí."
 	},
 	{
 		"id": "boyfriend",
@@ -191,149 +131,126 @@
 	{
 		"id": "boyfriend-goodbye",
 		"type": "speechScene",
-		"next": "kitchen-back-trans",
+		"next": "uni-trans",
 		"person": "people/boyfriend-idle.png",
 		"name": "[Přítel]",
 		"text": "Každopádně, musím jít nakládat další krabice, samo se to přece nepřestěhuje. Ale povím vám, [Dcera] to doopravdy táhne daleko. Jde opravdu vidět, že chce dokázat hodně. Taky už není úplně brzy, možná byste se měl chystat do vaší práce. Na shledanou."
 	},
 	{
-		"id": "kitchen-back-trans",
-		"type": "infoScene",
-		"next": "kitchen-back",
-		"image": "backgrounds/kitchen.jpg",
-		"text": "Vrátite se zpátky do kuchyně a jdete si přečíst dopis, o kterém vám dcera řekla."
-	},
-	{
-		"id": "kitchen-back",
-		"type": "dialogScene",
-		"next": "kitchen-letter",
-		"bg": "backgrounds/kitchen.jpg"
-	},
-	{
-		"id": "kitchen-letter",
-		"type": "documentScene",
-		"next": "letter-reaction",
-		"document": "<h5>Dobrý den.</h5><br>Není příliš podstatné, kdo přesně jsme, jen vězte, že je Vám tento dopis adresován od státního útvaru.<br>\tJiž nějakou dobu si Vás všímáme a nemohly nám uniknout Vaše mimořádné schopnosti v oboru jaderné fyziky. Jsme si vědomi, že Vaše finanční situace není momentálně plně stabilní a univerzitní zaměstnání Vás nenaplňuje.<br><br>Chtěli bychom Vám podat návrh. Využívali bychom Vašich služeb na pozici jaderného inženýra, za plat mnohem lepší než Váš nynější; zároveň byste nemusel mít strach o bezpečí své rodiny, ovšem pokud byste přijal naši nabídku.<br><br>Důrazně Vám doporučujeme náš návrh akceptovat.<br><br>Pokud nabídku přijímáte, dostavte se dne <span class='redacted'></span> na adresu <span class='redacted'></span> s přiloženou identifikační kartou; na místě se dozvíte vše, co budete ve svém novém zaměstnání vykonávat, společně s povinnostmi, jež bude obnášet."
-	},
-	{
-		"id": "letter-reaction",
-		"type": "speechScene",
-		"next": "uni-trans",
-		"person": "",
-		"name": "(V hlavě)",
-		"text": "Nemám ponětí, co má tohle znamenat."
-	},
-	{
 		"id": "uni-trans",
 		"type": "infoScene",
-		"next": "uni",
+		"next": "student-dialog",
 		"image": "backgrounds/office.jpg",
-		"text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu, kde učíte. Chvíli poté, co přijdete do své kanceláře, vám zazvoní telefon."
+		"text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu, kde učíte. Po přednášce se u vás v kanceláři objeví jeden z vašich studentů."
 	},
 	{
-		"id": "uni",
+		"id": "student-dialog",
 		"type": "dialogScene",
-		"next": "phone-question",
+		"next": "student-0",
 		"bg": "backgrounds/office.jpg"
 	},
 	{
-		"id": "phone-question",
+		"id": "student-0",
 		"type": "speechScene",
-		"next": "phone-answer",
-		"person": "",
-		"name": "(Do telefonu)",
-		"text": "Dobrý den, u telefonu-"
+		"next": "student-1",
+		"person": "people/boyfriend-happy.png",
+		"name": "[student]",
+		"text": "Dobrý den pane profesore, chtěl jsem vám jen říci že mě vaše poslední přednáška přímo nadchla. Vaše návštěva národní knihovny ve Francii přinesla skutečně neočekávané výsledky."
 	},
 	{
-		"id": "phone-answer",
+		"id": "student-1",
 		"type": "speechScene",
-		"next": "phone-choice",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Dnes jste dostal dopis. Je to tak?"
+		"next": "student-2",
+		"person": "people/mckun-idle.png",
+		"name": "[profesor]",
+		"text": "Děkuji, je pěkné vidět že studenty moje přednášky baví."
 	},
 	{
-		"id": "phone-choice",
-		"type": "choiceScene",
-		"person": "",
-		"question": "Dnes jste dostal dopis. Je to tak?",
-		"choices": [
-			{
-				"text": "Kdo jste?",
-				"next": "phone-answer-01"
-			},
-			{
-				"text": "Co má tohle znamenat?",
-				"next": "phone-answer-02"
-			},
-			{
-				"text": "...Ano, ale-",
-				"next": "phone-answer-03"
-			}
-		]
-	},
-	{
-		"id": "phone-answer-01",
+		"id": "student-2",
 		"type": "speechScene",
-		"next": "phone-answer-final-1",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Už Vám nejspíš došlo, že není důležité, kdo jsem."
+		"next": "student-3",
+		"person": "people/boyfriend-idle.png",
+		"name": "[student]",
+		"text": "Chtěl jsem se ale zeptat, proč se neučíme o historii 20. století zdaleka tolik jako o ostatních obdobích?"
 	},
 	{
-		"id": "phone-answer-02",
+		"id": "student-3",
 		"type": "speechScene",
-		"next": "phone-answer-final-1",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Pro Vás tohle pouze znamená povýšení, nemusíte se hned zlobit."
+		"next": "student-4",
+		"person": "people/mckun-idle.png",
+		"name": "[profesor]",
+		"text": "Je to v dnešní době poměrně ožehavé téma, navíc většinu věcí, které se za posledních 70 let udály stejně ani učit nesmím."
 	},
 	{
-		"id": "phone-answer-03",
+		"id": "student-4",
 		"type": "speechScene",
-		"next": "phone-answer-final-1",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Přímá a jasná odpověď, to se mi líbí."
+		"next": "student-5",
+		"person": "people/boyfriend-happy.png",
+		"name": "[student]",
+		"text": "A není to škoda? Rodiče nám o obou válkách a věcech co se děly po nich stejně vyprávějí."
 	},
 	{
-		"id": "phone-answer-final-1",
+		"id": "student-5",
 		"type": "speechScene",
-		"next": "phone-answer-final-2",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Doufám, že jste pochopil můj požadavek. Vše, co se po Vás chce, je napsáno v dopise, který Vám byl dnes ráno doručen."
+		"next": "student-6",
+		"person": "people/mckun-thinking.png",
+		"name": "[profesor]",
+		"text": "To je ale něco jiného, co vám rodiče říkají doma nikdo neuhlídá, ale já jsem neustále pod dozorem, takže musím učit tak, abych pomáhal budovat náš socialistický stát..."
 	},
 	{
-		"id": "phone-answer-final-2",
+		"id": "student-6",
 		"type": "speechScene",
-		"next": "phone-answer-final-3",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Berte tuto situaci jako povýšení na pozici, kterou jste vždycky chtěl. Dovolím si připomenout, že není důvod tuto nabídku odmítnout, nebo o ní někomu říkat."
+		"next": "student-7",
+		"person": "people/boyfriend-idle.png",
+		"name": "[student]",
+		"text": "A neměl by jste pro mě nějakou knížku, ve které bych se mohl dočíst víc? Vážně bych se o tomhle chtěl dozvědět víc."
 	},
 	{
-		"id": "phone-answer-final-3",
+		"id": "student-7",
 		"type": "speechScene",
-		"next": "phone-answer-final-4",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Vypadáte jako velmi zodpovědný otec, předpokládám tedy, že Vás nenapadne naši malou konverzaci s někým sdílet - velmi si totiž cením svého soukromí, víte?"
+		"next": "student-8",
+		"person": "people/mckun-idle.png",
+		"name": "[profesor]",
+		"text": "Kdyby u tebe něco takového našli, dostali bychom se oba do pořádného problému, doplatily by na to i naše rodiny."
 	},
 	{
-		"id": "phone-answer-final-4",
+		"id": "student-8",
 		"type": "speechScene",
-		"next": "classroom-trans",
-		"person": "people/person.png",
-		"name": "???",
-		"text": "Zítra Vás budeme očekávat na Vašem novém pracovišti. Na shledanou, příjemný zbytek dne."
+		"next": "student-9",
+		"person": "people/mckun-thinking.png",
+		"name": "[profesor]",
+		"text": "Ale víš co, stav se po škole u mě doma, na, napíšu ti adresu. Pustím ti desku, která tě určitě bude zajímat."
 	},
 	{
-		"id": "classroom-trans",
+		"id": "student-9",
+		"type": "speechScene",
+		"next": "student-10",
+		"person": "people/boyfriend-happy.png",
+		"name": "[student]",
+		"text": "Vážně? Mockrát děkuj..."
+	},
+	{
+		"id": "student-10",
+		"type": "speechScene",
+		"next": "student-11",
+		"person": "people/janitor-idle.png",
+		"name": "[uklízeč]",
+		"text": "*Vstrčí hlavu dovnitř pootevřenými dveřmi* Pardon že ruším, přišel jsem vynést koše, mohu dále?"
+	},
+	{
+		"id": "student-11",
+		"type": "speechScene",
+		"next": "timeskip-0",
+		"person": "people/mckun-idle.png",
+		"name": "[profesor]",
+		"text": "*Trochu polekaně začne přerovnávat věci na svém stole* Jistěže, zrovna jsme domluvili."
+	},
+	{
+		"id": "timeskip-0",
 		"type": "infoScene",
 		"next": "policeman-dialog",
 		"image": "backgrounds/classroom.jpg",
-		"text": "Rozhodnete se, že i přes varování té neznámé osoby její nabídku odmítnete. Pokračujete ve své stávající práci učitele a žádné další zprávy už nedostanete. Až jednoho dne, když vejdete do své kanceláře..."
+		"text": "Student za vámi toho dne přijde, a vy mu pustíte svou desku o okupaci Československa sovětskými vojsky v roce 1968. Pokračujete v učení jako obvykle, ale když za dva týdny přijdete ráno do své kanceláře, čeká tam na vás policista."
 	},
 	{
 		"id": "policeman-dialog",
@@ -375,7 +292,7 @@
 		"next": "policeman-arrest",
 		"person": "people/soldier-undecisive.png",
 		"name": "Policista",
-		"text": "Kdo jsem vědět nepotřebujete, ale rozhodně víte kde pracuji. A rozhodně víte proč tu dnes jsem."
+		"text": "Kdo jsem, to vědět nepotřebujete, ale rozhodně víte kde pracuji. A rozhodně víte proč tu dnes jsem."
 	},
 	{
 		"id": "policeman-answer-2",
@@ -486,6 +403,6 @@
 		"type": "endScene",
 		"next": "",
 		"title": "Konec.",
-		"ending": "Toto je konec Janova příběhu. Po jeho zatčení s ním byl proveden vykonstruovaný soudní proces, během kterého z Jana udělali odstrašující případ a odsoudili ho na více než 20 let ve vězení, kde kvůli těžkým podmínkám několik let nato zemřel na zápal plic. Děkujeme, že jste jeho příběhu věnovali pozornost."
+		"ending": "Toto je konec Jaroslavova příběhu. Velkou část svého života strávil jako politický vězeň ve vězení, odkud se dostal až po pádu komunistického režimu v roce 1989."
 	}
 ]
