@@ -1,461 +1,491 @@
 [
-  {
-    "id": "demo-start",
-    "type": "startScene",
-    "next": "demo-intro",
-    "title": "[REDACTED]"
-  },
-  {
-    "id": "demo-intro",
-    "type": "infoScene",
-    "next": "demo-bedroom",
-    "image": "backgrounds/bedroom.jpg",
-    "text": "Jednoho dne se brzy ráno probudíte a už se vám nepodaří usnout. Najednou uslyšíte zvláštní zvuky."
-  },
-  {
-    "id": "demo-bedroom",
-    "type": "dialogScene",
-    "next": "demo-noises",
-    "bg": "backgrounds/bedroom.jpg"
-  },
-  {
-    "id": "demo-noises",
-    "type": "speechScene",
-    "next": "demo-kitchen-trans",
-    "person": "",
-    "name": "(V hlavě)",
-    "text": "Co to může být?..."
-  },
-  {
-    "id": "demo-kitchen-trans",
-    "type": "infoScene",
-    "next": "demo-kitchen",
-    "image": "backgrounds/kitchen.jpg",
-    "text": "Zvuky se opět ozvou, tentokrát jste si jistý, že vycházejí z přízemí. Sejdete po schodech do kuchyně."
-  },
-  {
-    "id": "demo-kitchen",
-    "type": "dialogScene",
-    "next": "demo-letter-notice",
-    "bg": "backgrounds/kitchen.jpg"
-  },
-  {
-    "id": "demo-letter-notice",
-    "type": "speechScene",
-    "next": "demo-outside-trans",
-    "person": "",
-    "name": "(V hlavě)",
-    "text": "Je tu nějaký dopis..."
-  },
-  {
-    "id": "demo-outside-trans",
-    "type": "infoScene",
-    "next": "demo-outside",
-    "image": "backgrounds/outside.jpg",
-    "text": "V tu chvíli uslyšíte zvuky z venku a jdete se podívat, co se tam děje."
-  },
-  {
-    "id": "demo-outside",
-    "type": "dialogScene",
-    "next": "demo-daughter",
-    "bg": "backgrounds/outside_boxes.jpg"
-  },
-  {
-    "id": "demo-daughter",
-    "type": "speechScene",
-    "next": "demo-response-choice",
-    "person": "people/daughter-happy.png",
-    "name": "[Dcera]",
-    "text": "... Ahoj, myslela jsem, že touhle dobou ještě spíš... jenom jsem tohle všechno chtěla mít hotový, než se... promiň, prostě jsem to chtěla mít za sebou."
-  },
-  {
-    "id": "demo-response-choice",
-    "type": "choiceScene",
-    "person": "people/daughter-idle.png",
-    "question": "... promiň, prostě jsem to chtěla mít za sebou.",
-    "choices": [
-      {
-        "text": "Už nějakou dobu moc nespím",
-        "next": "demo-daughter-01"
-      },
-      {
-        "text": "Stačilo mi říct, mohl jsem ti pomoct",
-        "next": "demo-daughter-02"
-      },
-      {
-        "text": "Myslel jsem, že ty jsi ta, která touhle dobou spí",
-        "next": "demo-daughter-03"
-      }
-    ]
-  },
-  {
-    "id": "demo-daughter-01",
-    "type": "speechScene",
-    "next": "demo-daughter-letter",
-    "person": "people/daughter-idle.png",
-    "name": "[Dcera]",
-    "text": "Prospělo by ti, kdyby ses pořádně vyspal. Navíc v práci nezanecháváš moc dobrý dojem, když zíváš každých pět minut."
-  },
-  {
-    "id": "demo-daughter-02",
-    "type": "speechScene",
-    "next": "demo-daughter-letter",
-    "person": "people/daughter-angry.png",
-    "name": "[Dcera]",
-    "text": "Už nejsem tak malá, abys mi se vším musel pomáhat. Univerzita je můj cíl a moje cesta. Navíc mi pomáhá přítel. Před chvílí odvezl pár krabic."
-  },
-  {
-    "id": "demo-daughter-03",
-    "type": "speechScene",
-    "next": "demo-daughter-letter",
-    "person": "people/daughter-idle.png",
-    "name": "[Dcera]",
-    "text": "Mám dojem, že jsem ti říkala, že dnes ráno budu stěhovat moje věci. Stejně si teď, když už nebydlím blízko školy, musím zvykat na vstávání brzy."
-  },
-  {
-    "id": "demo-daughter-letter",
-    "type": "speechScene",
-    "next": "demo-letter-choice",
-    "person": "people/daughter-idle.png",
-    "name": "[Dcera]",
-    "text": "Mimochodem, přišla ti pošta. Něco z práce. Máš to v kuchyni."
-  },
-  {
-    "id": "demo-letter-choice",
-    "type": "choiceScene",
-    "person": "people/daughter-idle.png",
-    "question": "Mimochodem, přišla ti pošta. Něco z práce. Máš to v kuchyni.",
-    "choices": [
-      {
-        "text": "Děkuju, podívám se na to.",
-        "next": "demo-letter-01"
-      },
-      {
-        "text": "Proč jsi ho neotevřela?",
-        "next": "demo-letter-02"
-      },
-      {
-        "text": "...?",
-        "next": "demo-letter-03"
-      }
-    ]
-  },
-  {
-    "id": "demo-letter-01",
-    "type": "speechScene",
-    "next": "demo-boyfriend",
-    "person": "people/daughter-idle.png",
-    "name": "Dcera",
-    "text": "Nic se neděje. Snad to jsou nějaké dobré zprávy."
-  },
-  {
-    "id": "demo-letter-02",
-    "type": "speechScene",
-    "next": "demo-boyfriend",
-    "person": "people/daughter-idle.png",
-    "name": "[Dcera]",
-    "text": "Myslela jsem, že to je něco, co vědět nemusím."
-  },
-  {
-    "id": "demo-letter-03",
-    "type": "speechScene",
-    "next": "demo-boyfriend",
-    "person": "people/daughter-angry.png",
-    "name": "[Dcera]",
-    "text": "Neboj, nepotřebuju s tebou znovu řešit tvoje kariérní rozhodnutí."
-  },
-  {
-    "id": "demo-boyfriend",
-    "type": "speechScene",
-    "next": "demo-daughter-boyfriend",
-    "person": "people/boyfriend-idle.png",
-    "name": "[Přítel]",
-    "text": "[Dcera]! Ty bedny jsem odvezl a vyložil, můžeme naložit další. Ah.. tatínek je vzhůru, jak vidím."
-  },
-  {
-    "id": "demo-daughter-boyfriend",
-    "type": "speechScene",
-    "next": "demo-boyfriend-hello",
-    "person": "people/daughter-idle.png",
-    "name": "[Dcera]",
-    "text": "Ah, [Přítel] už je zpátky. Půjdu naložit nějaké krabice."
-  },
-  {
-    "id": "demo-boyfriend-hello",
-    "type": "speechScene",
-    "next": "demo-boyfriend-goodbye",
-    "person": "people/boyfriend-happy.png",
-    "name": "[Přítel]",
-    "text": "Zdravím, už je to nějaká doba, co jsem vás viděl. Možná kdybyste nebyl pořád zašitý ve svojí pracovně, tak by se s vámi dalo častěji vídat… a bavit."
-  },
-  {
-    "id": "demo-boyfriend-goodbye",
-    "type": "speechScene",
-    "next": "demo-kitchen-back-trans",
-    "person": "people/boyfriend-idle.png",
-    "name": "[Přítel]",
-    "text": "Každopádně, musím jít nakládat další krabice, samo se to přece nepřestěhuje. Ale povím vám, [Dcera] to doopravdy táhne daleko. Jde opravdu vidět, že chce dokázat hodně. Taky už není úplně brzy, možná byste se měl chystat do vaší práce. Na shledanou."
-  },
-  {
-    "id": "demo-kitchen-back-trans",
-    "type": "infoScene",
-    "next": "demo-kitchen-back",
-    "image": "backgrounds/kitchen.jpg",
-    "text": "Vrátite se zpátky do kuchyně a jdete si přečíst dopis, o kterém vám dcera řekla."
-  },
-  {
-    "id": "demo-kitchen-back",
-    "type": "dialogScene",
-    "next": "demo-kitchen-letter",
-    "bg": "backgrounds/kitchen.jpg"
-  },
-  {
-    "id": "demo-kitchen-letter",
-    "type": "documentScene",
-    "next": "demo-letter-reaction",
-    "document": "<h5>Dobrý den.</h5><br>Není příliš podstatné, kdo přesně jsme, jen vězte, že je Vám tento dopis adresován od státního útvaru.<br>\tJiž nějakou dobu si Vás všímáme a nemohly nám uniknout Vaše mimořádné schopnosti v oboru jaderné fyziky. Jsme si vědomi, že Vaše finanční situace není momentálně plně stabilní a univerzitní zaměstnání Vás nenaplňuje.<br><br>Chtěli bychom Vám podat návrh. Využívali bychom Vašich služeb na pozici jaderného inženýra, za plat mnohem lepší než Váš nynější; zároveň byste nemusel mít strach o bezpečí své rodiny, ovšem pokud byste přijal naši nabídku.<br><br>Důrazně Vám doporučujeme náš návrh akceptovat.<br><br>Pokud nabídku přijímáte, dostavte se dne <span class='redacted'></span> na adresu <span class='redacted'></span> s přiloženou identifikační kartou; na místě se dozvíte vše, co budete ve svém novém zaměstnání vykonávat, společně s povinnostmi, jež bude obnášet."
-  },
-  {
-    "id": "demo-letter-reaction",
-    "type": "speechScene",
-    "next": "demo-uni-trans",
-    "person": "",
-    "name": "(V hlavě)",
-    "text": "Nemám ponětí, co má tohle znamenat."
-  },
-  {
-    "id": "demo-uni-trans",
-    "type": "infoScene",
-    "next": "demo-uni",
-    "image": "backgrounds/office.jpg",
-    "text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu, kde učíte. Chvíli poté, co přijdete do své kanceláře, vám zazvoní telefon."
-  },
-  {
-    "id": "demo-uni",
-    "type": "dialogScene",
-    "next": "demo-phone-question",
-    "bg": "backgrounds/office.jpg"
-  },
-  {
-    "id": "demo-phone-question",
-    "type": "speechScene",
-    "next": "demo-phone-answer",
-    "person": "",
-    "name": "(Do telefonu)",
-    "text": "Dobrý den, u telefonu-"
-  },
-  {
-    "id": "demo-phone-answer",
-    "type": "speechScene",
-    "next": "demo-phone-choice",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Dnes jste dostal dopis. Je to tak?"
-  },
-  {
-    "id": "demo-phone-choice",
-    "type": "choiceScene",
-    "person": "",
-    "question": "Dnes jste dostal dopis. Je to tak?",
-    "choices": [
-      { "text": "Kdo jste?", "next": "demo-phone-answer-01" },
-      { "text": "Co má tohle znamenat?", "next": "demo-phone-answer-02" },
-      { "text": "...Ano, ale-", "next": "demo-phone-answer-03" }
-    ]
-  },
-  {
-    "id": "demo-phone-answer-01",
-    "type": "speechScene",
-    "next": "demo-phone-answer-final-1",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Už Vám nejspíš došlo, že není důležité, kdo jsem."
-  },
-  {
-    "id": "demo-phone-answer-02",
-    "type": "speechScene",
-    "next": "demo-phone-answer-final-1",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Pro Vás tohle pouze znamená povýšení, nemusíte se hned zlobit."
-  },
-  {
-    "id": "demo-phone-answer-03",
-    "type": "speechScene",
-    "next": "demo-phone-answer-final-1",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Přímá a jasná odpověď, to se mi líbí."
-  },
-  {
-    "id": "demo-phone-answer-final-1",
-    "type": "speechScene",
-    "next": "demo-phone-answer-final-2",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Doufám, že jste pochopil můj požadavek. Vše, co se po Vás chce, je napsáno v dopise, který Vám byl dnes ráno doručen."
-  },
-  {
-    "id": "demo-phone-answer-final-2",
-    "type": "speechScene",
-    "next": "demo-phone-answer-final-3",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Berte tuto situaci jako povýšení na pozici, kterou jste vždycky chtěl. Dovolím si připomenout, že není důvod tuto nabídku odmítnout, nebo o ní někomu říkat."
-  },
-  {
-    "id": "demo-phone-answer-final-3",
-    "type": "speechScene",
-    "next": "demo-phone-answer-final-4",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Vypadáte jako velmi zodpovědný otec, předpokládám tedy, že Vás nenapadne naši malou konverzaci s někým sdílet - velmi si totiž cením svého soukromí, víte?"
-  },
-  {
-    "id": "demo-phone-answer-final-4",
-    "type": "speechScene",
-    "next": "demo-classroom-trans",
-    "person": "people/person.png",
-    "name": "???",
-    "text": "Zítra Vás budeme očekávat na Vašem novém pracovišti. Na shledanou, příjemný zbytek dne."
-  },
-  {
-    "id": "demo-classroom-trans",
-    "type": "infoScene",
-    "next": "demo-policeman-dialog",
-    "image": "backgrounds/classroom.jpg",
-    "text": "Rozhodnete se, že i přes varování té neznámé osoby její nabídku odmítnete. Pokračujete ve své stávající práci učitele a žádné další zprávy už nedostanete. Až jednoho dne, když vejdete do své kanceláře..."
-  },
-  {
-    "id": "demo-policeman-dialog",
-    "type": "dialogScene",
-    "next": "demo-policeman",
-    "bg": "backgrounds/office.jpg"
-  },
-  {
-    "id": "demo-policeman",
-    "type": "speechScene",
-    "person": "people/soldier-idle.png",
-    "name": "Policista",
-    "text": "Čest práci, soudruhu. Odučil jste svoji poslední hodinu dobře?",
-    "next": "demo-policeman-choice"
-  },
-  {
-    "id": "demo-policeman-choice",
-    "type": "choiceScene",
-    "person": "people/mckun-idle.png",
-    "question": "Odučil jste svoji poslední hodinu dobře?",
-    "choices": [
-      {
-        "text": "Kdo jste? A co ode mě chcete?",
-        "next": "demo-policeman-answer-1"
-      },
-      { "text": "...", "next": "demo-policeman-answer-2" },
-      {
-        "text": "Dobrý den, ano, řekl bych že velmi",
-        "next": "demo-policeman-answer-3"
-      }
-    ]
-  },
-  {
-    "id": "demo-policeman-answer-1",
-    "type": "speechScene",
-    "next": "demo-policeman-arrest",
-    "person": "people/soldier-undecisive.png",
-    "name": "Policista",
-    "text": "Kdo jsem vědět nepotřebujete, ale rozhodně víte kde pracuji. A rozhodně víte proč tu dnes jsem."
-  },
-  {
-    "id": "demo-policeman-answer-2",
-    "type": "speechScene",
-    "next": "demo-policeman-arrest",
-    "person": "people/soldier-idle.png",
-    "name": "Policista",
-    "text": "..."
-  },
-  {
-    "id": "demo-policeman-answer-3",
-    "type": "speechScene",
-    "next": "demo-policeman-arrest",
-    "person": "people/soldier-angry.png",
-    "name": "Policista",
-    "text": "Příště buďte zticha a neodpovídejte. Nic od vás slyšet nepotřebuji."
-  },
-  {
-    "id": "demo-policeman-arrest",
-    "type": "speechScene",
-    "next": "demo-policeman-arrest-1",
-    "person": "people/soldier-idle.png",
-    "name": "Policista",
-    "text": "*Ukáže na stůl, kde leží předem vyplňené doznání, kterému chybí jen jeho podpis* Jste obviněn a zatčen z protistátního chování a vlastizrady. Půjdete se mnou a podepíšete nám vaši výpověď."
-  },
-  {
-    "id": "demo-policeman-arrest-1",
-    "type": "speechScene",
-    "next": "demo-policeman-arrest-choice",
-    "person": "people/soldier-idle.png",
-    "name": "Policista",
-    "text": "Teď se ke mně otočte zády a dejte si ruce za záda."
-  },
-  {
-    "id": "demo-policeman-arrest-choice",
-    "type": "choiceScene",
-    "person": "people/mckun-idle.png",
-    "question": "Teď se ke mně otočte zády a dejte si ruce za záda.",
-    "choices": [
-      { "text": "...", "next": "demo-policeman-arrest-answer-1" },
-      { "text": "Tohle nemůžete, já jsem nic neudělal!", "next": "demo-policeman-arrest-answer-2" },
-      { "text": "Mám dceru, uvidím ji ještě?", "next": "demo-policeman-arrest-answer-3" }
-    ]
-  },
-  {
-    "id": "demo-policeman-arrest-answer-1",
-    "type": "speechScene",
-    "next": "demo-policeman-futile-choice",
-    "person": "people/soldier-idle.png",
-    "name": "Policista",
-    "text": "Svůj soudní proces můžete očekávat zítra. Teď se hezky projdeme k mému autu. Cestou se můžete rozloučit se všemi těmi studenty, kterým jste vymýval mozky."
-  },
-  {
-    "id": "demo-policeman-arrest-answer-2",
-    "type": "speechScene",
-    "next": "demo-policeman-futile-choice",
-    "person": "people/soldier-angry.png",
-    "name": "Policista",
-    "text": "Řekl jsem aby jste se otočil! Máte právo zůstat zticha. Jste zatčen za angažování se v protistátním chování a šíření protistátního smýšlení. To vše je vlastizrada. Teď půjdete se mnou."
-  },
-  {
-    "id": "demo-policeman-arrest-answer-3",
-    "type": "speechScene",
-    "next": "demo-policeman-futile-choice",
-    "person": "people/soldier-undecisive.png",
-    "name": "Policista",
-    "text": "To je mi doopravdy jedno. Na to jste měl myslet před tím než jste zradil stát."
-  },
-  {
-    "id": "demo-policeman-futile-choice",
-    "type": "choiceScene",
-    "person": "people/mckun-idle.png",
-    "question": "",
-    "choices": [
-      { "text": "Nikomu jsem mozky nevymýval, a není soudní proces, když je o výsledeku předem rozhodnuto.", "next": "demo-policeman-thoughts" },
-      { "text": "Nesahejte na mě, půjdu sám.", "next": "demo-policeman-thoughts" },
-      { "text": "Já nejsem žádný zrádce!", "next": "demo-policeman-thoughts" }
-    ]
-  },
-  {
-    "id": "demo-policeman-thoughts",
-    "type": "speechScene",
-    "next": "demo-end",
-    "person": "people/mckun-angry.png",
-    "name": "(V hlavě)",
-    "text": "Teď už stejně nemá cenu nic říkat, kéž bych alespoň mohl ještě jednou vidět svou dceru a rozloučit se s ní."
-  },
-  {
-    "id": "demo-end",
-    "type": "endScene",
-    "next": "",
-    "title": "Konec.",
-    "ending": "Toto je konec naší ukázky. Děkujeme za Vaši pozornost."
-  }
+	{
+		"id": "start",
+		"type": "startScene",
+		"next": "intro",
+		"title": "[REDACTED]"
+	},
+	{
+		"id": "intro",
+		"type": "infoScene",
+		"next": "bedroom",
+		"image": "backgrounds/bedroom.jpg",
+		"text": "Jednoho dne se brzy ráno probudíte a už se vám nepodaří usnout. Najednou uslyšíte zvláštní zvuky."
+	},
+	{
+		"id": "bedroom",
+		"type": "dialogScene",
+		"next": "noises",
+		"bg": "backgrounds/bedroom.jpg"
+	},
+	{
+		"id": "noises",
+		"type": "speechScene",
+		"next": "kitchen-trans",
+		"person": "",
+		"name": "(V hlavě)",
+		"text": "Co to může být?..."
+	},
+	{
+		"id": "kitchen-trans",
+		"type": "infoScene",
+		"next": "kitchen",
+		"image": "backgrounds/kitchen.jpg",
+		"text": "Zvuky se opět ozvou, tentokrát jste si jistý, že vycházejí z přízemí. Sejdete po schodech do kuchyně."
+	},
+	{
+		"id": "kitchen",
+		"type": "dialogScene",
+		"next": "letter-notice",
+		"bg": "backgrounds/kitchen.jpg"
+	},
+	{
+		"id": "letter-notice",
+		"type": "speechScene",
+		"next": "outside-trans",
+		"person": "",
+		"name": "(V hlavě)",
+		"text": "Je tu nějaký dopis..."
+	},
+	{
+		"id": "outside-trans",
+		"type": "infoScene",
+		"next": "outside",
+		"image": "backgrounds/outside.jpg",
+		"text": "V tu chvíli uslyšíte zvuky z venku a jdete se podívat, co se tam děje."
+	},
+	{
+		"id": "outside",
+		"type": "dialogScene",
+		"next": "daughter",
+		"bg": "backgrounds/outside_boxes.jpg"
+	},
+	{
+		"id": "daughter",
+		"type": "speechScene",
+		"next": "response-choice",
+		"person": "people/daughter-happy.png",
+		"name": "[Dcera]",
+		"text": "... Ahoj, myslela jsem, že touhle dobou ještě spíš... jenom jsem tohle všechno chtěla mít hotový, než se... promiň, prostě jsem to chtěla mít za sebou."
+	},
+	{
+		"id": "response-choice",
+		"type": "choiceScene",
+		"person": "people/daughter-idle.png",
+		"question": "... promiň, prostě jsem to chtěla mít za sebou.",
+		"choices": [
+			{
+				"text": "Už nějakou dobu moc nespím",
+				"next": "daughter-01"
+			},
+			{
+				"text": "Stačilo mi říct, mohl jsem ti pomoct",
+				"next": "daughter-02"
+			},
+			{
+				"text": "Myslel jsem, že ty jsi ta, která touhle dobou spí",
+				"next": "daughter-03"
+			}
+		]
+	},
+	{
+		"id": "daughter-01",
+		"type": "speechScene",
+		"next": "daughter-letter",
+		"person": "people/daughter-idle.png",
+		"name": "[Dcera]",
+		"text": "Prospělo by ti, kdyby ses pořádně vyspal. Navíc v práci nezanecháváš moc dobrý dojem, když zíváš každých pět minut."
+	},
+	{
+		"id": "daughter-02",
+		"type": "speechScene",
+		"next": "daughter-letter",
+		"person": "people/daughter-angry.png",
+		"name": "[Dcera]",
+		"text": "Už nejsem tak malá, abys mi se vším musel pomáhat. Univerzita je můj cíl a moje cesta. Navíc mi pomáhá přítel. Před chvílí odvezl pár krabic."
+	},
+	{
+		"id": "daughter-03",
+		"type": "speechScene",
+		"next": "daughter-letter",
+		"person": "people/daughter-idle.png",
+		"name": "[Dcera]",
+		"text": "Mám dojem, že jsem ti říkala, že dnes ráno budu stěhovat moje věci. Stejně si teď, když už nebydlím blízko školy, musím zvykat na vstávání brzy."
+	},
+	{
+		"id": "daughter-letter",
+		"type": "speechScene",
+		"next": "letter-choice",
+		"person": "people/daughter-idle.png",
+		"name": "[Dcera]",
+		"text": "Mimochodem, přišla ti pošta. Něco z práce. Máš to v kuchyni."
+	},
+	{
+		"id": "letter-choice",
+		"type": "choiceScene",
+		"person": "people/daughter-idle.png",
+		"question": "Mimochodem, přišla ti pošta. Něco z práce. Máš to v kuchyni.",
+		"choices": [
+			{
+				"text": "Děkuju, podívám se na to.",
+				"next": "letter-01"
+			},
+			{
+				"text": "Proč jsi ho neotevřela?",
+				"next": "letter-02"
+			},
+			{
+				"text": "...?",
+				"next": "letter-03"
+			}
+		]
+	},
+	{
+		"id": "letter-01",
+		"type": "speechScene",
+		"next": "boyfriend",
+		"person": "people/daughter-idle.png",
+		"name": "Dcera",
+		"text": "Nic se neděje. Snad to jsou nějaké dobré zprávy."
+	},
+	{
+		"id": "letter-02",
+		"type": "speechScene",
+		"next": "boyfriend",
+		"person": "people/daughter-idle.png",
+		"name": "[Dcera]",
+		"text": "Myslela jsem, že to je něco, co vědět nemusím."
+	},
+	{
+		"id": "letter-03",
+		"type": "speechScene",
+		"next": "boyfriend",
+		"person": "people/daughter-angry.png",
+		"name": "[Dcera]",
+		"text": "Neboj, nepotřebuju s tebou znovu řešit tvoje kariérní rozhodnutí."
+	},
+	{
+		"id": "boyfriend",
+		"type": "speechScene",
+		"next": "daughter-boyfriend",
+		"person": "people/boyfriend-idle.png",
+		"name": "[Přítel]",
+		"text": "[Dcera]! Ty bedny jsem odvezl a vyložil, můžeme naložit další. Ah.. tatínek je vzhůru, jak vidím."
+	},
+	{
+		"id": "daughter-boyfriend",
+		"type": "speechScene",
+		"next": "boyfriend-hello",
+		"person": "people/daughter-idle.png",
+		"name": "[Dcera]",
+		"text": "Ah, [Přítel] už je zpátky. Půjdu naložit nějaké krabice."
+	},
+	{
+		"id": "boyfriend-hello",
+		"type": "speechScene",
+		"next": "boyfriend-goodbye",
+		"person": "people/boyfriend-happy.png",
+		"name": "[Přítel]",
+		"text": "Zdravím, už je to nějaká doba, co jsem vás viděl. Možná kdybyste nebyl pořád zašitý ve svojí pracovně, tak by se s vámi dalo častěji vídat… a bavit."
+	},
+	{
+		"id": "boyfriend-goodbye",
+		"type": "speechScene",
+		"next": "kitchen-back-trans",
+		"person": "people/boyfriend-idle.png",
+		"name": "[Přítel]",
+		"text": "Každopádně, musím jít nakládat další krabice, samo se to přece nepřestěhuje. Ale povím vám, [Dcera] to doopravdy táhne daleko. Jde opravdu vidět, že chce dokázat hodně. Taky už není úplně brzy, možná byste se měl chystat do vaší práce. Na shledanou."
+	},
+	{
+		"id": "kitchen-back-trans",
+		"type": "infoScene",
+		"next": "kitchen-back",
+		"image": "backgrounds/kitchen.jpg",
+		"text": "Vrátite se zpátky do kuchyně a jdete si přečíst dopis, o kterém vám dcera řekla."
+	},
+	{
+		"id": "kitchen-back",
+		"type": "dialogScene",
+		"next": "kitchen-letter",
+		"bg": "backgrounds/kitchen.jpg"
+	},
+	{
+		"id": "kitchen-letter",
+		"type": "documentScene",
+		"next": "letter-reaction",
+		"document": "<h5>Dobrý den.</h5><br>Není příliš podstatné, kdo přesně jsme, jen vězte, že je Vám tento dopis adresován od státního útvaru.<br>\tJiž nějakou dobu si Vás všímáme a nemohly nám uniknout Vaše mimořádné schopnosti v oboru jaderné fyziky. Jsme si vědomi, že Vaše finanční situace není momentálně plně stabilní a univerzitní zaměstnání Vás nenaplňuje.<br><br>Chtěli bychom Vám podat návrh. Využívali bychom Vašich služeb na pozici jaderného inženýra, za plat mnohem lepší než Váš nynější; zároveň byste nemusel mít strach o bezpečí své rodiny, ovšem pokud byste přijal naši nabídku.<br><br>Důrazně Vám doporučujeme náš návrh akceptovat.<br><br>Pokud nabídku přijímáte, dostavte se dne <span class='redacted'></span> na adresu <span class='redacted'></span> s přiloženou identifikační kartou; na místě se dozvíte vše, co budete ve svém novém zaměstnání vykonávat, společně s povinnostmi, jež bude obnášet."
+	},
+	{
+		"id": "letter-reaction",
+		"type": "speechScene",
+		"next": "uni-trans",
+		"person": "",
+		"name": "(V hlavě)",
+		"text": "Nemám ponětí, co má tohle znamenat."
+	},
+	{
+		"id": "uni-trans",
+		"type": "infoScene",
+		"next": "uni",
+		"image": "backgrounds/office.jpg",
+		"text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu, kde učíte. Chvíli poté, co přijdete do své kanceláře, vám zazvoní telefon."
+	},
+	{
+		"id": "uni",
+		"type": "dialogScene",
+		"next": "phone-question",
+		"bg": "backgrounds/office.jpg"
+	},
+	{
+		"id": "phone-question",
+		"type": "speechScene",
+		"next": "phone-answer",
+		"person": "",
+		"name": "(Do telefonu)",
+		"text": "Dobrý den, u telefonu-"
+	},
+	{
+		"id": "phone-answer",
+		"type": "speechScene",
+		"next": "phone-choice",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Dnes jste dostal dopis. Je to tak?"
+	},
+	{
+		"id": "phone-choice",
+		"type": "choiceScene",
+		"person": "",
+		"question": "Dnes jste dostal dopis. Je to tak?",
+		"choices": [
+			{
+				"text": "Kdo jste?",
+				"next": "phone-answer-01"
+			},
+			{
+				"text": "Co má tohle znamenat?",
+				"next": "phone-answer-02"
+			},
+			{
+				"text": "...Ano, ale-",
+				"next": "phone-answer-03"
+			}
+		]
+	},
+	{
+		"id": "phone-answer-01",
+		"type": "speechScene",
+		"next": "phone-answer-final-1",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Už Vám nejspíš došlo, že není důležité, kdo jsem."
+	},
+	{
+		"id": "phone-answer-02",
+		"type": "speechScene",
+		"next": "phone-answer-final-1",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Pro Vás tohle pouze znamená povýšení, nemusíte se hned zlobit."
+	},
+	{
+		"id": "phone-answer-03",
+		"type": "speechScene",
+		"next": "phone-answer-final-1",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Přímá a jasná odpověď, to se mi líbí."
+	},
+	{
+		"id": "phone-answer-final-1",
+		"type": "speechScene",
+		"next": "phone-answer-final-2",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Doufám, že jste pochopil můj požadavek. Vše, co se po Vás chce, je napsáno v dopise, který Vám byl dnes ráno doručen."
+	},
+	{
+		"id": "phone-answer-final-2",
+		"type": "speechScene",
+		"next": "phone-answer-final-3",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Berte tuto situaci jako povýšení na pozici, kterou jste vždycky chtěl. Dovolím si připomenout, že není důvod tuto nabídku odmítnout, nebo o ní někomu říkat."
+	},
+	{
+		"id": "phone-answer-final-3",
+		"type": "speechScene",
+		"next": "phone-answer-final-4",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Vypadáte jako velmi zodpovědný otec, předpokládám tedy, že Vás nenapadne naši malou konverzaci s někým sdílet - velmi si totiž cením svého soukromí, víte?"
+	},
+	{
+		"id": "phone-answer-final-4",
+		"type": "speechScene",
+		"next": "classroom-trans",
+		"person": "people/person.png",
+		"name": "???",
+		"text": "Zítra Vás budeme očekávat na Vašem novém pracovišti. Na shledanou, příjemný zbytek dne."
+	},
+	{
+		"id": "classroom-trans",
+		"type": "infoScene",
+		"next": "policeman-dialog",
+		"image": "backgrounds/classroom.jpg",
+		"text": "Rozhodnete se, že i přes varování té neznámé osoby její nabídku odmítnete. Pokračujete ve své stávající práci učitele a žádné další zprávy už nedostanete. Až jednoho dne, když vejdete do své kanceláře..."
+	},
+	{
+		"id": "policeman-dialog",
+		"type": "dialogScene",
+		"next": "policeman",
+		"bg": "backgrounds/office.jpg"
+	},
+	{
+		"id": "policeman",
+		"type": "speechScene",
+		"person": "people/soldier-idle.png",
+		"name": "Policista",
+		"text": "Čest práci, soudruhu. Odučil jste svoji poslední hodinu dobře?",
+		"next": "policeman-choice"
+	},
+	{
+		"id": "policeman-choice",
+		"type": "choiceScene",
+		"person": "people/mckun-idle.png",
+		"question": "Odučil jste svoji poslední hodinu dobře?",
+		"choices": [
+			{
+				"text": "Kdo jste? A co ode mě chcete?",
+				"next": "policeman-answer-1"
+			},
+			{
+				"text": "...",
+				"next": "policeman-answer-2"
+			},
+			{
+				"text": "Dobrý den, ano, řekl bych že velmi",
+				"next": "policeman-answer-3"
+			}
+		]
+	},
+	{
+		"id": "policeman-answer-1",
+		"type": "speechScene",
+		"next": "policeman-arrest",
+		"person": "people/soldier-undecisive.png",
+		"name": "Policista",
+		"text": "Kdo jsem vědět nepotřebujete, ale rozhodně víte kde pracuji. A rozhodně víte proč tu dnes jsem."
+	},
+	{
+		"id": "policeman-answer-2",
+		"type": "speechScene",
+		"next": "policeman-arrest",
+		"person": "people/soldier-idle.png",
+		"name": "Policista",
+		"text": "..."
+	},
+	{
+		"id": "policeman-answer-3",
+		"type": "speechScene",
+		"next": "policeman-arrest",
+		"person": "people/soldier-angry.png",
+		"name": "Policista",
+		"text": "Příště buďte zticha a neodpovídejte. Nic od vás slyšet nepotřebuji."
+	},
+	{
+		"id": "policeman-arrest",
+		"type": "speechScene",
+		"next": "policeman-arrest-1",
+		"person": "people/soldier-idle.png",
+		"name": "Policista",
+		"text": "*Ukáže na stůl, kde leží předem vyplňené doznání, kterému chybí jen jeho podpis* Jste obviněn a zatčen z protistátního chování a vlastizrady. Půjdete se mnou a podepíšete nám vaši výpověď."
+	},
+	{
+		"id": "policeman-arrest-1",
+		"type": "speechScene",
+		"next": "policeman-arrest-choice",
+		"person": "people/soldier-idle.png",
+		"name": "Policista",
+		"text": "Teď se ke mně otočte zády a dejte si ruce za záda."
+	},
+	{
+		"id": "policeman-arrest-choice",
+		"type": "choiceScene",
+		"person": "people/mckun-idle.png",
+		"question": "Teď se ke mně otočte zády a dejte si ruce za záda.",
+		"choices": [
+			{
+				"text": "...",
+				"next": "policeman-arrest-answer-1"
+			},
+			{
+				"text": "Tohle nemůžete, já jsem nic neudělal!",
+				"next": "policeman-arrest-answer-2"
+			},
+			{
+				"text": "Mám dceru, uvidím ji ještě?",
+				"next": "policeman-arrest-answer-3"
+			}
+		]
+	},
+	{
+		"id": "policeman-arrest-answer-1",
+		"type": "speechScene",
+		"next": "policeman-futile-choice",
+		"person": "people/soldier-idle.png",
+		"name": "Policista",
+		"text": "Svůj soudní proces můžete očekávat zítra. Teď se hezky projdeme k mému autu. Cestou se můžete rozloučit se všemi těmi studenty, kterým jste vymýval mozky."
+	},
+	{
+		"id": "policeman-arrest-answer-2",
+		"type": "speechScene",
+		"next": "policeman-futile-choice",
+		"person": "people/soldier-angry.png",
+		"name": "Policista",
+		"text": "Řekl jsem aby jste se otočil! Máte právo zůstat zticha. Jste zatčen za angažování se v protistátním chování a šíření protistátního smýšlení. To vše je vlastizrada. Teď půjdete se mnou."
+	},
+	{
+		"id": "policeman-arrest-answer-3",
+		"type": "speechScene",
+		"next": "policeman-futile-choice",
+		"person": "people/soldier-undecisive.png",
+		"name": "Policista",
+		"text": "To je mi doopravdy jedno. Na to jste měl myslet před tím než jste zradil stát."
+	},
+	{
+		"id": "policeman-futile-choice",
+		"type": "choiceScene",
+		"person": "people/mckun-idle.png",
+		"question": "",
+		"choices": [
+			{
+				"text": "Nikomu jsem mozky nevymýval, a není soudní proces, když je o výsledeku předem rozhodnuto.",
+				"next": "policeman-thoughts"
+			},
+			{
+				"text": "Nesahejte na mě, půjdu sám.",
+				"next": "policeman-thoughts"
+			},
+			{
+				"text": "Já nejsem žádný zrádce!",
+				"next": "policeman-thoughts"
+			}
+		]
+	},
+	{
+		"id": "policeman-thoughts",
+		"type": "speechScene",
+		"next": "end",
+		"person": "people/mckun-angry.png",
+		"name": "(V hlavě)",
+		"text": "Teď už stejně nemá cenu nic říkat, kéž bych alespoň mohl ještě jednou vidět svou dceru a rozloučit se s ní."
+	},
+	{
+		"id": "end",
+		"type": "endScene",
+		"next": "",
+		"title": "Konec.",
+		"ending": "Toto je konec Janova příběhu. Po jeho zatčení s ním byl proveden vykonstruovaný soudní proces, během kterého z Jana udělali odstrašující případ a odsoudili ho na více než 20 let ve vězení, kde kvůli těžkým podmínkám několik let nato zemřel na zápal plic. Děkujeme, že jste jeho příběhu věnovali pozornost."
+	}
 ]
