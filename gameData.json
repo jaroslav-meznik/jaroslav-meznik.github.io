@@ -391,6 +391,86 @@
 		]
 	},
 	{
+		"id": "interrogation-0",
+		"type": "speechScene",
+		"next": "interrogation-1",
+		"person": "people/person.png",
+		"name": "Vyslýchající",
+		"text": "*Srovná si papíry a odkašle si* Byl jste poučen o svých právech. Pokud nemáte další otázky, přesuňme se nyní k důvodu tohoto výslechu. Byla u Vás mimo jiné nalezena jistá gramofonová deska… Chcete se k ní vyjádřit?"
+	},
+	{
+		"id": "interrogation-1",
+		"type": "choiceScene",
+		"person": "people/mckun-idle.png",
+		"question": "Mluví o gramofonové desce, kterou jsem schovával doma. Na jejím obalu bylo napsáno Valčíky Johanna Strausse, obsahovala ale výklad událostí v Československu v roce 1968. Ještě v den zatčení jsem přemýšlel, jestli jí důkladněji neschovat - na tom již nezáleží. Hlavně nesmím říct od koho jí mám - budu zapírat.",
+		"choices": [
+			{
+				"text": "Nejsem si vědom existence žádné takové desky.",
+				"next": "interrogation-2"
+			},
+			{
+				"text": "Odmítám se k tomuto tématu vyjadřovat.",
+				"next": "interrogation-2"
+			},
+			{
+				"text": "...",
+				"next": "interrogation-2"
+			}
+		]
+	},
+	{
+		"id": "interrogation-2",
+		"type": "speechScene",
+		"next": "interrogation-3",
+		"person": "people/person.png",
+		"name": "Vyslýchající",
+		"text": "Jedná se o desku s podvratným obsahem - měla na obalu nadepsáno “Valčíky.”"
+	},
+	{
+		"id": "interrogation-3",
+		"type": "speechScene",
+		"next": "interrogation-4",
+		"person": "",
+		"name": "(V hlavě)",
+		"text": "Nemyslím si, že vědí, odkud jí mám. Budu zapírat a neřeknu jim pravdu."
+	},
+	{
+		"id": "interrogation-4",
+		"type": "speechScene",
+		"next": "interrogation-5",
+		"person": "people/mckun-idle.png",
+		"name": "Jaroslav",
+		"text": "Není mi znám její obsah - a mám jí od Jana Cyprise. Co myslíte tím, že má podvratný obsah?"
+	},
+	{
+		"id": "interrogation-5",
+		"type": "speechScene",
+		"next": "interrogation-6",
+		"person": "people/person.png",
+		"name": "Vyslýchající",
+		"text": "Na tom nezáleží. Ta deska jasně svědčí o Vaší protistátní činnosti."
+	},
+	{
+		"id": "interrogation-6",
+		"type": "choiceScene",
+		"person": "people/mckun-idle.png",
+		"question": "Pokračujme v dalším bodě obvinění. Jste podezřelý z účasti na schůzkách protistátního charakteru a rozšiřování nepřátelských tiskovin. Prováděl jste politicky podvratnou činnost vypracováváním a rozšiřováním různých písemných materiálů, které útočí na základy republiky. Co nám k tomu řeknete?",
+		"choices": [
+			{
+				"text": "Byl jsem členem diskusního klubu Československé socialistické strany. Schůzky jeho členů však nepovažuji za závadné.",
+				"next": "policeman-thoughts"
+			},
+			{
+				"text": "Politicky jsem se sice angažoval, žádná moje činnost však nebyla podvratná ani útočná.",
+				"next": "policeman-thoughts"
+			},
+			{
+				"text": "Nejsem si vědom, že bych docházel na schůzky protistátního charakteru a že bych rozšiřoval nepřátelské tiskoviny.",
+				"next": "policeman-thoughts"
+			}
+		]
+	},
+	{
 		"id": "policeman-thoughts",
 		"type": "speechScene",
 		"next": "end",
