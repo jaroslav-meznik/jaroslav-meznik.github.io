@@ -378,15 +378,15 @@
 		"choices": [
 			{
 				"text": "Nikomu jsem mozky nevymýval, a není soudní proces, když je o výsledeku předem rozhodnuto.",
-				"next": "policeman-thoughts"
+				"next": "interrogation-0"
 			},
 			{
 				"text": "Nesahejte na mě, půjdu sám.",
-				"next": "policeman-thoughts"
+				"next": "interrogation-0"
 			},
 			{
 				"text": "Já nejsem žádný zrádce!",
-				"next": "policeman-thoughts"
+				"next": "interrogation-0"
 			}
 		]
 	},
