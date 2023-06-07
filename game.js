@@ -348,7 +348,7 @@ function handleScene(sceneId) {
 async function startScene(scene) {
 	renderer.resetScene();
 
-	let bg = await getImage("/thumbnail.png");
+	let bg = await getImage("/images/thumbnail.png");
 	renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
 
 	renderer.add(new UI_Button("Hrát").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.75).setAnchor(0.5, 0.5));
