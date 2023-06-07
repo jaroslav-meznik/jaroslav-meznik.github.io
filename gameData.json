@@ -3,7 +3,7 @@
 		"id": "start",
 		"type": "startScene",
 		"next": "intro",
-		"title": "[REDACTED]"
+		"title": "Život profesora Jaroslava Mezníka za komunistické éry"
 	},
 	{
 		"id": "intro",
@@ -483,6 +483,6 @@
 		"type": "endScene",
 		"next": "",
 		"title": "Konec.",
-		"ending": "Toto je konec Jaroslavova příběhu. Velkou část svého života strávil jako politický vězeň ve vězení, odkud se dostal až po pádu komunistického režimu v roce 1989."
+		"ending": "Toto je konec našeho příběhu. Pokud se chcete dozvědět více o životu Jaroslava Mezníka, obraťtě se na sekci Životopis. Děkujeme za vaši pozornost."
 	}
 ]

@@ -211,7 +211,7 @@ class Renderer {
 	render() {
 		this.clear();
 
-		if (this.bgChanged) {
+		if (this.bgSrc && this.bgChanged) {
 			this.bgCtx.drawImage(this.bgSrc.content, 0, 0, this.w, this.h);
 			this.bgChanged = false;
 		}
@@ -348,8 +348,11 @@ function handleScene(sceneId) {
 async function startScene(scene) {
 	renderer.resetScene();
 
-	let bg = await getImage("/thumbnail.png");
-	renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
+	//let bg = await getImage("/images/thumbnail.png");
+	//renderer.setBG(new UI_Image(bg).setPos(0, 0).setDims(1, 1));
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
+
+	renderer.add(new UI_Text(scene["title"]).setPos(0.5, 0.4).setAnchor(0.5, 1.0).setStyles({ "font-size": "2rem", "text-align": "center" }));
 
 	renderer.add(new UI_Button("Hrát").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.75).setAnchor(0.5, 0.5));
 
