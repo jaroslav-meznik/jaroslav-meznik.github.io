@@ -354,7 +354,7 @@ async function startScene(scene) {
 
 	renderer.add(new UI_Text(scene["title"]).setPos(0.5, 0.4).setAnchor(0.5, 1.0).setStyles({ "font-size": "2rem", "text-align": "center" }));
 
-	renderer.add(new UI_Button("Hrát").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.75).setAnchor(0.5, 0.5));
+	renderer.add(new UI_Button("Spustit").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.75).setAnchor(0.5, 0.5));
 
 	renderer.render();
 }
