@@ -335,6 +335,9 @@ function handleScene(sceneId) {
 		case "infoScene":
 			infoScene(scene);
 			break;
+		case "textScene":
+			textScene(scene);
+			break;
 		case "endScene":
 			endScene(scene);
 			break;
@@ -397,7 +400,7 @@ async function choiceScene(scene) {
 	}
 
 	scene["choices"].forEach((choice, index) => {
-		renderer.add(new UI_Button(choice["text"]).setCallback(() => { handleScene(choice["next"]); }).setPos(0.5, 0.7525 + index * 0.085).setDims(0.9, 0.075).setAnchor(0.5, 0));
+		renderer.add(new UI_Button(choice["text"]).setCallback(() => { handleScene(choice["next"]); }).setPos(0.5, 0.7525 + index * 0.085).setDims(0.95, 0.075).setAnchor(0.5, 0));
 	});
 
 	renderer.render();
@@ -426,6 +429,18 @@ async function infoScene(scene) {
 	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.85).setDims(0.5, 0.1).setAnchor(0.5, 0));
 
 	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.8, 0.85).setAnchor(0, 0));
+
+	renderer.render();
+}
+
+async function textScene(scene) {
+	renderer.resetScene();
+
+	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
+
+	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.5).setDims(0.6, 0).setAnchor(0.5, 1).setStyles({ "textAlign": "justify" }));
+
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.6).setAnchor(0.5, 0));
 
 	renderer.render();
 }

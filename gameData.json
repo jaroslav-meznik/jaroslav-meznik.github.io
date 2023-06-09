@@ -2,146 +2,98 @@
 	{
 		"id": "start",
 		"type": "startScene",
-		"next": "intro",
+		"next": "introduction-0",
 		"title": "Život profesora Jaroslava Mezníka za komunistické éry"
 	},
 	{
+		"id": "introduction-0",
+		"type": "textScene",
+		"next": "introduction-1",
+		"text": "Prof. PhDr. Jaroslav Mezník, CSc. (31. prosince 1928 Bratislava – 28. listopadu 2008 Brno) se narodil do poměrně bohaté rodiny Marie rozené Dvořákové a Jaroslava Mezníka, moravskoslezského zemského prezidenta, který byl zatčen a následně zastřelen v nacistickém koncentračním táboře v Brně."
+	},
+	{
+		"id": "introduction-1",
+		"type": "textScene",
+		"next": "introduction-2",
+		"text": "Již na gymnáziu (které navštěvoval v letech 1940 a 1948) projevoval nesouhlas s režimem, který přinesl Únorový převrat; již tehdy se ve veřejných diskuzích otevřeně stavěl proti režimu. Od počátků svého politického smýšlení se Jaroslav Mezník pokládal za levicově orientovaného, komunismus však byl pro něj naprosto nepřijatelný."
+	},
+	{
+		"id": "introduction-2",
+		"type": "textScene",
+		"next": "introduction-3",
+		"text": "Vzhledem ke svému „buržoaznímu původu” (tehdejšímu režimu se příčili bohatí lidé), své politické angažovanosti, kterou lze pokládat za režimu oponující, a skutečnost, že odmítl vstoupit do KSČ (Komunistické strany Československa) je poměrně velkým štěstím, že byl vůbec přijat na univerzitu."
+	},
+	{
+		"id": "introduction-3",
+		"type": "textScene",
+		"next": "introduction-4",
+		"text": "Na filozofické fakultě Masarykovy univerzity vystudoval historii a archivnictví. Těmto oborům se věnoval celý život, i když mu komunistický režim často stavěl do cesty překážky. Ve svém výzkumu se soustředil převážně na středověké dějiny, téma pro režim v podstatě bezproblémové –\u2060 všechny jeho politické těžkosti tak nutně vychází z jeho politické aktivity, ne odborné činnosti."
+	},
+	{
+		"id": "introduction-4",
+		"type": "textScene",
+		"next": "introduction-5",
+		"text": "Od ledna roku 1953 pracoval prvně jako archivář ve Státním archivu v Janovicích u Rýmařova (na Krajském archivu Olomouckého kraje), v říjnu tohoto roku byl však povinen nastoupit do tzv. technických praporů na službu, která trvala dva roky –\u2060 většinu své služby strávil těžkou prací v dolech v Petřvaldě."
+	},
+	{
+		"id": "introduction-5",
+		"type": "textScene",
+		"next": "introduction-6",
+		"text": "Krátce po propuštění ze služby dostal místo jako aspirant pražského ústavu na brněnské pobočce Historického ústavu československé Akademie věd, od září 1959 se pak měl stát odborným pracovníkem. Ukázalo se však, že z nějakého důvodu v roce 1956 při nástupu do práce nebyla prověřena jeho minulost –\u2060 když tomu tak bylo učiněno v roce 1959 a byly prověřeny posudky z jeho bývalých zaměstnání, vyšlo najevo, že byla organizace KSČ na fakultě dříve proti tomu, aby se stal archivářem v Olomouci. S jeho přijetím na novou pozici tedy byly problémy, nakonec ale prošel a v ústavu pracoval až do roku 1972."
+	},
+	{
+		"id": "introduction-6",
+		"type": "textScene",
+		"next": "introduction-7",
+		"text": "15. července 1957 si Jaroslav Mezník vzal Vlastu Potměšilovou, studentku medicíny; 28. října 1960 se jim narodila dcera Dagmar. Pan prof. Mezník od roku 1960 přednášel na Filozofické fakultě na Masarykově univerzitě v Brně, dále se 24. října 1968 se na FF Univerzity Karlovy habilitoval a byl mu –\u2060 poměrně překvapivě i přes jeho politickou činnost –\u2060 udělen titul docenta."
+	},
+	{
+		"id": "introduction-7",
+		"type": "textScene",
+		"next": "introduction-8",
+		"text": "V roce 1953 zemřel Josif Stalin a v roce 1956 proběhl XX. sjezd Komunistické strany Sovětského svazu, na kterém Nikita Chruščov odsoudil kult jeho osobnosti. Také se v té době měnila politika Sovětského svazu, s tím, že Chruščov –\u2060 jako přední sovětský státník –\u2060 navazoval kontakty se západními zeměmi. Tyto události měly za následek uvolňování režimu v šedesátých letech, které vyvrcholilo Pražským jarem v roce 1968."
+	},
+	{
+		"id": "introduction-8",
+		"type": "textScene",
+		"next": "introduction-9",
+		"text": "V lednu 1968 se musel své funkce vzdát Antonín Novotný a na místo prvního tajemníka KSČ byl zvolen Alexander Dubček. Jaroslav Mezník popisuje, že tehdy došlo k „prolomení hrází svobodného vyjadřování.“ (str. 141) Noviny a časopisy psaly o potřebě obnovení demokracie; celkově se situace velmi výrazně uvolnila."
+	},
+	{
+		"id": "introduction-9",
+		"type": "textScene",
+		"next": "introduction-10",
+		"text": "V reakci na změny, ke kterým docházelo, autor píše: „Nechtěl jsem být jen svědkem událostí, pokládal jsem za svou povinnost, abych se na dění nějakým způsobem podílel.“ (str. 141) Po roce 1967 tak Jaroslav Mezník vstoupil do ČSS (Československé strany socialistické). I když byla tehdy zcela pod nadvládou komunistické strany, doufal, že se z ní časem stane samostatná a skutečná strana, která by mohla napomoci k obnově demokracie. Důležité je poznamenat, že v rámci ČSS byl založen diskuzní klub, ve kterém její členové probírali své politické názory; ty se často s oficiálními stanovisky ČSS neshodovaly."
+	},
+	{
+		"id": "introduction-10",
+		"type": "textScene",
+		"next": "introduction-11",
+		"text": "Po roce 1968, tedy v době normalizace, se ČSS začala více orientovat na kurz určený komunistickou stranou –\u2060 někteří členové se začali scházet sami, jelikož usoudili, že prostřednictvím strany ničeho nedosáhnou. Tyto schůzky se většinou odehrávaly v bytech různých z nich. Program organizace, která tak vznikla, byl nazván Malý akční program Československého hnutí za demokratický socialismus. Mezi jeho hlavní body patřilo obnovení samostatnosti Československa, vytvoření nové kultury, zavedení svobody náboženského přesvědčení a celková reformulace myšlenky socialismu. Jaroslav Mezník se ůčastnil především diskuzí, některé činnosti organizace mu přišly dokonce nesmyslné."
+	},
+	{
+		"id": "introduction-11",
+		"type": "textScene",
+		"next": "introduction-12",
+		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –\u2060 docházelo k politickým prověrkám, při kterých byla zásadní část pracovníků propuštěna, či minimálně přesunuta. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060 právě ty byly v letech 1967-1968 samozřejmě politicky angažované."
+	},
+	{
+		"id": "introduction-12",
+		"type": "textScene",
+		"next": "introduction-13",
+		"text": "V únoru 1970 byl Historický ústav československé Akademie věd zrušen a místo něj byl zřízen Ústav československých a světových dějin. Zřízením nového ústavu byly zrušeny všechny pracovní smlouvy, které byly uzavřeny za dobu existence ústavu starého. Následovaly prověrky všech pracovníků, a všichni byli nuceni sepsat svou politickou činnost v letech 1968-1969. Podle slov prof. Mezníka: „Bylo to ponižující. Člověk stěží mohl psát něco, čím by se ohrozil, na druhé straně se mu příčilo popírat své přesvědčení a za svou činnost se kát.“ (str. 156)"
+	},
+	{
+		"id": "introduction-13",
+		"type": "textScene",
+		"next": "intro",
+		"text": "V září roku 1972 proběhlo jednání konkurzní komise, na které byla mimo jiné probírána žádost prof. Mezníka na novou smlouvu, jelikož jeho dosavadní mu zajišťovala místo jen do konce roku; konkurzní komise se rozhodla, že s ním již nová smlouva uzavřena nebude. Nastal pro něj (a velké množství jeho kolegů) tak problém s hledáním zaměstnání, které by alespoň do nějaké míry odpovídalo jeho kvalifikaci; nakonec uspěl, a podařilo se mu získat místo na Univerzitní knihovně v Brně."
+	},
+	{
 		"id": "intro",
-		"type": "infoScene",
-		"next": "bedroom",
-		"image": "backgrounds/bedroom.jpg",
-		"text": "Jednoho dne se brzy ráno probudíte a už se vám nepodaří usnout. Najednou uslyšíte zvláštní zvuky."
-	},
-	{
-		"id": "bedroom",
-		"type": "dialogScene",
-		"next": "noises",
-		"bg": "backgrounds/bedroom.jpg"
-	},
-	{
-		"id": "noises",
-		"type": "speechScene",
-		"next": "kitchen-trans",
-		"person": "",
-		"name": "(V hlavě)",
-		"text": "Co to může být?..."
-	},
-	{
-		"id": "kitchen-trans",
-		"type": "infoScene",
-		"next": "kitchen",
-		"image": "backgrounds/kitchen.jpg",
-		"text": "Zvuky se opět ozvou, tentokrát jste si jistý, že vycházejí z přízemí. Sejdete po schodech do kuchyně."
-	},
-	{
-		"id": "kitchen",
-		"type": "dialogScene",
-		"next": "outside-trans",
-		"bg": "backgrounds/kitchen.jpg"
-	},
-	{
-		"id": "outside-trans",
-		"type": "infoScene",
-		"next": "outside",
-		"image": "backgrounds/outside.jpg",
-		"text": "V tu chvíli uslyšíte zvuky z venku a jdete se podívat, co se tam děje."
-	},
-	{
-		"id": "outside",
-		"type": "dialogScene",
-		"next": "daughter",
-		"bg": "backgrounds/outside_boxes.jpg"
-	},
-	{
-		"id": "daughter",
-		"type": "speechScene",
-		"next": "response-choice",
-		"person": "people/daughter-happy.png",
-		"name": "[Dcera]",
-		"text": "... Ahoj, myslela jsem, že touhle dobou ještě spíš... jenom jsem tohle všechno chtěla mít hotový, než se... promiň, prostě jsem to chtěla mít za sebou."
-	},
-	{
-		"id": "response-choice",
-		"type": "choiceScene",
-		"person": "people/daughter-idle.png",
-		"question": "... promiň, prostě jsem to chtěla mít za sebou.",
-		"choices": [
-			{
-				"text": "Už nějakou dobu moc nespím",
-				"next": "daughter-01"
-			},
-			{
-				"text": "Stačilo mi říct, mohl jsem ti pomoct",
-				"next": "daughter-02"
-			},
-			{
-				"text": "Myslel jsem, že ty jsi ta, která touhle dobou spí",
-				"next": "daughter-03"
-			}
-		]
-	},
-	{
-		"id": "daughter-01",
-		"type": "speechScene",
-		"next": "boyfriend",
-		"person": "people/daughter-idle.png",
-		"name": "[Dcera]",
-		"text": "Prospělo by ti, kdyby ses pořádně vyspal. Navíc v práci nezanecháváš moc dobrý dojem, když zíváš každých pět minut."
-	},
-	{
-		"id": "daughter-02",
-		"type": "speechScene",
-		"next": "boyfriend",
-		"person": "people/daughter-angry.png",
-		"name": "[Dcera]",
-		"text": "Už nejsem tak malá, abys mi se vším musel pomáhat. Univerzita je můj cíl a moje cesta. Navíc mi pomáhá přítel. Před chvílí odvezl pár krabic."
-	},
-	{
-		"id": "daughter-03",
-		"type": "speechScene",
-		"next": "boyfriend",
-		"person": "people/daughter-idle.png",
-		"name": "[Dcera]",
-		"text": "Mám dojem, že jsem ti říkala, že dnes ráno budu stěhovat moje věci. Stejně si teď, když už nebydlím blízko školy, musím zvykat na vstávání brzy."
-	},
-	{
-		"id": "boyfriend",
-		"type": "speechScene",
-		"next": "daughter-boyfriend",
-		"person": "people/boyfriend-idle.png",
-		"name": "[Přítel]",
-		"text": "[Dcera]! Ty bedny jsem odvezl a vyložil, můžeme naložit další. Ah.. tatínek je vzhůru, jak vidím."
-	},
-	{
-		"id": "daughter-boyfriend",
-		"type": "speechScene",
-		"next": "boyfriend-hello",
-		"person": "people/daughter-idle.png",
-		"name": "[Dcera]",
-		"text": "Ah, [Přítel] už je zpátky. Půjdu naložit nějaké krabice."
-	},
-	{
-		"id": "boyfriend-hello",
-		"type": "speechScene",
-		"next": "boyfriend-goodbye",
-		"person": "people/boyfriend-happy.png",
-		"name": "[Přítel]",
-		"text": "Zdravím, už je to nějaká doba, co jsem vás viděl. Možná kdybyste nebyl pořád zašitý ve svojí pracovně, tak by se s vámi dalo častěji vídat… a bavit."
-	},
-	{
-		"id": "boyfriend-goodbye",
-		"type": "speechScene",
-		"next": "uni-trans",
-		"person": "people/boyfriend-idle.png",
-		"name": "[Přítel]",
-		"text": "Každopádně, musím jít nakládat další krabice, samo se to přece nepřestěhuje. Ale povím vám, [Dcera] to doopravdy táhne daleko. Jde opravdu vidět, že chce dokázat hodně. Taky už není úplně brzy, možná byste se měl chystat do vaší práce. Na shledanou."
-	},
-	{
-		"id": "uni-trans",
-		"type": "infoScene",
+		"type": "textScene",
 		"next": "student-dialog",
-		"image": "backgrounds/office.jpg",
-		"text": "V rychlosti se nasnídáte, připravíte a vyrazíte na cestu na vysokou školu, kde učíte. Po přednášce se u vás v kanceláři objeví jeden z vašich studentů."
+		"text": "Prof. PhDr. Jaroslav Mezník, CSc. (31. prosince 1928 Bratislava – 28. listopadu 2008 Brno) se narodil do poměrně bohaté rodiny Marie rozené Dvořákové a Jaroslava Mezníka, moravskoslezského zemského prezidenta, který byl zatčen a následně zastřelen v nacistickém koncentračním táboře v Brně."
 	},
 	{
 		"id": "student-dialog",
@@ -248,9 +200,27 @@
 	{
 		"id": "timeskip-0",
 		"type": "infoScene",
-		"next": "policeman-dialog",
+		"next": "arrest-0",
 		"image": "backgrounds/classroom.jpg",
 		"text": "Student za vámi toho dne přijde, a vy mu pustíte svou desku o okupaci Československa sovětskými vojsky v roce 1968. Pokračujete v učení jako obvykle, ale když za dva týdny přijdete ráno do své kanceláře, čeká tam na vás policista."
+	},
+	{
+		"id": "arrest-0",
+		"type": "textScene",
+		"next": "arrest-1",
+		"text": "Prof. Mezník prosbu neznámého muže vyslyšel a vydali se spolu do ústavu. Záhy zjistil, že ho doprovází kromě muže, který ho oslovil, ještě další dva. Píše, že teprve v tu chvíli pochopil, že ho čeká zatčení, a že muž, který ho oslovil, jen nechtěl tropit před knihovnou rozruch."
+	},
+	{
+		"id": "arrest-1",
+		"type": "textScene",
+		"next": "arrest-2",
+		"text": "V ústavu mu příslušníci StB zevrubně prohlédli skříň a zásuvky od stolu. Po prohlídce ho odvezli do věznice v Bohunicích, kde následovaly výslechy."
+	},
+	{
+		"id": "arrest-2",
+		"type": "textScene",
+		"next": "policeman-dialog",
+		"text": "Většina členů Malého akčního programu byla stejně jako prof. Mezník pozavírána a vyslýchána při velkém zatýkání v lednu 1972."
 	},
 	{
 		"id": "policeman-dialog",
@@ -392,72 +362,90 @@
 	},
 	{
 		"id": "interrogation-0",
-		"type": "speechScene",
+		"type": "textScene",
 		"next": "interrogation-1",
+		"text": "Ve své knize Jaroslav Mezník píše, že výslechy probíhaly každý den od rána do večera, s výjimkou nedělí a někdy i sobot; trvaly celé 3 měsíce a zabývaly se především schůzkami „nelegální politické organizace“, jejíž součástí byl i Jaroslav Mezník, ale také osob, s nimiž se stýkal. Jaroslav Mezník a ostatní z jeho skupiny byli velmi nezkušení a doplatili na to tím, že u výslechů vypověděli více, než měli."
+	},
+	{
+		"id": "interrogation-1",
+		"type": "textScene",
+		"next": "interrogation-2",
+		"text": "Když byl konečně odsouzen, vyslechl si u soudu i rozsudky ostatních jeho kamarádů. On sám dostal tři a půl roku. Slovy prof. Mezníka: „Dny a noci, které jsem prožil po prohlížení, patřily k těm nejhorším v mém životě. Stále jsem přemítal o svých chybách. (...) Teprve poznenáhlu jsem se dostával z hluboké deprese. Nakonec se totiž při soudu ukázalo, že jsem svými výpověďmi uškodil nejvíce sám sobě. Dobře mi tak.“ (str. 174)"
+	},
+	{
+		"id": "interrogation-2",
+		"type": "textScene",
+		"next": "interrogation-scene-0",
+		"text": "První noci a večery po svém zatčení trávil Jaroslav Mezník v policejní vazbě v Bohunicích –\u2060 přes den probíhaly výslechy. O této době se ve svém životopisu příliš nerozepisuje, píše jen, že jelikož byl na cele sám, z nudy si podle románů, které popisovaly vězení, vyrobil šachové figurky a hrál sám se sebou šachy."
+	},
+	{
+		"id": "interrogation-scene-0",
+		"type": "speechScene",
+		"next": "interrogation-scene-1",
 		"person": "people/person.png",
 		"name": "Vyslýchající",
 		"text": "*Srovná si papíry a odkašle si* Byl jste poučen o svých právech. Pokud nemáte další otázky, přesuňme se nyní k důvodu tohoto výslechu. Byla u Vás mimo jiné nalezena jistá gramofonová deska… Chcete se k ní vyjádřit?"
 	},
 	{
-		"id": "interrogation-1",
+		"id": "interrogation-scene-1",
 		"type": "choiceScene",
 		"person": "people/mckun-idle.png",
 		"question": "Mluví o gramofonové desce, kterou jsem schovával doma. Na jejím obalu bylo napsáno Valčíky Johanna Strausse, obsahovala ale výklad událostí v Československu v roce 1968. Ještě v den zatčení jsem přemýšlel, jestli jí důkladněji neschovat - na tom již nezáleží. Hlavně nesmím říct od koho jí mám - budu zapírat.",
 		"choices": [
 			{
 				"text": "Nejsem si vědom existence žádné takové desky.",
-				"next": "interrogation-2"
+				"next": "interrogation-scene-2"
 			},
 			{
 				"text": "Odmítám se k tomuto tématu vyjadřovat.",
-				"next": "interrogation-2"
+				"next": "interrogation-scene-2"
 			},
 			{
 				"text": "...",
-				"next": "interrogation-2"
+				"next": "interrogation-scene-2"
 			}
 		]
 	},
 	{
-		"id": "interrogation-2",
+		"id": "interrogation-scene-2",
 		"type": "speechScene",
-		"next": "interrogation-3",
+		"next": "interrogation-scene-3",
 		"person": "people/person.png",
 		"name": "Vyslýchající",
 		"text": "Jedná se o desku s podvratným obsahem - měla na obalu nadepsáno “Valčíky.”"
 	},
 	{
-		"id": "interrogation-3",
+		"id": "interrogation-scene-3",
 		"type": "speechScene",
-		"next": "interrogation-4",
+		"next": "interrogation-scene-4",
 		"person": "",
 		"name": "(V hlavě)",
 		"text": "Nemyslím si, že vědí, odkud jí mám. Budu zapírat a neřeknu jim pravdu."
 	},
 	{
-		"id": "interrogation-4",
+		"id": "interrogation-scene-4",
 		"type": "speechScene",
-		"next": "interrogation-5",
+		"next": "interrogation-scene-5",
 		"person": "people/mckun-idle.png",
 		"name": "Jaroslav",
 		"text": "Není mi znám její obsah - a mám jí od Jana Cyprise. Co myslíte tím, že má podvratný obsah?"
 	},
 	{
-		"id": "interrogation-5",
+		"id": "interrogation-scene-5",
 		"type": "speechScene",
-		"next": "interrogation-6",
+		"next": "interrogation-scene-6",
 		"person": "people/person.png",
 		"name": "Vyslýchající",
 		"text": "Na tom nezáleží. Ta deska jasně svědčí o Vaší protistátní činnosti."
 	},
 	{
-		"id": "interrogation-6",
+		"id": "interrogation-scene-6",
 		"type": "choiceScene",
 		"person": "people/mckun-idle.png",
 		"question": "Pokračujme v dalším bodě obvinění. Jste podezřelý z účasti na schůzkách protistátního charakteru a rozšiřování nepřátelských tiskovin. Prováděl jste politicky podvratnou činnost vypracováváním a rozšiřováním různých písemných materiálů, které útočí na základy republiky. Co nám k tomu řeknete?",
 		"choices": [
 			{
-				"text": "Byl jsem členem diskusního klubu Československé socialistické strany. Schůzky jeho členů však nepovažuji za závadné.",
+				"text": "Byl jsem členem diskusního klubu Československé socialistické strany, kerý však nepovažuji za závadný.",
 				"next": "policeman-thoughts"
 			},
 			{
@@ -465,7 +453,7 @@
 				"next": "policeman-thoughts"
 			},
 			{
-				"text": "Nejsem si vědom, že bych docházel na schůzky protistátního charakteru a že bych rozšiřoval nepřátelské tiskoviny.",
+				"text": "Nejsem si vědom, že bych docházel na schůzky protistátního charakteru nebo šíříl nepřátelské tiskoviny.",
 				"next": "policeman-thoughts"
 			}
 		]
@@ -473,10 +461,46 @@
 	{
 		"id": "policeman-thoughts",
 		"type": "speechScene",
-		"next": "end",
+		"next": "prison-0",
 		"person": "people/mckun-angry.png",
 		"name": "(V hlavě)",
 		"text": "Teď už stejně nemá cenu nic říkat, kéž bych alespoň mohl ještě jednou vidět svou dceru a rozloučit se s ní."
+	},
+	{
+		"id": "prison-0",
+		"type": "textScene",
+		"next": "prison-1",
+		"text": "4. února na prof. Mezníka byla uvalena vyšetřovací vazba a stěhoval se do vazby vazební, stále v Bohunicích. Pobýval v místnosti 3x3,5 metru, se záchodem bez jakékoliv zástěny, nefunkčním topným tělesem a v jednu chvíli až čtyřmi dalšími lidmi. Ve vazbě panoval poměrně pravidelný režim; jednou za deset dní měli vězni možnost vysprchovat se v koupelně, jednou za čtrnáct dní dostávali čisté osobní prádlo a prostěradla. Ve stejných intervalech, ale v jiných termínech, dostali možnost oholit se tupým holícím strojkem."
+	},
+	{
+		"id": "prison-1",
+		"type": "textScene",
+		"next": "prison-2",
+		"text": "20. října 1972 Jaroslavu Mezníkovi oznámil dozorce, že si má sbalit věci. Rozloučil se se svými spoluvězni a byl společně s ostatními odsouzenými ve stejném procesu jako on, tj. s některými organizátory Malého akčního programu (Milan Šilhan, Petr Wurm, Alois Vyroubal) převezen na věznici Bory. Zde se mu poprvé od svého zatčení (a za dobu jeho věznení také naposledy) naskytla příležitost si se svými kamarády promluvit. Tato příležitost však byla vskutku ojedinělá, protože v Borech byl velmi sofistikovaný systém izolace politických vězňů, jako byl Jaroslav Mezník. Práce, kterou ve vězení vykonával, byla spojování spínacích špendlíků –\u2060 7 kg denně. Komunikoval tehdy se spoluvězni ve vedlejších celách s pomocí vězeňské morseovky –\u2060 místo čárky dvě rychlá ťuknutí, mezera mezi slovy je označena tlesknutím do zdi apod."
+	},
+	{
+		"id": "prison-2",
+		"type": "textScene",
+		"next": "prison-3",
+		"text": "7. září 1973 se opět stěhoval, tentokrát autobusem do Litoměřic, kde přestěhovaným vězňům zřídili zvláštní oddělení. Stejně jako v Borech mohli posílat dopisy svým známým jednou týdně, uvnitř věznice ale byla komunikace mezi vězni znemožněna. O podmíněné propuštění požádal na konci roku 1973, po uplynutí poloviny trestu. 5. dubna se přímo v litoměřické věznici konal krátký soud, na kterém byla jeho žádost zamítnuta, protože „soud nemohl přehlédnout závažnost trestného činu i tu skutečnost, že nesprávné názory a postoje, které jej vedly k trestné činnosti, u něho dosud přetrvávají, takže není záruka, že by po propuštění z výkonu trestu vedl řádný život pracujícího člověka.“ (str. 211)"
+	},
+	{
+		"id": "prison-3",
+		"type": "textScene",
+		"next": "conclusion-0",
+		"text": "Jaroslav Mezník byl po soudním přetahování podmínečně propuštěn 23. prosince 1974. Až komicky působí návrh o spolupráci, který mu StB před tímto soudem dala: „Víte, do jakého maléru jste se dostal, do toho se můžou dostat i jiní. Velmi byste možná mnohým lidem pomohl, kdybyste nám sděloval, jestli za vámi někdo přišel s nějakými takovými nabídkami.“ Ve vězení strávil dva roky, deset měsíců a 24 dní."
+	},
+	{
+		"id": "conclusion-0",
+		"type": "textScene",
+		"next": "conclusion-1",
+		"text": "Kvůli svému politickému pozadí měl po návratu z vězení problém najít práci; až do sametové revoluce pracoval v továrně, až po té měl možnost se vrátit k povolání souvisejícímu s historií. Jaroslav Mezník věděl, že chce i nadále bojovat proti komunistickému režimu. Podepsal proto v roce 1977 Chartu 77 (ke svému jednání se vyjádřil následovně: “Člověk se ocitne v určité úloze a tu by měl plnit. Byl jsem odpůrcem komunistického režimu a pokládal jsem za správné se proti němu postavit”). V souvislosti s tímto dokumentem byl následně ještě několikrát vyslýchán a vyšetřován; jelikož však byl znalejší policejních výslechů, jména signatářů a další informace, které by mohly ostatním lidem uškodit, zůstávala mnohem tajnější."
+	},
+	{
+		"id": "conclusion-1",
+		"type": "textScene",
+		"next": "end",
+		"text": "Jaroslav Mezník se věnoval opoziční činnosti až do sametové revoluce."
 	},
 	{
 		"id": "end",
