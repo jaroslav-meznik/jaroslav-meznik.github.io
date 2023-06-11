@@ -8,8 +8,15 @@
 	{
 		"id": "introduction-0",
 		"type": "textScene",
-		"next": "introduction-1",
+		"next": "image-0",
 		"text": "Prof. PhDr. Jaroslav Mezník, CSc. (31. prosince 1928 Bratislava – 28. listopadu 2008 Brno) se narodil do poměrně bohaté rodiny Marie rozené Dvořákové a Jaroslava Mezníka, moravskoslezského zemského prezidenta, který byl zatčen a následně zastřelen v nacistickém koncentračním táboře v Brně."
+	},
+	{
+		"id": "image-0",
+		"type": "infoScene",
+		"next": "introduction-1",
+		"image": "images/mother.jpg",
+		"text": "Marie Mezníková a JUDr. Jaroslav Mezník, asi roku 1939."
 	},
 	{
 		"id": "introduction-1",
@@ -32,8 +39,15 @@
 	{
 		"id": "introduction-4",
 		"type": "textScene",
-		"next": "introduction-5",
+		"next": "image-1",
 		"text": "Od ledna roku 1953 pracoval prvně jako archivář ve Státním archivu v Janovicích u Rýmařova (na Krajském archivu Olomouckého kraje), v říjnu tohoto roku byl však povinen nastoupit do tzv. technických praporů na službu, která trvala dva roky –\u2060 většinu své služby strávil těžkou prací v dolech v Petřvaldě."
+	},
+	{
+		"id": "image-1",
+		"type": "infoScene",
+		"next": "introduction-5",
+		"image": "images/uniform.jpg",
+		"text": "Jaroslav Mezník jako voják s černými výložkami –\u2060 asi 1954."
 	},
 	{
 		"id": "introduction-5",
@@ -44,14 +58,28 @@
 	{
 		"id": "introduction-6",
 		"type": "textScene",
-		"next": "introduction-7",
+		"next": "image-2",
 		"text": "15. července 1957 si Jaroslav Mezník vzal Vlastu Potměšilovou, studentku medicíny; 28. října 1960 se jim narodila dcera Dagmar. Pan prof. Mezník od roku 1960 přednášel na Filozofické fakultě na Masarykově univerzitě v Brně, dále se 24. října 1968 se na FF Univerzity Karlovy habilitoval a byl mu –\u2060 poměrně překvapivě i přes jeho politickou činnost –\u2060 udělen titul docenta."
+	},
+	{
+		"id": "image-2",
+		"type": "infoScene",
+		"next": "introduction-7",
+		"image": "images/daughter.jpg",
+		"text": "Vlasta Mezníková s dcerou Dagmarou, 1961."
 	},
 	{
 		"id": "introduction-7",
 		"type": "textScene",
-		"next": "introduction-8",
+		"next": "image-3",
 		"text": "V roce 1953 zemřel Josif Stalin a v roce 1956 proběhl XX. sjezd Komunistické strany Sovětského svazu, na kterém Nikita Chruščov odsoudil kult jeho osobnosti. Také se v té době měnila politika Sovětského svazu, s tím, že Chruščov –\u2060 jako přední sovětský státník –\u2060 navazoval kontakty se západními zeměmi. Tyto události měly za následek uvolňování režimu v šedesátých letech, které vyvrcholilo Pražským jarem v roce 1968."
+	},
+	{
+		"id": "image-3",
+		"type": "infoScene",
+		"next": "introduction-8",
+		"image": "images/bulgaria.jpg",
+		"text": "Jaroslav Mezník s dcerou Dagmarou, Bulharsko. V létě roku 1966."
 	},
 	{
 		"id": "introduction-8",
@@ -62,8 +90,15 @@
 	{
 		"id": "introduction-9",
 		"type": "textScene",
-		"next": "introduction-10",
+		"next": "image-4",
 		"text": "V reakci na změny, ke kterým docházelo, autor píše: „Nechtěl jsem být jen svědkem událostí, pokládal jsem za svou povinnost, abych se na dění nějakým způsobem podílel.“ (str. 141) Po roce 1967 tak Jaroslav Mezník vstoupil do ČSS (Československé strany socialistické). I když byla tehdy zcela pod nadvládou komunistické strany, doufal, že se z ní časem stane samostatná a skutečná strana, která by mohla napomoci k obnově demokracie. Důležité je poznamenat, že v rámci ČSS byl založen diskuzní klub, ve kterém její členové probírali své politické názory; ty se často s oficiálními stanovisky ČSS neshodovaly."
+	},
+	{
+		"id": "image-4",
+		"type": "infoScene",
+		"next": "introduction-10",
+		"image": "images/conversation.jpg",
+		"text": "Jaroslav Mezník (napravo) diskutuje s Rudolfem Battěkem"
 	},
 	{
 		"id": "introduction-10",
@@ -74,26 +109,8 @@
 	{
 		"id": "introduction-11",
 		"type": "textScene",
-		"next": "introduction-12",
-		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –\u2060 docházelo k politickým prověrkám, při kterých byla zásadní část pracovníků propuštěna, či minimálně přesunuta. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060 právě ty byly v letech 1967-1968 samozřejmě politicky angažované."
-	},
-	{
-		"id": "introduction-12",
-		"type": "textScene",
-		"next": "introduction-13",
-		"text": "V únoru 1970 byl Historický ústav československé Akademie věd zrušen a místo něj byl zřízen Ústav československých a světových dějin. Zřízením nového ústavu byly zrušeny všechny pracovní smlouvy, které byly uzavřeny za dobu existence ústavu starého. Následovaly prověrky všech pracovníků, a všichni byli nuceni sepsat svou politickou činnost v letech 1968-1969. Podle slov prof. Mezníka: „Bylo to ponižující. Člověk stěží mohl psát něco, čím by se ohrozil, na druhé straně se mu příčilo popírat své přesvědčení a za svou činnost se kát.“ (str. 156)"
-	},
-	{
-		"id": "introduction-13",
-		"type": "textScene",
-		"next": "intro",
-		"text": "V září roku 1972 proběhlo jednání konkurzní komise, na které byla mimo jiné probírána žádost prof. Mezníka na novou smlouvu, jelikož jeho dosavadní mu zajišťovala místo jen do konce roku; konkurzní komise se rozhodla, že s ním již nová smlouva uzavřena nebude. Nastal pro něj (a velké množství jeho kolegů) tak problém s hledáním zaměstnání, které by alespoň do nějaké míry odpovídalo jeho kvalifikaci; nakonec uspěl, a podařilo se mu získat místo na Univerzitní knihovně v Brně."
-	},
-	{
-		"id": "intro",
-		"type": "textScene",
 		"next": "student-dialog",
-		"text": "Prof. PhDr. Jaroslav Mezník, CSc. (31. prosince 1928 Bratislava – 28. listopadu 2008 Brno) se narodil do poměrně bohaté rodiny Marie rozené Dvořákové a Jaroslava Mezníka, moravskoslezského zemského prezidenta, který byl zatčen a následně zastřelen v nacistickém koncentračním táboře v Brně."
+		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –\u2060 docházelo k politickým prověrkám, při kterých byla zásadní část pracovníků propuštěna, či minimálně přesunuta. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060 právě ty byly v letech 1967-1968 samozřejmě politicky angažované."
 	},
 	{
 		"id": "student-dialog",
@@ -171,7 +188,7 @@
 		"next": "student-9",
 		"person": "people/mckun-thinking.png",
 		"name": "[profesor]",
-		"text": "Ale víš co, stav se po škole u mě doma, na, napíšu ti adresu. Pustím ti desku, která tě určitě bude zajímat."
+		"text": "Ale víš co, stav se po škole u mě doma, na, napíšu ti adresu. Pustím ti desku, která tě určitě bude zajímat. Týká se okupace Československa sovětskými vojsky v roce 1968."
 	},
 	{
 		"id": "student-9",
@@ -192,17 +209,80 @@
 	{
 		"id": "student-11",
 		"type": "speechScene",
-		"next": "timeskip-0",
+		"next": "introduction-12",
 		"person": "people/mckun-idle.png",
 		"name": "[profesor]",
 		"text": "*Trochu polekaně začne přerovnávat věci na svém stole* Jistěže, zrovna jsme domluvili."
 	},
 	{
-		"id": "timeskip-0",
-		"type": "infoScene",
+		"id": "introduction-12",
+		"type": "textScene",
+		"next": "introduction-13",
+		"text": "V únoru 1970 byl Historický ústav československé Akademie věd zrušen a místo něj byl zřízen Ústav československých a světových dějin. Zřízením nového ústavu byly zrušeny všechny pracovní smlouvy, které byly uzavřeny za dobu existence ústavu starého. Následovaly prověrky všech pracovníků, a všichni byli nuceni sepsat svou politickou činnost v letech 1968-1969. Podle slov prof. Mezníka: „Bylo to ponižující. Člověk stěží mohl psát něco, čím by se ohrozil, na druhé straně se mu příčilo popírat své přesvědčení a za svou činnost se kát.“ (str. 156)"
+	},
+	{
+		"id": "introduction-13",
+		"type": "textScene",
+		"next": "library-arrest-0",
+		"text": "V září roku 1972 proběhlo jednání konkurzní komise, na které byla mimo jiné probírána žádost prof. Mezníka na novou smlouvu, jelikož jeho dosavadní mu zajišťovala místo jen do konce roku; konkurzní komise se rozhodla, že s ním již nová smlouva uzavřena nebude. Nastal pro něj (a velké množství jeho kolegů) tak problém s hledáním zaměstnání, které by alespoň do nějaké míry odpovídalo jeho kvalifikaci; nakonec uspěl, a podařilo se mu získat místo na Univerzitní knihovně v Brně."
+	},
+	{
+		"id": "library-arrest-0",
+		"type": "dialogScene",
+		"next": "library-arrest-1",
+		"bg": "backgrounds/outside_people.jpg"
+	},
+	{
+		"id": "library-arrest-1",
+		"type": "speechScene",
+		"next": "library-arrest-2",
+		"person": "",
+		"name": "(V hlavě)",
+		"text": "Brzy by měli otevřít. Jdu navštívit pracovnici Univerzitní knihovny, která nastupuje do důchodu, a na jejíž místo brzy nastoupím –\u2060 v ústavu už budu pracovat jen měsíc. Ukáže mi, jaká práce mne čeká."
+	},
+	{
+		"id": "library-arrest-2",
+		"type": "choiceScene",
+		"person": "people/person.png",
+		"question": "Dobrý den, jste pan Mezník?",
+		"choices": [
+			{
+				"text": "Dobrý den, ano –\u2060 potřebujete něco?",
+				"next": "library-arrest-3"
+			},
+			{
+				"text": "Ano, to jsem já. Jak vám mohu pomoci?",
+				"next": "library-arrest-3"
+			},
+			{
+				"text": "Správně. Mohu se zeptat, s kým mám tu čest?",
+				"next": "library-arrest-3"
+			}
+		]
+	},
+	{
+		"id": "library-arrest-3",
+		"type": "speechScene",
+		"next": "library-arrest-4",
+		"person": "people/person.png",
+		"name": "Neznámý muž",
+		"text": "Pracuji na pobočce ústavu. Potřebuji pomoci, a vedoucí ještě není na místě –\u2060 půjdete se mnou? Je to pár kroků."
+	},
+	{
+		"id": "library-arrest-4",
+		"type": "speechScene",
+		"next": "library-arrest-5",
+		"person": "people/mckun-angry.png",
+		"name": "Jaroslav",
+		"text": "Omlouvám se, ale musím jít do knihovny."
+	},
+	{
+		"id": "library-arrest-5",
+		"type": "speechScene",
 		"next": "arrest-0",
-		"image": "backgrounds/classroom.jpg",
-		"text": "Student za vámi toho dne přijde, a vy mu pustíte svou desku o okupaci Československa sovětskými vojsky v roce 1968. Pokračujete v učení jako obvykle, ale když za dva týdny přijdete ráno do své kanceláře, čeká tam na vás policista."
+		"person": "people/person.png",
+		"name": "Neznámý muž",
+		"text": "Prosím, pojďte se mnou. Nezdržíte se dlouho."
 	},
 	{
 		"id": "arrest-0",
@@ -233,7 +313,7 @@
 		"type": "speechScene",
 		"person": "people/soldier-idle.png",
 		"name": "Policista",
-		"text": "Čest práci, soudruhu. Odučil jste svoji poslední hodinu dobře?",
+		"text": "Čest práci, soudruhu.",
 		"next": "policeman-choice"
 	},
 	{
@@ -251,7 +331,7 @@
 				"next": "policeman-answer-2"
 			},
 			{
-				"text": "Dobrý den, ano, řekl bych že velmi",
+				"text": "Čest práci, mohu se vás zeptat, proč jste v mé kanceláři a kdo vás pustil dovnitř?",
 				"next": "policeman-answer-3"
 			}
 		]
@@ -270,7 +350,7 @@
 		"next": "policeman-arrest",
 		"person": "people/soldier-idle.png",
 		"name": "Policista",
-		"text": "..."
+		"text": "Čekal jsem alespoň pozdrav, ale pro takové, jako jste vy, je možná i to příliš."
 	},
 	{
 		"id": "policeman-answer-3",
@@ -278,7 +358,7 @@
 		"next": "policeman-arrest",
 		"person": "people/soldier-angry.png",
 		"name": "Policista",
-		"text": "Příště buďte zticha a neodpovídejte. Nic od vás slyšet nepotřebuji."
+		"text": "Nebojte, všechno brzy pochopíte."
 	},
 	{
 		"id": "policeman-arrest",
