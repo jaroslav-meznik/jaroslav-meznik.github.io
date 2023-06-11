@@ -109,110 +109,8 @@
 	{
 		"id": "introduction-11",
 		"type": "textScene",
-		"next": "student-dialog",
-		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –\u2060 docházelo k politickým prověrkám, při kterých byla zásadní část pracovníků propuštěna, či minimálně přesunuta. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060 právě ty byly v letech 1967-1968 samozřejmě politicky angažované."
-	},
-	{
-		"id": "student-dialog",
-		"type": "dialogScene",
-		"next": "student-0",
-		"bg": "backgrounds/office.jpg"
-	},
-	{
-		"id": "student-0",
-		"type": "speechScene",
-		"next": "student-1",
-		"person": "people/boyfriend-happy.png",
-		"name": "[student]",
-		"text": "Dobrý den pane profesore, chtěl jsem vám jen říci že mě vaše poslední přednáška přímo nadchla. Vaše návštěva národní knihovny ve Francii přinesla skutečně neočekávané výsledky."
-	},
-	{
-		"id": "student-1",
-		"type": "speechScene",
-		"next": "student-2",
-		"person": "people/mckun-idle.png",
-		"name": "[profesor]",
-		"text": "Děkuji, je pěkné vidět že studenty moje přednášky baví."
-	},
-	{
-		"id": "student-2",
-		"type": "speechScene",
-		"next": "student-3",
-		"person": "people/boyfriend-idle.png",
-		"name": "[student]",
-		"text": "Chtěl jsem se ale zeptat, proč se neučíme o historii 20. století zdaleka tolik jako o ostatních obdobích?"
-	},
-	{
-		"id": "student-3",
-		"type": "speechScene",
-		"next": "student-4",
-		"person": "people/mckun-idle.png",
-		"name": "[profesor]",
-		"text": "Je to v dnešní době poměrně ožehavé téma, navíc většinu věcí, které se za posledních 70 let udály stejně ani učit nesmím."
-	},
-	{
-		"id": "student-4",
-		"type": "speechScene",
-		"next": "student-5",
-		"person": "people/boyfriend-happy.png",
-		"name": "[student]",
-		"text": "A není to škoda? Rodiče nám o obou válkách a věcech co se děly po nich stejně vyprávějí."
-	},
-	{
-		"id": "student-5",
-		"type": "speechScene",
-		"next": "student-6",
-		"person": "people/mckun-thinking.png",
-		"name": "[profesor]",
-		"text": "To je ale něco jiného, co vám rodiče říkají doma nikdo neuhlídá, ale já jsem neustále pod dozorem, takže musím učit tak, abych pomáhal budovat náš socialistický stát..."
-	},
-	{
-		"id": "student-6",
-		"type": "speechScene",
-		"next": "student-7",
-		"person": "people/boyfriend-idle.png",
-		"name": "[student]",
-		"text": "A neměl by jste pro mě nějakou knížku, ve které bych se mohl dočíst víc? Vážně bych se o tomhle chtěl dozvědět víc."
-	},
-	{
-		"id": "student-7",
-		"type": "speechScene",
-		"next": "student-8",
-		"person": "people/mckun-idle.png",
-		"name": "[profesor]",
-		"text": "Kdyby u tebe něco takového našli, dostali bychom se oba do pořádného problému, doplatily by na to i naše rodiny."
-	},
-	{
-		"id": "student-8",
-		"type": "speechScene",
-		"next": "student-9",
-		"person": "people/mckun-thinking.png",
-		"name": "[profesor]",
-		"text": "Ale víš co, stav se po škole u mě doma, na, napíšu ti adresu. Pustím ti desku, která tě určitě bude zajímat. Týká se okupace Československa sovětskými vojsky v roce 1968."
-	},
-	{
-		"id": "student-9",
-		"type": "speechScene",
-		"next": "student-10",
-		"person": "people/boyfriend-happy.png",
-		"name": "[student]",
-		"text": "Vážně? Mockrát děkuj..."
-	},
-	{
-		"id": "student-10",
-		"type": "speechScene",
-		"next": "student-11",
-		"person": "people/janitor-idle.png",
-		"name": "[uklízeč]",
-		"text": "*Vstrčí hlavu dovnitř pootevřenými dveřmi* Pardon že ruším, přišel jsem vynést koše, mohu dále?"
-	},
-	{
-		"id": "student-11",
-		"type": "speechScene",
 		"next": "introduction-12",
-		"person": "people/mckun-idle.png",
-		"name": "[profesor]",
-		"text": "*Trochu polekaně začne přerovnávat věci na svém stole* Jistěže, zrovna jsme domluvili."
+		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –\u2060 docházelo k politickým prověrkám, při kterých byla zásadní část pracovníků propuštěna, či minimálně přesunuta. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060 právě ty byly v letech 1967-1968 samozřejmě politicky angažované."
 	},
 	{
 		"id": "introduction-12",
@@ -243,7 +141,7 @@
 	{
 		"id": "library-arrest-2",
 		"type": "choiceScene",
-		"person": "people/person.png",
+		"person": "",
 		"question": "Dobrý den, jste pan Mezník?",
 		"choices": [
 			{
@@ -299,146 +197,8 @@
 	{
 		"id": "arrest-2",
 		"type": "textScene",
-		"next": "policeman-dialog",
+		"next": "interrogation-0",
 		"text": "Většina členů Malého akčního programu byla stejně jako prof. Mezník pozavírána a vyslýchána při velkém zatýkání v lednu 1972."
-	},
-	{
-		"id": "policeman-dialog",
-		"type": "dialogScene",
-		"next": "policeman",
-		"bg": "backgrounds/office.jpg"
-	},
-	{
-		"id": "policeman",
-		"type": "speechScene",
-		"person": "people/soldier-idle.png",
-		"name": "Policista",
-		"text": "Čest práci, soudruhu.",
-		"next": "policeman-choice"
-	},
-	{
-		"id": "policeman-choice",
-		"type": "choiceScene",
-		"person": "people/mckun-idle.png",
-		"question": "Odučil jste svoji poslední hodinu dobře?",
-		"choices": [
-			{
-				"text": "Kdo jste? A co ode mě chcete?",
-				"next": "policeman-answer-1"
-			},
-			{
-				"text": "...",
-				"next": "policeman-answer-2"
-			},
-			{
-				"text": "Čest práci, mohu se vás zeptat, proč jste v mé kanceláři a kdo vás pustil dovnitř?",
-				"next": "policeman-answer-3"
-			}
-		]
-	},
-	{
-		"id": "policeman-answer-1",
-		"type": "speechScene",
-		"next": "policeman-arrest",
-		"person": "people/soldier-undecisive.png",
-		"name": "Policista",
-		"text": "Kdo jsem, to vědět nepotřebujete, ale rozhodně víte kde pracuji. A rozhodně víte proč tu dnes jsem."
-	},
-	{
-		"id": "policeman-answer-2",
-		"type": "speechScene",
-		"next": "policeman-arrest",
-		"person": "people/soldier-idle.png",
-		"name": "Policista",
-		"text": "Čekal jsem alespoň pozdrav, ale pro takové, jako jste vy, je možná i to příliš."
-	},
-	{
-		"id": "policeman-answer-3",
-		"type": "speechScene",
-		"next": "policeman-arrest",
-		"person": "people/soldier-angry.png",
-		"name": "Policista",
-		"text": "Nebojte, všechno brzy pochopíte."
-	},
-	{
-		"id": "policeman-arrest",
-		"type": "speechScene",
-		"next": "policeman-arrest-1",
-		"person": "people/soldier-idle.png",
-		"name": "Policista",
-		"text": "*Ukáže na stůl, kde leží předem vyplňené doznání, kterému chybí jen jeho podpis* Jste obviněn a zatčen z protistátního chování a vlastizrady. Půjdete se mnou a podepíšete nám vaši výpověď."
-	},
-	{
-		"id": "policeman-arrest-1",
-		"type": "speechScene",
-		"next": "policeman-arrest-choice",
-		"person": "people/soldier-idle.png",
-		"name": "Policista",
-		"text": "Teď se ke mně otočte zády a dejte si ruce za záda."
-	},
-	{
-		"id": "policeman-arrest-choice",
-		"type": "choiceScene",
-		"person": "people/mckun-idle.png",
-		"question": "Teď se ke mně otočte zády a dejte si ruce za záda.",
-		"choices": [
-			{
-				"text": "...",
-				"next": "policeman-arrest-answer-1"
-			},
-			{
-				"text": "Tohle nemůžete, já jsem nic neudělal!",
-				"next": "policeman-arrest-answer-2"
-			},
-			{
-				"text": "Mám dceru, uvidím ji ještě?",
-				"next": "policeman-arrest-answer-3"
-			}
-		]
-	},
-	{
-		"id": "policeman-arrest-answer-1",
-		"type": "speechScene",
-		"next": "policeman-futile-choice",
-		"person": "people/soldier-idle.png",
-		"name": "Policista",
-		"text": "Svůj soudní proces můžete očekávat zítra. Teď se hezky projdeme k mému autu. Cestou se můžete rozloučit se všemi těmi studenty, kterým jste vymýval mozky."
-	},
-	{
-		"id": "policeman-arrest-answer-2",
-		"type": "speechScene",
-		"next": "policeman-futile-choice",
-		"person": "people/soldier-angry.png",
-		"name": "Policista",
-		"text": "Řekl jsem aby jste se otočil! Máte právo zůstat zticha. Jste zatčen za angažování se v protistátním chování a šíření protistátního smýšlení. To vše je vlastizrada. Teď půjdete se mnou."
-	},
-	{
-		"id": "policeman-arrest-answer-3",
-		"type": "speechScene",
-		"next": "policeman-futile-choice",
-		"person": "people/soldier-undecisive.png",
-		"name": "Policista",
-		"text": "To je mi doopravdy jedno. Na to jste měl myslet před tím než jste zradil stát."
-	},
-	{
-		"id": "policeman-futile-choice",
-		"type": "choiceScene",
-		"person": "people/mckun-idle.png",
-		"question": "",
-		"choices": [
-			{
-				"text": "Nikomu jsem mozky nevymýval, a není soudní proces, když je o výsledeku předem rozhodnuto.",
-				"next": "interrogation-0"
-			},
-			{
-				"text": "Nesahejte na mě, půjdu sám.",
-				"next": "interrogation-0"
-			},
-			{
-				"text": "Já nejsem žádný zrádce!",
-				"next": "interrogation-0"
-			}
-		]
 	},
 	{
 		"id": "interrogation-0",
@@ -455,8 +215,14 @@
 	{
 		"id": "interrogation-2",
 		"type": "textScene",
-		"next": "interrogation-scene-0",
+		"next": "interrogation-dialog",
 		"text": "První noci a večery po svém zatčení trávil Jaroslav Mezník v policejní vazbě v Bohunicích –\u2060 přes den probíhaly výslechy. O této době se ve svém životopisu příliš nerozepisuje, píše jen, že jelikož byl na cele sám, z nudy si podle románů, které popisovaly vězení, vyrobil šachové figurky a hrál sám se sebou šachy."
+	},
+	{
+		"id": "interrogation-dialog",
+		"type": "dialogScene",
+		"next": "interrogation-scene-0",
+		"bg": "backgrounds/office.jpg"
 	},
 	{
 		"id": "interrogation-scene-0",
@@ -526,25 +292,17 @@
 		"choices": [
 			{
 				"text": "Byl jsem členem diskusního klubu Československé socialistické strany, kerý však nepovažuji za závadný.",
-				"next": "policeman-thoughts"
+				"next": "prison-0"
 			},
 			{
 				"text": "Politicky jsem se sice angažoval, žádná moje činnost však nebyla podvratná ani útočná.",
-				"next": "policeman-thoughts"
+				"next": "prison-0"
 			},
 			{
 				"text": "Nejsem si vědom, že bych docházel na schůzky protistátního charakteru nebo šíříl nepřátelské tiskoviny.",
-				"next": "policeman-thoughts"
+				"next": "prison-0"
 			}
 		]
-	},
-	{
-		"id": "policeman-thoughts",
-		"type": "speechScene",
-		"next": "prison-0",
-		"person": "people/mckun-angry.png",
-		"name": "(V hlavě)",
-		"text": "Teď už stejně nemá cenu nic říkat, kéž bych alespoň mohl ještě jednou vidět svou dceru a rozloučit se s ní."
 	},
 	{
 		"id": "prison-0",
@@ -587,6 +345,6 @@
 		"type": "endScene",
 		"next": "",
 		"title": "Konec.",
-		"ending": "Toto je konec našeho příběhu. Pokud se chcete dozvědět více o životu Jaroslava Mezníka, obraťtě se na sekci Životopis. Děkujeme za vaši pozornost."
+		"ending": "Děkujeme za Vaši pozornost a za čas, který jste věnovali našemu projektu. Doufáme, že jsme Vás alespoň částečně přesvědčili o důležitosti tématu, které nám připadá zajímavé. Pokud se chcete dozvědět více, relevantní reference uvádíme v sekci O Projektu. Celý text tohoto projektu naleznete v sekci Životopis."
 	}
 ]

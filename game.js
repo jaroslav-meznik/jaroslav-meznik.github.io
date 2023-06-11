@@ -423,8 +423,8 @@ async function infoScene(scene) {
 
 	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
-	let image = await getImage(getImgUrl(scene["image"], 0.5, 0.7));
-	renderer.add(new UI_Image(image).setPos(0.5, 0.45).setDims(0.5, 0.7).setAnchor(0.5, 0.5).setLayout("Fill"));
+	let image = await getImage(getImgUrl(scene["image"], 0.8, 0.7));
+	renderer.add(new UI_Image(image).setPos(0.5, 0.45).setDims(0.8, 0.7).setAnchor(0.5, 0.5).setLayout("Fit"));
 
 	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.85).setDims(0.5, 0.1).setAnchor(0.5, 0));
 
@@ -438,9 +438,9 @@ async function textScene(scene) {
 
 	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
-	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.5).setDims(0.6, 0).setAnchor(0.5, 1).setStyles({ "textAlign": "justify" }));
+	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.5).setDims(0.6, 0).setAnchor(0.5, 0.5).setStyles({ "textAlign": "justify" }));
 
-	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.6).setAnchor(0.5, 0));
+	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.85).setAnchor(0.5, 0));
 
 	renderer.render();
 }
