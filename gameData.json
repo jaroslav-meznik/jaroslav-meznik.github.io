@@ -30,12 +30,14 @@
 		"id": "introduction-2",
 		"type": "textScene",
 		"next": "introduction-3",
+		"date": "1948",
 		"text": "Vzhledem ke svému „buržoaznímu původu” (tehdejšímu režimu se příčili bohatí lidé), své politické angažovanosti, kterou lze pokládat za režimu oponující, a skutečnost, že odmítl vstoupit do KSČ (Komunistické strany Československa) je poměrně velkým štěstím, že byl vůbec přijat na univerzitu."
 	},
 	{
 		"id": "introduction-3",
 		"type": "textScene",
 		"next": "introduction-4",
+		"date": "1948 - 1952",
 		"text": "Na filozofické fakultě Masarykovy univerzity vystudoval historii a archivnictví. Těmto oborům se věnoval celý život, i když mu komunistický režim často stavěl do cesty překážky. Ve svém výzkumu se soustředil převážně na středověké dějiny, téma pro režim v podstatě bezproblémové –\u2060 všechny jeho politické těžkosti tak nutně vychází z jeho politické aktivity, ne odborné činnosti."
 	},
 	{
@@ -56,6 +58,7 @@
 		"id": "introduction-5",
 		"type": "textScene",
 		"next": "introduction-6",
+		"date": "1959 - 1972",
 		"text": "Krátce po propuštění ze služby dostal místo jako aspirant pražského ústavu na brněnské pobočce Historického ústavu československé Akademie věd, od září 1959 se pak měl stát odborným pracovníkem. Ukázalo se však, že z nějakého důvodu v roce 1956 při nástupu do práce nebyla prověřena jeho minulost –\u2060 když tomu tak bylo učiněno v roce 1959 a byly prověřeny posudky z jeho bývalých zaměstnání, vyšlo najevo, že byla organizace KSČ na fakultě dříve proti tomu, aby se stal archivářem v Olomouci. S jeho přijetím na novou pozici tedy byly problémy, nakonec ale prošel a v ústavu pracoval až do roku 1972."
 	},
 	{
@@ -97,6 +100,7 @@
 		"id": "introduction-9",
 		"type": "textScene",
 		"next": "image-4",
+		"date": "1967 - 1972",
 		"text": "V reakci na změny, ke kterým docházelo, autor píše: „Nechtěl jsem být jen svědkem událostí, pokládal jsem za svou povinnost, abych se na dění nějakým způsobem podílel.“ (str. 141) Po roce 1967 tak Jaroslav Mezník vstoupil do ČSS (Československé strany socialistické). I když byla tehdy zcela pod nadvládou komunistické strany, doufal, že se z ní časem stane samostatná a skutečná strana, která by mohla napomoci k obnově demokracie. Důležité je poznamenat, že v rámci ČSS byl založen diskuzní klub, ve kterém její členové probírali své politické názory; ty se často s oficiálními stanovisky ČSS neshodovaly."
 	},
 	{
@@ -111,7 +115,7 @@
 		"type": "textScene",
 		"next": "introduction-11",
 		"date": "1968 - 1970",
-		"text": "Po roce 1968, tedy v době normalizace, se ČSS začala více orientovat na kurz určený komunistickou stranou –\u2060 někteří členové se začali scházet sami, jelikož usoudili, že prostřednictvím strany ničeho nedosáhnou. Tyto schůzky se většinou odehrávaly v bytech různých z nich. Program organizace, která tak vznikla, byl nazván Malý akční program Československého hnutí za demokratický socialismus. Mezi jeho hlavní body patřilo obnovení samostatnosti Československa, vytvoření nové kultury, zavedení svobody náboženského přesvědčení a celková reformulace myšlenky socialismu. Jaroslav Mezník se ůčastnil především diskuzí, některé činnosti organizace mu přišly dokonce nesmyslné."
+		"text": "Po roce 1968, tedy v době normalizace, se ČSS začala více orientovat na kurz určený komunistickou stranou –\u2060 někteří členové se začali scházet sami, jelikož usoudili, že prostřednictvím strany ničeho nedosáhnou. Tyto schůzky se většinou odehrávaly v bytech různých z nich. Program organizace, která tak vznikla, byl nazván Malý akční program Československého hnutí za demokratický socialismus. Mezi jeho hlavní body patřilo obnovení samostatnosti Československa, vytvoření nové kultury, zavedení svobody náboženského přesvědčení a celková reformulace myšlenky socialismu. Jaroslav Mezník se účastnil především diskuzí, některé činnosti organizace mu přišly dokonce nesmyslné."
 	},
 	{
 		"id": "introduction-11",
@@ -196,12 +200,14 @@
 		"id": "arrest-0",
 		"type": "textScene",
 		"next": "arrest-1",
+		"date": "31/01/1972",
 		"text": "Prof. Mezník prosbu neznámého muže vyslyšel a vydali se spolu do ústavu. Záhy zjistil, že ho doprovází kromě muže, který ho oslovil, ještě další dva. Píše, že teprve v tu chvíli pochopil, že ho čeká zatčení, a že muž, který ho oslovil, jen nechtěl tropit před knihovnou rozruch."
 	},
 	{
 		"id": "arrest-1",
 		"type": "textScene",
 		"next": "arrest-2",
+		"date": "31/01/1972",
 		"text": "V ústavu mu příslušníci StB zevrubně prohlédli skříň a zásuvky od stolu. Po prohlídce ho odvezli do věznice v Bohunicích, kde následovaly výslechy."
 	},
 	{
@@ -215,19 +221,22 @@
 		"id": "interrogation-0",
 		"type": "textScene",
 		"next": "interrogation-1",
-		"text": "Ve své knize Jaroslav Mezník píše, že výslechy probíhaly každý den od rána do večera, s výjimkou nedělí a někdy i sobot; trvaly celé 3 měsíce a zabývaly se především schůzkami „nelegální politické organizace“, jejíž součástí byl i Jaroslav Mezník, ale také osob, s nimiž se stýkal. Jaroslav Mezník a ostatní z jeho skupiny byli velmi nezkušení a doplatili na to tím, že u výslechů vypověděli více, než měli."
+		"date": "01/1972",
+		"text": "První noci a večery po svém zatčení trávil Jaroslav Mezník v policejní vazbě v Bohunicích –\u2060 přes den probíhaly výslechy. O této době se ve svém životopisu příliš nerozepisuje, píše jen, že jelikož byl na cele sám, z nudy si podle románů, které popisovaly vězení, vyrobil šachové figurky a hrál sám se sebou šachy."
 	},
 	{
 		"id": "interrogation-1",
 		"type": "textScene",
 		"next": "interrogation-2",
-		"text": "Když byl konečně odsouzen, vyslechl si u soudu i rozsudky ostatních jeho kamarádů. On sám dostal tři a půl roku. Slovy prof. Mezníka: „Dny a noci, které jsem prožil po prohlížení, patřily k těm nejhorším v mém životě. Stále jsem přemítal o svých chybách. (...) Teprve poznenáhlu jsem se dostával z hluboké deprese. Nakonec se totiž při soudu ukázalo, že jsem svými výpověďmi uškodil nejvíce sám sobě. Dobře mi tak.“ (str. 174)"
+		"date": "01/1972 - 05/1972",
+		"text": "Ve své knize Jaroslav Mezník píše, že výslechy probíhaly každý den od rána do večera, s výjimkou nedělí a někdy i sobot; trvaly celé 3 měsíce a zabývaly se především schůzkami „nelegální politické organizace“, jejíž součástí byl i Jaroslav Mezník, ale také osob, s nimiž se stýkal. Jaroslav Mezník a ostatní z jeho skupiny byli velmi nezkušení a doplatili na to tím, že u výslechů vypověděli více, než měli."
 	},
 	{
 		"id": "interrogation-2",
 		"type": "textScene",
 		"next": "interrogation-dialog",
-		"text": "První noci a večery po svém zatčení trávil Jaroslav Mezník v policejní vazbě v Bohunicích –\u2060 přes den probíhaly výslechy. O této době se ve svém životopisu příliš nerozepisuje, píše jen, že jelikož byl na cele sám, z nudy si podle románů, které popisovaly vězení, vyrobil šachové figurky a hrál sám se sebou šachy."
+		"date": "07/1972",
+		"text": "Když byl konečně odsouzen, vyslechl si u soudu i rozsudky ostatních jeho kamarádů. On sám dostal tři a půl roku. Slovy prof. Mezníka: „Dny a noci, které jsem prožil po prohlížení, patřily k těm nejhorším v mém životě. Stále jsem přemítal o svých chybách. (...) Teprve poznenáhlu jsem se dostával z hluboké deprese. Nakonec se totiž při soudu ukázalo, že jsem svými výpověďmi uškodil nejvíce sám sobě. Dobře mi tak.“ (str. 174)"
 	},
 	{
 		"id": "interrogation-dialog",
@@ -362,6 +371,6 @@
 		"type": "endScene",
 		"next": "",
 		"title": "Konec.",
-		"ending": "Děkujeme za Vaši pozornost a za čas, který jste věnovali našemu projektu. Doufáme, že jsme Vás alespoň částečně přesvědčili o důležitosti tématu, které nám připadá zajímavé. Pokud se chcete dozvědět více, relevantní reference uvádíme v sekci O Projektu. Celý text tohoto projektu naleznete v sekci Životopis."
+		"ending": "Děkujeme za Vaši pozornost a za čas, který jste věnovali našemu projektu. Doufáme, že jsme Vás alespoň částečně přesvědčili o důležitosti tématu, které nám připadá zajímavé. Pokud se chcete dozvědět více, relevantní reference uvádíme v sekci O projektu. Celý text tohoto projektu naleznete v sekci Životopis."
 	}
 ]
