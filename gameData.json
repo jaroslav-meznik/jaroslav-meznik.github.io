@@ -9,6 +9,7 @@
 		"id": "introduction-0",
 		"type": "textScene",
 		"next": "image-0",
+		"date": "31/12/1928",
 		"text": "Prof. PhDr. Jaroslav Mezník, CSc. (31. prosince 1928 Bratislava – 28. listopadu 2008 Brno) se narodil do poměrně bohaté rodiny Marie rozené Dvořákové a Jaroslava Mezníka, moravskoslezského zemského prezidenta, který byl zatčen a následně zastřelen v nacistickém koncentračním táboře v Brně."
 	},
 	{
@@ -22,6 +23,7 @@
 		"id": "introduction-1",
 		"type": "textScene",
 		"next": "introduction-2",
+		"date": "1940 - 1948",
 		"text": "Již na gymnáziu (které navštěvoval v letech 1940 a 1948) projevoval nesouhlas s režimem, který přinesl Únorový převrat; již tehdy se ve veřejných diskuzích otevřeně stavěl proti režimu. Od počátků svého politického smýšlení se Jaroslav Mezník pokládal za levicově orientovaného, komunismus však byl pro něj naprosto nepřijatelný."
 	},
 	{
@@ -40,6 +42,7 @@
 		"id": "introduction-4",
 		"type": "textScene",
 		"next": "image-1",
+		"date": "01/1953",
 		"text": "Od ledna roku 1953 pracoval prvně jako archivář ve Státním archivu v Janovicích u Rýmařova (na Krajském archivu Olomouckého kraje), v říjnu tohoto roku byl však povinen nastoupit do tzv. technických praporů na službu, která trvala dva roky –\u2060 většinu své služby strávil těžkou prací v dolech v Petřvaldě."
 	},
 	{
@@ -59,6 +62,7 @@
 		"id": "introduction-6",
 		"type": "textScene",
 		"next": "image-2",
+		"date": "15/07/1957 - 24/10/1968",
 		"text": "15. července 1957 si Jaroslav Mezník vzal Vlastu Potměšilovou, studentku medicíny; 28. října 1960 se jim narodila dcera Dagmar. Pan prof. Mezník od roku 1960 přednášel na Filozofické fakultě na Masarykově univerzitě v Brně, dále se 24. října 1968 se na FF Univerzity Karlovy habilitoval a byl mu –\u2060 poměrně překvapivě i přes jeho politickou činnost –\u2060 udělen titul docenta."
 	},
 	{
@@ -72,6 +76,7 @@
 		"id": "introduction-7",
 		"type": "textScene",
 		"next": "image-3",
+		"date": "1953 - 1956",
 		"text": "V roce 1953 zemřel Josif Stalin a v roce 1956 proběhl XX. sjezd Komunistické strany Sovětského svazu, na kterém Nikita Chruščov odsoudil kult jeho osobnosti. Také se v té době měnila politika Sovětského svazu, s tím, že Chruščov –\u2060 jako přední sovětský státník –\u2060 navazoval kontakty se západními zeměmi. Tyto události měly za následek uvolňování režimu v šedesátých letech, které vyvrcholilo Pražským jarem v roce 1968."
 	},
 	{
@@ -85,6 +90,7 @@
 		"id": "introduction-8",
 		"type": "textScene",
 		"next": "introduction-9",
+		"date": "01/1968",
 		"text": "V lednu 1968 se musel své funkce vzdát Antonín Novotný a na místo prvního tajemníka KSČ byl zvolen Alexander Dubček. Jaroslav Mezník popisuje, že tehdy došlo k „prolomení hrází svobodného vyjadřování.“ (str. 141) Noviny a časopisy psaly o potřebě obnovení demokracie; celkově se situace velmi výrazně uvolnila."
 	},
 	{
@@ -104,24 +110,28 @@
 		"id": "introduction-10",
 		"type": "textScene",
 		"next": "introduction-11",
+		"date": "1968 - 1970",
 		"text": "Po roce 1968, tedy v době normalizace, se ČSS začala více orientovat na kurz určený komunistickou stranou –\u2060 někteří členové se začali scházet sami, jelikož usoudili, že prostřednictvím strany ničeho nedosáhnou. Tyto schůzky se většinou odehrávaly v bytech různých z nich. Program organizace, která tak vznikla, byl nazván Malý akční program Československého hnutí za demokratický socialismus. Mezi jeho hlavní body patřilo obnovení samostatnosti Československa, vytvoření nové kultury, zavedení svobody náboženského přesvědčení a celková reformulace myšlenky socialismu. Jaroslav Mezník se ůčastnil především diskuzí, některé činnosti organizace mu přišly dokonce nesmyslné."
 	},
 	{
 		"id": "introduction-11",
 		"type": "textScene",
 		"next": "introduction-12",
+		"date": "1970",
 		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –\u2060 docházelo k politickým prověrkám, při kterých byla zásadní část pracovníků propuštěna, či minimálně přesunuta. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060 právě ty byly v letech 1967-1968 samozřejmě politicky angažované."
 	},
 	{
 		"id": "introduction-12",
 		"type": "textScene",
 		"next": "introduction-13",
+		"date": "02/1970",
 		"text": "V únoru 1970 byl Historický ústav československé Akademie věd zrušen a místo něj byl zřízen Ústav československých a světových dějin. Zřízením nového ústavu byly zrušeny všechny pracovní smlouvy, které byly uzavřeny za dobu existence ústavu starého. Následovaly prověrky všech pracovníků, a všichni byli nuceni sepsat svou politickou činnost v letech 1968-1969. Podle slov prof. Mezníka: „Bylo to ponižující. Člověk stěží mohl psát něco, čím by se ohrozil, na druhé straně se mu příčilo popírat své přesvědčení a za svou činnost se kát.“ (str. 156)"
 	},
 	{
 		"id": "introduction-13",
 		"type": "textScene",
 		"next": "library-arrest-0",
+		"date": "09/1972",
 		"text": "V září roku 1972 proběhlo jednání konkurzní komise, na které byla mimo jiné probírána žádost prof. Mezníka na novou smlouvu, jelikož jeho dosavadní mu zajišťovala místo jen do konce roku; konkurzní komise se rozhodla, že s ním již nová smlouva uzavřena nebude. Nastal pro něj (a velké množství jeho kolegů) tak problém s hledáním zaměstnání, které by alespoň do nějaké míry odpovídalo jeho kvalifikaci; nakonec uspěl, a podařilo se mu získat místo na Univerzitní knihovně v Brně."
 	},
 	{
@@ -198,6 +208,7 @@
 		"id": "arrest-2",
 		"type": "textScene",
 		"next": "interrogation-0",
+		"date": "01/1972",
 		"text": "Většina členů Malého akčního programu byla stejně jako prof. Mezník pozavírána a vyslýchána při velkém zatýkání v lednu 1972."
 	},
 	{
@@ -308,36 +319,42 @@
 		"id": "prison-0",
 		"type": "textScene",
 		"next": "prison-1",
+		"date": "04/02/1972",
 		"text": "4. února na prof. Mezníka byla uvalena vyšetřovací vazba a stěhoval se do vazby vazební, stále v Bohunicích. Pobýval v místnosti 3x3,5 metru, se záchodem bez jakékoliv zástěny, nefunkčním topným tělesem a v jednu chvíli až čtyřmi dalšími lidmi. Ve vazbě panoval poměrně pravidelný režim; jednou za deset dní měli vězni možnost vysprchovat se v koupelně, jednou za čtrnáct dní dostávali čisté osobní prádlo a prostěradla. Ve stejných intervalech, ale v jiných termínech, dostali možnost oholit se tupým holícím strojkem."
 	},
 	{
 		"id": "prison-1",
 		"type": "textScene",
 		"next": "prison-2",
+		"date": "20/10/1970",
 		"text": "20. října 1972 Jaroslavu Mezníkovi oznámil dozorce, že si má sbalit věci. Rozloučil se se svými spoluvězni a byl společně s ostatními odsouzenými ve stejném procesu jako on, tj. s některými organizátory Malého akčního programu (Milan Šilhan, Petr Wurm, Alois Vyroubal) převezen na věznici Bory. Zde se mu poprvé od svého zatčení (a za dobu jeho věznení také naposledy) naskytla příležitost si se svými kamarády promluvit. Tato příležitost však byla vskutku ojedinělá, protože v Borech byl velmi sofistikovaný systém izolace politických vězňů, jako byl Jaroslav Mezník. Práce, kterou ve vězení vykonával, byla spojování spínacích špendlíků –\u2060 7 kg denně. Komunikoval tehdy se spoluvězni ve vedlejších celách s pomocí vězeňské morseovky –\u2060 místo čárky dvě rychlá ťuknutí, mezera mezi slovy je označena tlesknutím do zdi apod."
 	},
 	{
 		"id": "prison-2",
 		"type": "textScene",
 		"next": "prison-3",
+		"date": "07/09/1973",
 		"text": "7. září 1973 se opět stěhoval, tentokrát autobusem do Litoměřic, kde přestěhovaným vězňům zřídili zvláštní oddělení. Stejně jako v Borech mohli posílat dopisy svým známým jednou týdně, uvnitř věznice ale byla komunikace mezi vězni znemožněna. O podmíněné propuštění požádal na konci roku 1973, po uplynutí poloviny trestu. 5. dubna se přímo v litoměřické věznici konal krátký soud, na kterém byla jeho žádost zamítnuta, protože „soud nemohl přehlédnout závažnost trestného činu i tu skutečnost, že nesprávné názory a postoje, které jej vedly k trestné činnosti, u něho dosud přetrvávají, takže není záruka, že by po propuštění z výkonu trestu vedl řádný život pracujícího člověka.“ (str. 211)"
 	},
 	{
 		"id": "prison-3",
 		"type": "textScene",
 		"next": "conclusion-0",
+		"date": "23/12/1974",
 		"text": "Jaroslav Mezník byl po soudním přetahování podmínečně propuštěn 23. prosince 1974. Až komicky působí návrh o spolupráci, který mu StB před tímto soudem dala: „Víte, do jakého maléru jste se dostal, do toho se můžou dostat i jiní. Velmi byste možná mnohým lidem pomohl, kdybyste nám sděloval, jestli za vámi někdo přišel s nějakými takovými nabídkami.“ Ve vězení strávil dva roky, deset měsíců a 24 dní."
 	},
 	{
 		"id": "conclusion-0",
 		"type": "textScene",
 		"next": "conclusion-1",
+		"date": "1974 - 1977",
 		"text": "Kvůli svému politickému pozadí měl po návratu z vězení problém najít práci; až do sametové revoluce pracoval v továrně, až po té měl možnost se vrátit k povolání souvisejícímu s historií. Jaroslav Mezník věděl, že chce i nadále bojovat proti komunistickému režimu. Podepsal proto v roce 1977 Chartu 77 (ke svému jednání se vyjádřil následovně: “Člověk se ocitne v určité úloze a tu by měl plnit. Byl jsem odpůrcem komunistického režimu a pokládal jsem za správné se proti němu postavit”). V souvislosti s tímto dokumentem byl následně ještě několikrát vyslýchán a vyšetřován; jelikož však byl znalejší policejních výslechů, jména signatářů a další informace, které by mohly ostatním lidem uškodit, zůstávala mnohem tajnější."
 	},
 	{
 		"id": "conclusion-1",
 		"type": "textScene",
 		"next": "end",
+		"date": "1977 - 1989",
 		"text": "Jaroslav Mezník se věnoval opoziční činnosti až do sametové revoluce."
 	},
 	{

@@ -438,7 +438,11 @@ async function textScene(scene) {
 
 	renderer.add(new UI_Rect().setPos(0, 0).setDims(1, 1).setStyles("black"));
 
-	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.5).setDims(0.6, 0).setAnchor(0.5, 0.5).setStyles({ "textAlign": "justify" }));
+	if (scene["date"] !== undefined) {
+		renderer.add(new UI_Text(scene["date"]).setPos(0.5, 0.1).setAnchor(0.5, 0).setStyles({ "font-size": "1rem", "color": "gray" }));
+	}
+
+	renderer.add(new UI_Text(scene["text"]).setPos(0.5, 0.5).setDims(0.65, 0).setAnchor(0.5, 0.5).setStyles({ "textAlign": "justify", "font-size": "0.825rem", "animation": "fadeIn 0.25s linear" }));
 
 	renderer.add(new UI_Button("Pokračovat").setCallback(() => { handleScene(scene["next"]); }).setPos(0.5, 0.85).setAnchor(0.5, 0));
 
