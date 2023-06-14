@@ -50,7 +50,7 @@ class UI_Image extends Drawable {
 	}
 
 	draw() {
-		let ratio = this.content.width / this.content.height;
+		const ratio = (this.content.width / this.content.height) / (renderer.w / renderer.h);
 
 		switch (this.layout) {
 			case "Fit":
