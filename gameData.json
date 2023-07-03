@@ -10,7 +10,7 @@
 		"type": "textScene",
 		"next": "image-0",
 		"date": "31/12/1928",
-		"text": "Prof. PhDr. Jaroslav Mezník, CSc. (31. prosince 1928 Bratislava – 28. listopadu 2008 Brno) se narodil do poměrně bohaté rodiny Marie rozené Dvořákové a Jaroslava Mezníka, moravskoslezského zemského prezidenta, který byl zatčen a následně zastřelen v nacistickém koncentračním táboře v Brně."
+		"text": "Prof. PhDr. Jaroslav Mezník, CSc. (31. prosince 1928 Bratislava –\u2060 28. listopadu 2008 Brno) se narodil do poměrně bohaté rodiny Marie rozené Dvořákové a Jaroslava Mezníka, moravskoslezského zemského prezidenta, který byl zatčen a následně zastřelen v nacistické věznici v Brně."
 	},
 	{
 		"id": "image-0",
@@ -24,28 +24,28 @@
 		"type": "textScene",
 		"next": "introduction-2",
 		"date": "1940 - 1948",
-		"text": "Již na gymnáziu (které navštěvoval v letech 1940 a 1948) projevoval nesouhlas s režimem, který přinesl Únorový převrat; již tehdy se ve veřejných diskuzích otevřeně stavěl proti režimu. Od počátků svého politického smýšlení se Jaroslav Mezník pokládal za levicově orientovaného, komunismus však byl pro něj naprosto nepřijatelný."
+		"text": "Již na gymnáziu (které navštěvoval v letech 1940 a 1948) projevoval nesouhlas s režimem, který přinesl Únorový převrat; již tehdy se poti němu ve veřejných diskuzích otevřeně stavěl. Od počátků svého politického smýšlení se Jaroslav Mezník pokládal za levicově orientovaného, komunismus však byl pro něj naprosto nepřijatelný."
 	},
 	{
 		"id": "introduction-2",
 		"type": "textScene",
 		"next": "introduction-3",
 		"date": "1948",
-		"text": "Vzhledem ke svému „buržoaznímu původu” (tehdejšímu režimu se příčili bohatí lidé), své politické angažovanosti, kterou lze pokládat za režimu oponující, a skutečnost, že odmítl vstoupit do KSČ (Komunistické strany Československa) je poměrně velkým štěstím, že byl vůbec přijat na univerzitu."
+		"text": "Vzhledem ke svému „buržoaznímu původu” (tehdejšímu režimu se příčili bohatí lidé), své politické angažovanosti a skutečnosti, že odmítl vstoupit do KSČ (Komunistické strany Československa) je poměrně velkým štěstím, že byl vůbec přijat na univerzitu."
 	},
 	{
 		"id": "introduction-3",
 		"type": "textScene",
 		"next": "introduction-4",
 		"date": "1948 - 1952",
-		"text": "Na filozofické fakultě Masarykovy univerzity vystudoval historii a archivnictví. Těmto oborům se věnoval celý život, i když mu komunistický režim často stavěl do cesty překážky. Ve svém výzkumu se soustředil převážně na středověké dějiny, téma pro režim v podstatě bezproblémové –\u2060 všechny jeho politické těžkosti tak nutně vychází z jeho politické aktivity, ne odborné činnosti."
+		"text": "Na filozofické fakultě Masarykovy univerzity vystudoval historii a archivnictví. Historii se věnoval celý život, kromě doby, po kterou byl politicky stíhán. Ve svém výzkumu se soustředil převážně na středověké dějiny, téma pro režim v podstatě bezproblémové –\u2060 všechny jeho politické těžkosti tak nutně vycházely z jeho politické aktivity, ne odborné činnosti."
 	},
 	{
 		"id": "introduction-4",
 		"type": "textScene",
 		"next": "image-1",
 		"date": "01/1953",
-		"text": "Od ledna roku 1953 pracoval prvně jako archivář ve Státním archivu v Janovicích u Rýmařova (na Krajském archivu Olomouckého kraje), v říjnu tohoto roku byl však povinen nastoupit do tzv. technických praporů na službu, která trvala dva roky –\u2060 většinu své služby strávil těžkou prací v dolech v Petřvaldě."
+		"text": "Od roku 1953 pracoval prvně jako archivář ve Státním archivu v Janovicích u Rýmařova (na Krajském archivu Olomouckého kraje), v říjnu tohoto roku byl však povinen nastoupit do tzv. technických praporů na službu, která trvala dva roky –\u2060 většinu své služby strávil těžkou prací v dolech v Petřvaldě."
 	},
 	{
 		"id": "image-1",
@@ -59,14 +59,14 @@
 		"type": "textScene",
 		"next": "introduction-6",
 		"date": "1959 - 1972",
-		"text": "Krátce po propuštění ze služby dostal místo jako aspirant pražského ústavu na brněnské pobočce Historického ústavu československé Akademie věd, od září 1959 se pak měl stát odborným pracovníkem. Ukázalo se však, že z nějakého důvodu v roce 1956 při nástupu do práce nebyla prověřena jeho minulost –\u2060 když tomu tak bylo učiněno v roce 1959 a byly prověřeny posudky z jeho bývalých zaměstnání, vyšlo najevo, že byla organizace KSČ na fakultě dříve proti tomu, aby se stal archivářem v Olomouci. S jeho přijetím na novou pozici tedy byly problémy, nakonec ale prošel a v ústavu pracoval až do roku 1972."
+		"text": "Krátce po propuštění ze služby dostal místo jako aspirant pražského ústavu na brněnské pobočce Historického ústavu československé Akademie věd, od září 1959 se pak měl stát odborným pracovníkem. Ukázalo se však, že z nějakého důvodu v roce 1956 při nástupu do práce nebyla prověřena jeho minulost. Později vyšlo najevo, že byla organizace KSČ na fakultě dříve proti tomu, aby se stal archivářem v Olomouci. S jeho přijetím na novou pozici tedy byly problémy, nakonec ale prošel a v ústavu pracoval až do roku 1972."
 	},
 	{
 		"id": "introduction-6",
 		"type": "textScene",
 		"next": "image-2",
 		"date": "15/07/1957 - 24/10/1968",
-		"text": "15. července 1957 si Jaroslav Mezník vzal Vlastu Potměšilovou, studentku medicíny; 28. října 1960 se jim narodila dcera Dagmar. Pan prof. Mezník od roku 1960 přednášel na Filozofické fakultě na Masarykově univerzitě v Brně, dále se 24. října 1968 se na FF Univerzity Karlovy habilitoval a byl mu –\u2060 poměrně překvapivě i přes jeho politickou činnost –\u2060 udělen titul docenta."
+		"text": "15. července 1957 si Jaroslav Mezník vzal Vlastu Potměšilovou, v té době ještě studentku medicíny; 28. října 1960 se jim narodila dcera Dagmar. Přestože od roku 1960 přednášel na Filozofické fakultě MU v Brně, habilitoval  se r. 1958 na FF UK a byl mu –⁠\u2060 poměrně překvapivě i přes jeho politickou činnost –\u2060⁠ udělen titul docenta."
 	},
 	{
 		"id": "image-2",
@@ -80,7 +80,7 @@
 		"type": "textScene",
 		"next": "image-3",
 		"date": "1953 - 1956",
-		"text": "V roce 1953 zemřel Josif Stalin a v roce 1956 proběhl XX. sjezd Komunistické strany Sovětského svazu, na kterém Nikita Chruščov odsoudil kult jeho osobnosti. Také se v té době měnila politika Sovětského svazu, s tím, že Chruščov –\u2060 jako přední sovětský státník –\u2060 navazoval kontakty se západními zeměmi. Tyto události měly za následek uvolňování režimu v šedesátých letech, které vyvrcholilo Pražským jarem v roce 1968."
+		"text": "V roce 1956 proběhl XX. sjezd Komunistické strany Sovětského svazu, na kterém Nikita Chruščov odsoudil kult osobnosti J.V. Stalina, který zemřel tři roky dříve. Začala se pomalu měnit politika Sovětského svazu a jeho satelitů, od stalinismu k mírné liberalizaci. Toto uvolňování poměrů ve východním bloku vyvrcholilo v Československu tzv. pražským jarem."
 	},
 	{
 		"id": "image-3",
@@ -94,14 +94,14 @@
 		"type": "textScene",
 		"next": "introduction-9",
 		"date": "01/1968",
-		"text": "V lednu 1968 se musel své funkce vzdát Antonín Novotný a na místo prvního tajemníka KSČ byl zvolen Alexander Dubček. Jaroslav Mezník popisuje, že tehdy došlo k „prolomení hrází svobodného vyjadřování.“ (str. 141) Noviny a časopisy psaly o potřebě obnovení demokracie; celkově se situace velmi výrazně uvolnila."
+		"text": "V lednu 1968 se musel svých funkcí prezidenta a prvního tajemníka UV KSČ vzdát Antonín Novotný a na místo prvního tajemníka KSČ byl zvolen Alexander Dubček. Jaroslav Mezník popisuje, že tehdy došlo k „prolomení hrází svobodného vyjadřování.“ (str. 141) Noviny a časopisy psaly o potřebě obnovení demokracie; celkově se situace velmi výrazně uvolnila."
 	},
 	{
 		"id": "introduction-9",
 		"type": "textScene",
 		"next": "image-4",
 		"date": "1967 - 1972",
-		"text": "V reakci na změny, ke kterým docházelo, autor píše: „Nechtěl jsem být jen svědkem událostí, pokládal jsem za svou povinnost, abych se na dění nějakým způsobem podílel.“ (str. 141) Po roce 1967 tak Jaroslav Mezník vstoupil do ČSS (Československé strany socialistické). I když byla tehdy zcela pod nadvládou komunistické strany, doufal, že se z ní časem stane samostatná a skutečná strana, která by mohla napomoci k obnově demokracie. Důležité je poznamenat, že v rámci ČSS byl založen diskuzní klub, ve kterém její členové probírali své politické názory; ty se často s oficiálními stanovisky ČSS neshodovaly."
+		"text": "V reakci na změny, ke kterým docházelo, autor napsal: „Nechtěl jsem být jen svědkem událostí, pokládal jsem za svou povinnost, abych se na dění nějakým způsobem podílel.“ (str. 141) Po roce 1967 tak Jaroslav Mezník vstoupil do ČSS (Československé strany socialistické). I když byla tehdy zcela pod nadvládou komunistické strany, doufal, že se z ní časem stane samostatná a skutečná strana, která by mohla napomoci k obnově demokracie. Důležité je poznamenat, že v rámci ČSS byl založen diskuzní klub, ve kterém její členové probírali své politické názory; ty se často s oficiálními stanovisky ČSS neshodovaly."
 	},
 	{
 		"id": "image-4",
@@ -115,21 +115,21 @@
 		"type": "textScene",
 		"next": "introduction-11",
 		"date": "1968 - 1970",
-		"text": "Po roce 1968, tedy v době normalizace, se ČSS začala více orientovat na kurz určený komunistickou stranou –\u2060 někteří členové se začali scházet sami, jelikož usoudili, že prostřednictvím strany ničeho nedosáhnou. Tyto schůzky se většinou odehrávaly v bytech různých z nich. Program organizace, která tak vznikla, byl nazván Malý akční program Československého hnutí za demokratický socialismus. Mezi jeho hlavní body patřilo obnovení samostatnosti Československa, vytvoření nové kultury, zavedení svobody náboženského přesvědčení a celková reformulace myšlenky socialismu. Jaroslav Mezník se účastnil především diskuzí, některé činnosti organizace mu přišly dokonce nesmyslné."
+		"text": "Po roce 1968, tedy v době normalizace, se ČSS začala více orientovat na kurz určený komunistickou stranou –\u2060 někteří členové se začali scházet sami, jelikož usoudili, že prostřednictvím strany ničeho nedosáhnou. Program organizace, která tak vznikla, byl nazván Malý akční program Československého hnutí za demokratický socialismus. Mezi jeho hlavní body patřilo obnovení samostatnosti Československa, vytvoření nové kultury, zavedení svobody náboženského přesvědčení a celková reformulace myšlenky socialismu. Jaroslav Mezník se v této organizaci účastnil především diskuzí."
 	},
 	{
 		"id": "introduction-11",
 		"type": "textScene",
 		"next": "introduction-12",
 		"date": "1970",
-		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –\u2060 docházelo k politickým prověrkám, při kterých byla zásadní část pracovníků propuštěna, či minimálně přesunuta. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060 právě ty byly v letech 1967-1968 samozřejmě politicky angažované."
+		"text": "V roce 1970 došlo k zásadním změnám téměř na všech pracovištích –⁠ přišly politické prověrky, při kterých byla podstatná část pracovníků propuštěna, či minimálně přesunuta na nevýznamné pozice. Velmi výrazně se tyto změny týkaly historických ústavů –\u2060⁠ právě ty byly v letech 1967-1968 výrazně politicky angažované."
 	},
 	{
 		"id": "introduction-12",
 		"type": "textScene",
 		"next": "introduction-13",
 		"date": "02/1970",
-		"text": "V únoru 1970 byl Historický ústav československé Akademie věd zrušen a místo něj byl zřízen Ústav československých a světových dějin. Zřízením nového ústavu byly zrušeny všechny pracovní smlouvy, které byly uzavřeny za dobu existence ústavu starého. Následovaly prověrky všech pracovníků, a všichni byli nuceni sepsat svou politickou činnost v letech 1968-1969. Podle slov prof. Mezníka: „Bylo to ponižující. Člověk stěží mohl psát něco, čím by se ohrozil, na druhé straně se mu příčilo popírat své přesvědčení a za svou činnost se kát.“ (str. 156)"
+		"text": "V únoru 1970 byl Historický ústav československé Akademie věd zrušen a místo něj byl zřízen Ústav československých a světových dějin. Vznikem nového ústavu byly zrušeny všechny pracovní smlouvy, které byly uzavřeny za dobu existence ústavu starého. Následovaly zmíněné prověrky všech pracovníků, a všichni byli nuceni reflektovat svou politickou činnost v letech 1968-1969. Podle slov prof. Mezníka: „Bylo to ponižující. Člověk stěží mohl psát něco, čím by se ohrozil, na druhé straně se mu příčilo popírat své přesvědčení a za svou činnost se kát.“ (str. 156)"
 	},
 	{
 		"id": "introduction-13",
