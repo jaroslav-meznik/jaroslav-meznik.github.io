@@ -6,30 +6,31 @@
 body {
     font-family: monospace;
     color: white;
+    overflow: hidden;
 }
 
 /* Fade-in */
 .fade-in {
-  animation: 0.5s fadeIn;
+    animation: 0.5s fadeIn;
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 
-  100% {
-    opacity: 1;
-  }
+    100% {
+        opacity: 1;
+    }
 }
 
 .redacted {
-  display: inline-flex;
-  height: 1em;
-  min-width: 5em;
-  transform: translateY(0.25em); 
-  color: black;
-  background-color: black;
+    display: inline-flex;
+    height: 1em;
+    min-width: 5em;
+    transform: translateY(0.25em);
+    color: black;
+    background-color: black;
 }
 
 /* Buttons */
@@ -60,10 +61,10 @@ button:active {
 }
 
 #content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
 }
